@@ -1,0 +1,108 @@
+# CLAUDE.md
+
+Guidance for Claude Code when working in this repository.
+
+## Project
+
+**meal-planner** is a home-use recipe, nutrition (calorie/macro) and shopping-list app.
+It is also a portfolio project for full-stack job interviews, so *how* things are built
+matters as much as what they do: clear module boundaries, deliberate EF Core usage,
+justified microservice decisions, modern React data handling, tests and observability.
+
+Full plan: [docs/architecture.md](docs/architecture.md). Decisions: [docs/adr/](docs/adr/).
+
+## Current status
+
+Milestone **M0 – Foundations** (empty repo: README, .gitignore, LICENSE only).
+Update this line when a milestone closes.
+
+## Tech stack
+
+- Backend: .NET 10, ASP.NET Core Minimal APIs, EF Core 10 (Npgsql), PostgreSQL
+- Orchestration: .NET Aspire (AppHost + ServiceDefaults)
+- Auth: ASP.NET Core Identity, JWT access + refresh tokens
+- Messaging (v2): RabbitMQ, MassTransit v8 or Wolverine, transactional outbox
+- Gateway (v2): YARP
+- Real-time: SignalR
+- Frontend: React 19, TypeScript, Vite, TanStack Query, React Hook Form + Zod,
+  Tailwind + shadcn/ui, API client generated from OpenAPI (Orval)
+- Tests: xUnit, Testcontainers, NetArchTest/ArchUnitNET, Vitest, Testing Library, MSW, Playwright
+- Observability: OpenTelemetry; CI: GitHub Actions, Docker
+
+## Architecture in one paragraph
+
+v1 is a **modular monolith**: one API host loads three modules (Catalog, Recipes, Planning),
+each with its own DbContext and its own PostgreSQL schema. In v2, Catalog and Planning are
+extracted into their own services behind a YARP gateway, and modules sync via integration
+events (`IngredientNutritionChanged`: Catalog → Recipes, `RecipeUpdated`: Recipes → Planning)
+instead of synchronous calls.
+
+## Planned layout
+
+```
+src/
+  AppHost/            Aspire orchestration
+  ServiceDefaults/    OpenTelemetry, health checks, resilience
+  Api/                v1 host, loads all modules
+  Gateway/            YARP (v2)
+  Modules/
+    Catalog/          Catalog.Domain, Catalog.Infrastructure, Catalog.Api
+    Recipes/          same split
+    Planning/         same split
+  Services/           v2 hosts (Catalog.Service, Planning.Service)
+  Shared/Contracts/   integration events only
+  web/                React + Vite app, src/features/{recipes,catalog,planning,shopping}
+tests/                *.UnitTests, *.IntegrationTests, e2e/
+docs/                 architecture.md, adr/
+```
+
+## Workflow
+
+- `main` is protected: every change goes through a PR. Never commit or push to `main` directly.
+- One GitHub issue → one branch → one PR. Branch name: `<issue-number>-<short-kebab-name>`,
+  e.g. `12-recipe-editor-form`.
+- PR description contains `Closes #<issue-number>`. PRs are squash-merged.
+- Commit messages: Conventional Commits (`feat:`, `fix:`, `test:`, `docs:`, `chore:`, `refactor:`).
+- Architecture-relevant choices get a short ADR in `docs/adr/` (next free number, same format
+  as `0001`).
+
+## Backend conventions
+
+- Nullable reference types on, warnings as errors.
+- Minimal API endpoints grouped per module (`MapGroup`); no controllers.
+- No MediatR, no AutoMapper: plain handler classes and explicit mapping.
+- Modules never reference another module's Domain or Infrastructure project. Cross-module
+  communication only via `Shared/Contracts` (events) or, in v1, a module's public API surface.
+  An architecture test enforces this.
+- Value objects (`Quantity`, `NutrientProfile`) are immutable records with their own logic,
+  mapped as EF Core complex/owned types.
+- EF Core: one DbContext per module with its own schema; migrations per module; reads use
+  projections + `AsNoTracking`; no lazy loading; concurrency tokens where users can collide
+  (shopping list items).
+- Domain logic (unit conversion, nutrition calculation, list merging) is unit-tested without
+  a database. Endpoints and persistence get integration tests against real PostgreSQL via
+  Testcontainers.
+
+## Frontend conventions
+
+- Feature folders under `src/features/`; shared UI in `src/components/`.
+- Server state lives in TanStack Query only; no global state library.
+- API calls go through the generated client; never hand-write request types that exist in OpenAPI.
+- Forms: React Hook Form + Zod schemas.
+
+## Working with the owner
+
+The owner builds this to learn and to explain it in interviews. When implementing:
+
+- Prefer small, reviewable steps that map to one issue.
+- Briefly explain non-obvious decisions and the trade-off behind them.
+- Ask before adding a new dependency or changing the architecture described above.
+- Keep `docs/architecture.md` and this file up to date when something changes.
+
+## Commands
+
+Fill in as the solution takes shape:
+
+- Run everything: `dotnet run --project src/AppHost` (planned)
+- Backend tests: `dotnet test`
+- Frontend: `cd src/web && npm run dev` / `npm test`
