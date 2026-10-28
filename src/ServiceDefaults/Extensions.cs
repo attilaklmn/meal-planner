@@ -103,6 +103,18 @@ public static class Extensions
             // Add a default liveness check to ensure app is responsive
             .AddCheck("self", () => HealthCheckResult.Healthy(), ["live"]);
 
+        // A dependency that hangs (e.g. a database connect with retry-on-failure) must not hang the health endpoint:
+        // give every check without its own timeout a short one, so /health reports Unhealthy quickly instead.
+        // PostConfigure (not Configure) runs after every AddHealthChecks registration, so it also covers checks
+        // that modules register after AddServiceDefaults, such as the DbContext checks.
+        builder.Services.PostConfigure<HealthCheckServiceOptions>(options =>
+        {
+            foreach (var registration in options.Registrations.Where(r => r.Timeout == Timeout.InfiniteTimeSpan))
+            {
+                registration.Timeout = TimeSpan.FromSeconds(5);
+            }
+        });
+
         return builder;
     }
 
