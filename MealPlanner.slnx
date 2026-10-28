@@ -1,0 +1,27 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Api/Api.csproj" />
+    <Project Path="src/AppHost/AppHost.csproj" />
+    <Project Path="src/ServiceDefaults/ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Catalog/">
+    <Project Path="src/Modules/Catalog/Catalog.Api/Catalog.Api.csproj" />
+    <Project Path="src/Modules/Catalog/Catalog.Domain/Catalog.Domain.csproj" />
+    <Project Path="src/Modules/Catalog/Catalog.Infrastructure/Catalog.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Planning/">
+    <Project Path="src/Modules/Planning/Planning.Api/Planning.Api.csproj" />
+    <Project Path="src/Modules/Planning/Planning.Domain/Planning.Domain.csproj" />
+    <Project Path="src/Modules/Planning/Planning.Infrastructure/Planning.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Recipes/">
+    <Project Path="src/Modules/Recipes/Recipes.Api/Recipes.Api.csproj" />
+    <Project Path="src/Modules/Recipes/Recipes.Domain/Recipes.Domain.csproj" />
+    <Project Path="src/Modules/Recipes/Recipes.Infrastructure/Recipes.Infrastructure.csproj" />
+  </Folder>
+</Solution>

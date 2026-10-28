@@ -103,6 +103,9 @@ The owner builds this to learn and to explain it in interviews. When implementin
 
 Fill in as the solution takes shape:
 
-- Run everything: `dotnet run --project src/AppHost` (planned)
+- Prerequisites: .NET 10 SDK, Aspire CLI (`aspire` on PATH, needed to build the AppHost), Docker running
+- Build: `dotnet build` (solution: `MealPlanner.slnx`; shared settings in `Directory.Build.props`,
+  package versions only in `Directory.Packages.props`)
+- Run everything: `dotnet run --project src/AppHost` (Aspire dashboard URL is printed on start)
 - Backend tests: `dotnet test`
 - Frontend: `cd src/web && npm run dev` / `npm test`
