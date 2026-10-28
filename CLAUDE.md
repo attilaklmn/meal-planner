@@ -13,7 +13,8 @@ Full plan: [docs/architecture.md](docs/architecture.md). Decisions: [docs/adr/](
 
 ## Current status
 
-Milestone **M0 – Foundations** (empty repo: README, .gitignore, LICENSE only).
+Milestone **M0 – Foundations** in progress: solution skeleton with Aspire, Postgres with one
+DbContext and schema per module.
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -106,6 +107,10 @@ Fill in as the solution takes shape:
 - Prerequisites: .NET 10 SDK, Aspire CLI (`aspire` on PATH, needed to build the AppHost), Docker running
 - Build: `dotnet build` (solution: `MealPlanner.slnx`; shared settings in `Directory.Build.props`,
   package versions only in `Directory.Packages.props`)
-- Run everything: `dotnet run --project src/AppHost` (Aspire dashboard URL is printed on start)
+- Run everything: `dotnet run --project src/AppHost` (Aspire dashboard URL is printed on start).
+  Postgres runs as a persistent container; in Development the Api applies pending migrations on start.
+- Restore local tools (dotnet-ef): `dotnet tool restore`
+- Add a migration (per module, no running database needed):
+  `dotnet ef migrations add <Name> --project src/Modules/<Module>/<Module>.Infrastructure --output-dir Persistence/Migrations`
 - Backend tests: `dotnet test`
 - Frontend: `cd src/web && npm run dev` / `npm test`

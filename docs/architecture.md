@@ -114,7 +114,7 @@ piece weight. Nutrition calculation and shopping-list merging both build on this
 | Projection + `AsNoTracking` | Recipe list, search | Avoiding N+1, selecting only needed columns |
 | Split query | Recipe details with many ingredients | Awareness of cartesian explosion |
 | Schema per module, multiple DbContexts | All three modules | Enforcing module boundaries |
-| Migration bundles | In CI, not at startup | Safe schema updates |
+| Migration bundles | In CI, not at startup (only local Development migrates on start) | Safe schema updates |
 | Seed + import | USDA FoodData Central or Open Food Facts subset | Bulk insert, batch size |
 | Compiled query | Ingredient search while typing | Performance awareness, backed by measurement |
 
