@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.6.3" />
     <PackageVersion Include="Aspire.Hosting.PostgreSQL" Version="13.6.3" />
     <PackageVersion Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.6.3" />
     <!-- Keep in line with the EF Core version Aspire.Npgsql.EntityFrameworkCore.PostgreSQL brings in. -->

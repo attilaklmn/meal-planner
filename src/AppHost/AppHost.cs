@@ -8,9 +8,15 @@ var postgres = builder.AddPostgres("postgres")
 
 var database = postgres.AddDatabase("mealplanner");
 
-builder.AddProject<Projects.Api>("api")
+var api = builder.AddProject<Projects.Api>("api")
     .WithReference(database)
     .WaitFor(database)
     .WithHttpHealthCheck("/health");
+
+// Vite dev server; WithReference passes the Api's URL as env vars, which vite.config.ts uses as proxy target.
+builder.AddViteApp("web", "../web")
+    .WithReference(api)
+    .WaitFor(api)
+    .WithExternalHttpEndpoints();
 
 builder.Build().Run();
