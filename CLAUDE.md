@@ -15,7 +15,7 @@ Full plan: [docs/architecture.md](docs/architecture.md). Decisions: [docs/adr/](
 
 Milestone **M0 – Foundations** in progress: solution skeleton with Aspire, Postgres with one
 DbContext and schema per module, React + Vite frontend skeleton started by the AppHost, typed API
-client generated from OpenAPI.
+client generated from OpenAPI, GitHub Actions CI.
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -61,6 +61,9 @@ docs/                 architecture.md, adr/
 ## Workflow
 
 - `main` is protected: every change goes through a PR. Never commit or push to `main` directly.
+- CI (`.github/workflows/ci.yml`) runs on every PR and push to `main`. Its jobs `backend`, `frontend` and
+  `api-client` are required status checks; renaming a job means updating branch protection too.
+  When bumping the Aspire SDK, bump `ASPIRE_CLI_VERSION` in the workflow as well.
 - One GitHub issue → one branch → one PR. Branch name: `<issue-number>-<short-kebab-name>`,
   e.g. `12-recipe-editor-form`.
 - PR description contains `Closes #<issue-number>`. PRs are squash-merged.
