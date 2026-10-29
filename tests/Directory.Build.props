@@ -1,0 +1,12 @@
+<Project>
+
+  <!-- Inherit the repo-wide settings, then relax the rules that don't fit test code. -->
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <!-- CA1707: test names are sentences (Scale_multiplies_every_value), which reads better in test output. -->
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+
+</Project>

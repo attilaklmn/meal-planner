@@ -157,11 +157,11 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 | | **Gate: v2 demoable in interviews** | | |
 
 ### M0 – Foundations
-- [ ] .NET 10 solution with the planned layout, Aspire AppHost and ServiceDefaults
-- [ ] PostgreSQL container from Aspire, three DbContexts with their own schemas
-- [ ] React + Vite + TypeScript, Tailwind, shadcn/ui, TanStack Query base
-- [ ] OpenAPI description and generated frontend client (Orval)
-- [ ] GitHub Actions: build for both sides
+- [x] .NET 10 solution with the planned layout, Aspire AppHost and ServiceDefaults
+- [x] PostgreSQL container from Aspire, three DbContexts with their own schemas
+- [x] React + Vite + TypeScript, Tailwind, shadcn/ui, TanStack Query base
+- [x] OpenAPI description and generated frontend client (Orval)
+- [x] GitHub Actions: build for both sides
 
 ### M1 – Ingredient catalog
 - [ ] `Ingredient`, `NutrientProfile` complex type, migration
