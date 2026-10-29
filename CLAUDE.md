@@ -15,7 +15,7 @@ Full plan: [docs/architecture.md](docs/architecture.md). Decisions: [docs/adr/](
 
 M0 – Foundations is done (Aspire, Postgres with a DbContext and schema per module, React + Vite,
 generated API client, CI). Milestone **M1 – Ingredient catalog** in progress: `Ingredient` and
-`NutrientProfile` domain model with unit tests.
+`NutrientProfile` domain model with unit tests, persisted in `catalog."Ingredients"` (complex type).
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -121,6 +121,8 @@ Fill in as the solution takes shape:
 - Restore local tools (dotnet-ef): `dotnet tool restore`
 - Add a migration (per module, no running database needed):
   `dotnet ef migrations add <Name> --project src/Modules/<Module>/<Module>.Infrastructure --output-dir Persistence/Migrations`
+  (`.editorconfig` marks that folder as generated code, so analyzers don't fail the build on it).
+  Review the SQL with `dotnet ef migrations script <From> <To> --project ...`.
 - Backend tests: `dotnet test` (xUnit v3 on Microsoft.Testing.Platform, opted in via `global.json`;
   in CI `dotnet test --solution MealPlanner.slnx`). Test projects live in `tests/<Module>.UnitTests`;
   `tests/Directory.Build.props` allows `Sentence_style_test_names`.

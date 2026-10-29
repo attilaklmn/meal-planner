@@ -22,6 +22,14 @@ public sealed class Ingredient
         SourceId = sourceId;
     }
 
+    // For EF Core: it can't pass a complex property through a constructor, so it materializes through
+    // this one and sets the properties afterwards. Domain code always goes through Create.
+#pragma warning disable CS8618 // Non-nullable properties are filled in by EF Core right after construction.
+    private Ingredient()
+    {
+    }
+#pragma warning restore CS8618
+
     public Guid Id { get; private set; }
 
     /// <summary>English name, as in the source dataset.</summary>
