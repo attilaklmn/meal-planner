@@ -14,7 +14,8 @@ Full plan: [docs/architecture.md](docs/architecture.md). Decisions: [docs/adr/](
 ## Current status
 
 Milestone **M0 – Foundations** in progress: solution skeleton with Aspire, Postgres with one
-DbContext and schema per module, React + Vite frontend skeleton started by the AppHost.
+DbContext and schema per module, React + Vite frontend skeleton started by the AppHost, typed API
+client generated from OpenAPI.
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -70,7 +71,8 @@ docs/                 architecture.md, adr/
 ## Backend conventions
 
 - Nullable reference types on, warnings as errors.
-- Minimal API endpoints grouped per module (`MapGroup`); no controllers.
+- Minimal API endpoints grouped per module (`MapGroup`); no controllers. Handlers return `TypedResults`
+  types and set `WithName` (OpenAPI operationId = generated hook name).
 - No MediatR, no AutoMapper: plain handler classes and explicit mapping.
 - Modules never reference another module's Domain or Infrastructure project. Cross-module
   communication only via `Shared/Contracts` (events) or, in v1, a module's public API surface.
@@ -91,6 +93,8 @@ docs/                 architecture.md, adr/
 - The browser only talks to the Vite dev server, which proxies `/api` to the Api (no CORS setup).
 - Server state lives in TanStack Query only; no global state library.
 - API calls go through the generated client; never hand-write request types that exist in OpenAPI.
+  Never edit `src/api/generated` by hand. All generated requests use `src/api/fetcher.ts`, which throws
+  `ApiError` on non-2xx so queries reach their error state.
 - Forms: React Hook Form + Zod schemas.
 
 ## Working with the owner
@@ -118,3 +122,6 @@ Fill in as the solution takes shape:
 - Frontend (in `src/web`): `npm run dev` (standalone, proxies `/api` to `localhost:5030`; under Aspire the
   AppHost starts it), `npm test`, `npm run lint` (oxlint), `npm run format` / `format:check` (Prettier),
   `npm run build`
+- API client: `dotnet build src/Api` writes `src/Api/Api.json` (OpenAPI), then in `src/web`
+  `npm run generate:api` regenerates `src/api/generated`. Both are committed; regenerate after every
+  endpoint or DTO change. Live document in Development: `/openapi/v1.json`.

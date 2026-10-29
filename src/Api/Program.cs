@@ -8,6 +8,7 @@ const string Database = "mealplanner";
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+builder.Services.AddOpenApi();
 
 builder.AddCatalogModule(Database);
 builder.AddRecipesModule(Database);
@@ -16,6 +17,12 @@ builder.AddPlanningModule(Database);
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
+
+if (app.Environment.IsDevelopment())
+{
+    // Live document at /openapi/v1.json; the committed Api.json is produced at build time instead.
+    app.MapOpenApi();
+}
 
 app.MapCatalogEndpoints();
 app.MapRecipesEndpoints();
