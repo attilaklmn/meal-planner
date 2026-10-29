@@ -24,4 +24,7 @@
     <Project Path="src/Modules/Recipes/Recipes.Domain/Recipes.Domain.csproj" />
     <Project Path="src/Modules/Recipes/Recipes.Infrastructure/Recipes.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Catalog.UnitTests/Catalog.UnitTests.csproj" />
+  </Folder>
 </Solution>

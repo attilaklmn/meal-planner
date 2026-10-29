@@ -43,7 +43,8 @@ jobs:
 
       - run: dotnet restore MealPlanner.slnx
       - run: dotnet build MealPlanner.slnx --no-restore --configuration Release
-      - run: dotnet test MealPlanner.slnx --no-build --configuration Release
+      # global.json opts dotnet test into Microsoft.Testing.Platform, which takes the solution via --solution.
+      - run: dotnet test --solution MealPlanner.slnx --no-build --configuration Release
 
   frontend:
     runs-on: ubuntu-latest

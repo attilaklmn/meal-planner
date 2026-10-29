@@ -13,9 +13,9 @@ Full plan: [docs/architecture.md](docs/architecture.md). Decisions: [docs/adr/](
 
 ## Current status
 
-Milestone **M0 – Foundations** in progress: solution skeleton with Aspire, Postgres with one
-DbContext and schema per module, React + Vite frontend skeleton started by the AppHost, typed API
-client generated from OpenAPI, GitHub Actions CI.
+M0 – Foundations is done (Aspire, Postgres with a DbContext and schema per module, React + Vite,
+generated API client, CI). Milestone **M1 – Ingredient catalog** in progress: `Ingredient` and
+`NutrientProfile` domain model with unit tests.
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -121,7 +121,9 @@ Fill in as the solution takes shape:
 - Restore local tools (dotnet-ef): `dotnet tool restore`
 - Add a migration (per module, no running database needed):
   `dotnet ef migrations add <Name> --project src/Modules/<Module>/<Module>.Infrastructure --output-dir Persistence/Migrations`
-- Backend tests: `dotnet test`
+- Backend tests: `dotnet test` (xUnit v3 on Microsoft.Testing.Platform, opted in via `global.json`;
+  in CI `dotnet test --solution MealPlanner.slnx`). Test projects live in `tests/<Module>.UnitTests`;
+  `tests/Directory.Build.props` allows `Sentence_style_test_names`.
 - Frontend (in `src/web`): `npm run dev` (standalone, proxies `/api` to `localhost:5030`; under Aspire the
   AppHost starts it), `npm test`, `npm run lint` (oxlint), `npm run format` / `format:check` (Prettier),
   `npm run build`
