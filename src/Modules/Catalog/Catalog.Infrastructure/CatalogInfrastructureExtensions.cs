@@ -10,12 +10,16 @@ public static class CatalogInfrastructureExtensions
 {
     public static IHostApplicationBuilder AddCatalogInfrastructure(this IHostApplicationBuilder builder, string connectionName)
     {
-        var connectionString = builder.Configuration.GetConnectionString(connectionName)
-            ?? throw new InvalidOperationException($"Connection string '{connectionName}' is missing.");
-
         // Registered by hand (not AddNpgsqlDbContext) so the migrations history table can live in the module's schema.
+        // The connection string is read when a DbContext is created, not here: build-time OpenAPI generation
+        // runs this startup code without a database configured.
         builder.Services.AddDbContext<CatalogDbContext>(options =>
-            options.UseNpgsql(connectionString, CatalogDbContext.ConfigureNpgsql));
+        {
+            var connectionString = builder.Configuration.GetConnectionString(connectionName)
+                ?? throw new InvalidOperationException($"Connection string '{connectionName}' is missing.");
+
+            options.UseNpgsql(connectionString, CatalogDbContext.ConfigureNpgsql);
+        });
 
         // Adds Aspire's health check, OpenTelemetry instrumentation and retry-on-failure to the registration above.
         builder.EnrichNpgsqlDbContext<CatalogDbContext>();
