@@ -164,7 +164,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 - [x] GitHub Actions: build for both sides
 
 ### M1 – Ingredient catalog
-- [ ] `Ingredient`, `NutrientProfile` complex type, migration
+- [x] `Ingredient`, `NutrientProfile` complex type, migration
 - [ ] Import: a few hundred common ingredients from USDA or Open Food Facts, plus Hungarian names
 - [ ] Search endpoint with projection, frontend autocomplete
 
