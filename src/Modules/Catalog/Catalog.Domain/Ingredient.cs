@@ -58,6 +58,21 @@ public sealed class Ingredient
             RequiredText(sourceId, SourceIdMaxLength));
     }
 
+    /// <summary>Takes over a newer version of the same source row; the identity (id, source, source id) stays.</summary>
+    public void UpdateFromSource(string name, string hungarianName, NutrientProfile nutrientsPer100g)
+    {
+        ArgumentNullException.ThrowIfNull(nutrientsPer100g);
+
+        // Validate everything before changing anything, so a bad row leaves the ingredient untouched.
+        var validName = RequiredText(name, NameMaxLength);
+        var validHungarianName = RequiredText(hungarianName, NameMaxLength);
+        var validNutrients = ValidPer100g(nutrientsPer100g);
+
+        Name = validName;
+        HungarianName = validHungarianName;
+        NutrientsPer100g = validNutrients;
+    }
+
     /// <summary>Nutrition of the given amount of this ingredient.</summary>
     public NutrientProfile NutrientsFor(decimal grams)
     {

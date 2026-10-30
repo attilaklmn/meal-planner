@@ -15,7 +15,8 @@ Full plan: [docs/architecture.md](docs/architecture.md). Decisions: [docs/adr/](
 
 M0 – Foundations is done (Aspire, Postgres with a DbContext and schema per module, React + Vite,
 generated API client, CI). Milestone **M1 – Ingredient catalog** in progress: `Ingredient` and
-`NutrientProfile` domain model with unit tests, persisted in `catalog."Ingredients"` (complex type).
+`NutrientProfile` domain model with unit tests, persisted in `catalog."Ingredients"` (complex type),
+seeded in Development with 372 USDA SR Legacy ingredients with Hungarian names (ADR 0003).
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -132,3 +133,7 @@ Fill in as the solution takes shape:
 - API client: `dotnet build src/Api` writes `src/Api/Api.json` (OpenAPI), then in `src/web`
   `npm run generate:api` regenerates `src/api/generated`. Both are committed; regenerate after every
   endpoint or DTO change. Live document in Development: `/openapi/v1.json`.
+- Ingredient seed data: edit `tools/catalog-data/selection.csv`, download the USDA SR Legacy CSV zip
+  (FoodData Central downloads, not committed), then
+  `dotnet run tools/catalog-data/build-ingredients.cs -- <zip>` rewrites
+  `src/Modules/Catalog/Catalog.Infrastructure/Seeding/ingredients.csv`. Commit both files.

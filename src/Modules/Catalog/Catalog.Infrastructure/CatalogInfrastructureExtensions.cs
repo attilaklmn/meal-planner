@@ -1,4 +1,5 @@
 using Catalog.Infrastructure.Persistence;
+using Catalog.Infrastructure.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,7 +27,8 @@ public static class CatalogInfrastructureExtensions
 
         if (builder.Environment.IsDevelopment())
         {
-            builder.Services.AddHostedService<CatalogMigrationService>();
+            builder.Services.AddScoped<IngredientSeeder>();
+            builder.Services.AddHostedService<CatalogDatabaseInitializer>();
         }
 
         return builder;
