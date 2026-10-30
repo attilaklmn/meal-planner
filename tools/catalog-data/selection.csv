@@ -1,0 +1,373 @@
+fdc_id,usda_description,hungarian_name
+171287,"Egg, whole, raw, fresh",Tojás
+173424,"Egg, whole, cooked, hard-boiled",Főtt tojás
+172183,"Egg, white, raw, fresh",Tojásfehérje
+172184,"Egg, yolk, raw, fresh",Tojássárgája
+171265,"Milk, whole, 3.25% milkfat, with added vitamin D","Teljes tej (3,5%)"
+171267,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",Félzsíros tej (2%)
+170872,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",Zsírszegény tej (1%)
+171269,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",Sovány tej
+170874,"Milk, buttermilk, fluid, cultured, lowfat",Író
+171275,"Milk, canned, condensed, sweetened",Sűrített tej (cukrozott)
+170859,"Cream, fluid, heavy whipping",Habtejszín
+170857,"Cream, fluid, light (coffee cream or table cream)",Főzőtejszín
+171257,"Cream, sour, cultured",Tejföl
+171284,"Yogurt, plain, whole milk",Natúr joghurt
+171304,"Yogurt, Greek, plain, whole milk",Görög joghurt
+170894,"Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)",Zsírszegény görög joghurt
+170904,"Kefir, lowfat, plain, LIFEWAY",Kefir
+172179,"Cheese, cottage, creamed, large or small curd",Cottage cheese
+172181,"Cheese, cottage, nonfat, uncreamed, dry, large or small curd",Sovány túró
+172182,"Cheese, cottage, lowfat, 2% milkfat",Félzsíros túró
+170851,"Cheese, ricotta, whole milk",Ricotta
+170845,"Cheese, mozzarella, whole milk",Mozzarella
+170847,"Cheese, mozzarella, part skim milk",Light mozzarella
+173414,"Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",Cheddar sajt
+171247,"Cheese, parmesan, grated",Parmezán (reszelt)
+170848,"Cheese, parmesan, hard",Parmezán
+173420,"Cheese, feta",Feta sajt
+171241,"Cheese, gouda",Gouda sajt
+173419,"Cheese, edam",Edami sajt
+171251,"Cheese, swiss",Ementáli sajt
+173418,"Cheese, cream",Krémsajt
+172177,"Cheese, brie",Brie
+172178,"Cheese, camembert",Camembert
+172175,"Cheese, blue",Kéksajt
+170850,"Cheese, provolone",Provolone
+173430,"Butter, without salt",Vaj
+173410,"Butter, salted",Sózott vaj
+173468,"Salt, table",Só
+170931,"Spices, pepper, black",Fekete bors
+171329,"Spices, paprika",Fűszerpaprika (őrölt)
+170932,"Spices, pepper, red or cayenne",Cayenne-bors
+170923,"Spices, cumin seed",Római kömény
+170918,"Spices, caraway seed",Kömény
+171320,"Spices, cinnamon, ground",Fahéj
+171325,"Spices, garlic powder",Fokhagymapor
+171327,"Spices, onion powder",Hagymapor
+171328,"Spices, oregano, dried",Oregánó
+171317,"Spices, basil, dried",Bazsalikom (szárított)
+170938,"Spices, thyme, dried",Kakukkfű
+170928,"Spices, marjoram, dried",Majoránna
+171333,"Spices, rosemary, dried",Rozmaring
+170917,"Spices, bay leaf",Babérlevél
+171326,"Spices, nutmeg, ground",Szerecsendió
+170926,"Spices, ginger, ground",Gyömbér (őrölt)
+172231,"Spices, turmeric, ground",Kurkuma
+170924,"Spices, curry powder",Curry por
+171319,"Spices, chili powder",Chili por
+171321,"Spices, cloves, ground",Szegfűszeg
+171322,"Spices, dill weed, dried",Kapor (szárított)
+171330,"Spices, poppy seed",Mák
+172232,"Basil, fresh",Bazsalikom (friss)
+170416,"Parsley, fresh",Petrezselyemzöld
+172233,"Dill weed, fresh",Kapor (friss)
+173475,"Spearmint, fresh",Menta
+169997,"Coriander (cilantro) leaves, raw",Koriander (friss)
+169994,"Chives, raw",Metélőhagyma
+173471,Vanilla extract,Vaníliakivonat
+172234,"Mustard, prepared, yellow",Mustár
+172237,"Vinegar, distilled",Ecet
+172241,"Vinegar, balsamic",Balzsamecet
+173469,"Vinegar, cider",Almaecet
+171413,"Oil, olive, salad or cooking",Olívaolaj
+171017,"Oil, sunflower, linoleic (less than 60%)",Napraforgóolaj
+172336,"Oil, canola",Repceolaj
+171412,"Oil, coconut",Kókuszolaj
+171016,"Oil, sesame, salad or cooking",Szezámolaj
+171401,Lard,Disznózsír
+173572,"Fat, goose",Libazsír
+172346,"Margarine, regular, 80% fat, composite, stick, with salt",Margarin
+171009,"Salad dressing, mayonnaise, regular",Majonéz
+171077,"Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",Csirkemell (nyers)
+171477,"Chicken, broilers or fryers, breast, meat only, cooked, roasted",Csirkemell (sült)
+173627,"Chicken, broilers or fryers, dark meat, thigh, meat only, raw",Csirkecombfilé
+172373,"Chicken, broilers or fryers, drumstick, meat and skin, raw",Csirke alsócomb (bőrrel)
+172378,"Chicken, broilers or fryers, leg, meat and skin, raw",Csirkecomb (bőrrel)
+172390,"Chicken, broilers or fryers, wing, meat and skin, raw",Csirkeszárny
+171447,"Chicken, broilers or fryers, meat and skin, raw",Egész csirke
+171116,"Chicken, ground, raw",Darált csirkehús
+171060,"Chicken, liver, all classes, raw",Csirkemáj
+171456,"Chicken, gizzard, all classes, raw",Csirkezúza
+171505,"Turkey, Ground, raw",Darált pulykahús
+171098,"Turkey, whole, breast, meat only, raw",Pulykamell
+172410,"Duck, domesticated, meat only, raw",Kacsahús
+172413,"Goose, domesticated, meat only, raw",Libahús
+172884,"Soup, stock, chicken, home-prepared",Csirkealaplé
+172883,"Soup, stock, beef, home-prepared",Marhaalaplé
+171192,"Sauce, pasta, spaghetti/marinara, ready-to-serve",Paradicsomos tésztaszósz
+171610,"Sauce, worcestershire",Worcester-szósz
+171186,"Sauce, hot chile, sriracha",Sriracha
+174523,"Sauce, barbecue",BBQ-szósz
+174531,"Sauce, fish, ready-to-serve",Halszósz
+174524,"Sauce, salsa, ready-to-serve",Salsa
+174277,Soy sauce made from soy and wheat (shoyu),Szójaszósz
+168556,Catsup,Ketchup
+173864,"Ham, sliced, regular (approximately 11% fat)",Sonka (szeletelt)
+172938,"Salami, dry or hard, pork",Szalámi
+173862,"Frankfurter, beef, unheated",Virsli
+171631,"Sausage, Italian, pork, mild, raw",Olasz kolbász (nyers)
+173859,"Sausage, pork, chorizo, link or ground, raw",Chorizo
+174575,"Pepperoni, beef and pork, sliced",Pepperoni
+173904,"Cereals, oats, regular and quick, not fortified, dry",Zabpehely
+171646,"Cereals ready-to-eat, granola, homemade",Granola
+173916,"Cereals, farina, unenriched, dry",Búzadara
+171688,"Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)",Alma
+173944,"Bananas, raw",Banán
+169097,"Oranges, raw, all commercial varieties",Narancs
+167746,"Lemons, raw, without peel",Citrom
+167747,"Lemon juice, raw",Citromlé
+168155,"Limes, raw",Lime
+168156,"Lime juice, raw",Limelé
+174673,"Grapefruit, raw, pink and red, all areas",Grapefruit
+169105,"Tangerines, (mandarin oranges), raw",Mandarin
+169118,"Pears, raw",Körte
+169928,"Peaches, yellow, raw",Őszibarack
+169914,"Nectarines, raw",Nektarin
+171697,"Apricots, raw",Kajszibarack
+169949,"Plums, raw",Szilva
+171719,"Cherries, sweet, raw",Cseresznye
+173954,"Cherries, sour, red, raw",Meggy
+167762,"Strawberries, raw",Eper
+167755,"Raspberries, raw",Málna
+171711,"Blueberries, raw",Kék áfonya
+173946,"Blackberries, raw",Szeder
+173964,"Currants, red and white, raw",Ribizli
+173030,"Gooseberries, raw",Egres
+171727,"Elderberries, raw",Bodza
+174683,"Grapes, red or green (European type, such as Thompson seedless), raw",Szőlő
+167765,"Watermelon, raw",Görögdinnye
+169092,"Melons, cantaloupe, raw",Sárgadinnye
+169124,"Pineapple, raw, all varieties",Ananász
+169910,"Mangos, raw",Mangó
+168153,"Kiwifruit, green, raw",Kivi
+171705,"Avocados, raw, all commercial varieties",Avokádó
+169134,"Pomegranates, raw",Gránátalma
+173021,"Figs, raw",Füge
+174665,"Figs, dried, uncooked",Szárított füge
+169941,"Persimmons, japanese, raw",Kaki
+168163,"Quinces, raw",Birsalma
+167758,"Rhubarb, raw",Rebarbara
+168165,"Raisins, dark, seedless (Includes foods for USDA's Food Distribution Program)",Mazsola
+168191,"Dates, medjool",Datolya
+168162,"Plums, dried (prunes), uncooked",Aszalt szilva
+173941,"Apricots, dried, sulfured, uncooked",Aszalt sárgabarack
+171723,"Cranberries, dried, sweetened (Includes foods for USDA's Food Distribution Program)",Szárított vörösáfonya
+169098,"Orange juice, raw (Includes foods for USDA's Food Distribution Program)",Narancslé
+173933,"Apple juice, canned or bottled, unsweetened, without added ascorbic acid",Almalé
+171695,"Applesauce, canned, unsweetened, without added ascorbic acid (Includes foods for USDA's Food Distribution Program)",Almapüré
+169112,"Peaches, canned, heavy syrup pack, solids and liquids",Őszibarack befőtt
+169094,"Olives, ripe, canned (small-extra large)",Fekete olívabogyó
+169096,"Olives, pickled, canned or bottled, green",Zöld olívabogyó
+168249,"Pork, fresh, loin, tenderloin, separable lean only, raw",Sertésszűz
+168238,"Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw",Sertéskaraj
+167849,"Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat, raw",Sertéstarja
+168222,"Pork, fresh, leg (ham), whole, separable lean and fat, raw",Sertéscomb
+167902,"Pork, fresh, ground, raw",Darált sertéshús
+167812,"Pork, fresh, belly, raw",Sertéshasaalja
+167853,"Pork, fresh, spareribs, separable lean and fat, raw",Sertésoldalas
+167862,"Pork, fresh, variety meats and by-products, liver, raw",Sertésmáj
+167811,"Pork, fresh, backfat, raw",Sertés hátszalonna
+168277,"Pork, cured, bacon, unprepared",Bacon
+170026,"Potatoes, flesh and skin, raw",Burgonya
+170440,"Potatoes, boiled, cooked without skin, flesh, without salt",Főtt burgonya
+170523,"Potatoes, french fried, all types, salt not added in processing, frozen, as purchased",Hasábburgonya (fagyasztott)
+168482,"Sweet potato, raw, unprepared (Includes foods for USDA's Food Distribution Program)",Édesburgonya
+170393,"Carrots, raw",Sárgarépa
+170417,"Parsnips, raw",Paszternák
+170400,"Celeriac, raw",Zellergumó
+169988,"Celery, raw",Szárzeller
+170000,"Onions, raw",Vöröshagyma
+170005,"Onions, spring or scallions (includes tops and bulb), raw",Újhagyma
+169230,"Garlic, raw",Fokhagyma
+169246,"Leeks, (bulb and lower leaf-portion), raw",Póréhagyma
+170499,"Shallots, raw",Salotta
+170457,"Tomatoes, red, ripe, raw, year round average",Paradicsom
+170051,"Tomatoes, red, ripe, canned, packed in tomato juice",Hámozott paradicsom (konzerv)
+170459,"Tomato products, canned, paste, without salt added (Includes foods for USDA's Food Distribution Program)",Sűrített paradicsom
+170054,"Tomato products, canned, sauce",Paradicsomszósz (passata)
+168567,"Tomatoes, sun-dried",Aszalt paradicsom
+170108,"Peppers, sweet, red, raw",Piros kaliforniai paprika
+170427,"Peppers, sweet, green, raw",Zöldpaprika
+169383,"Peppers, sweet, yellow, raw",Sárga kaliforniai paprika
+170106,"Peppers, hot chili, red, raw",Csilipaprika
+168576,"Peppers, jalapeno, raw",Jalapeño
+168409,"Cucumber, with peel, raw",Uborka
+168558,"Pickles, cucumber, dill or kosher dill",Csemegeuborka
+169291,"Squash, summer, zucchini, includes skin, raw",Cukkini
+169295,"Squash, winter, butternut, raw",Vajtök
+168448,"Pumpkin, raw",Sütőtök
+169228,"Eggplant, raw",Padlizsán
+169975,"Cabbage, raw",Fejes káposzta
+169977,"Cabbage, red, raw",Lilakáposzta
+170388,"Cabbage, savoy, raw",Kelkáposzta
+169279,"Sauerkraut, canned, solids and liquids",Savanyú káposzta
+169986,"Cauliflower, raw",Karfiol
+170379,"Broccoli, raw",Brokkoli
+170383,"Brussels sprouts, raw",Kelbimbó
+168424,"Kohlrabi, raw",Karalábé
+168421,"Kale, raw",Fodros kel
+168462,"Spinach, raw",Spenót
+169248,"Lettuce, iceberg (includes crisphead types), raw",Jégsaláta
+169247,"Lettuce, cos or romaine, raw",Római saláta
+169249,"Lettuce, green leaf, raw",Fejes saláta
+169387,"Arugula, raw",Rukkola
+169276,"Radishes, raw",Retek
+169145,"Beets, raw",Cékla
+170465,"Turnips, raw",Tarlórépa
+168389,"Asparagus, raw",Spárga
+169961,"Beans, snap, green, raw",Zöldbab
+170419,"Peas, green, raw",Zöldborsó
+170016,"Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)",Zöldborsó (fagyasztott)
+169998,"Corn, sweet, yellow, raw",Csemegekukorica
+169214,"Corn, sweet, yellow, canned, whole kernel, drained solids",Csemegekukorica (konzerv)
+169251,"Mushrooms, white, raw",Csiperkegomba
+168580,"Mushrooms, oyster, raw",Laskagomba
+169242,"Mushrooms, shiitake, raw",Shiitake gomba
+169255,"Mushrooms, portabella, raw",Portobello gomba
+169385,"Fennel, bulb, raw",Édeskömény
+169231,"Ginger root, raw",Gyömbér (friss)
+173472,"Horseradish, prepared",Torma
+170471,"Vegetables, mixed, frozen, unprepared",Vegyes zöldség (fagyasztott)
+168410,"Edamame, frozen, unprepared",Edamame
+170567,"Nuts, almonds",Mandula
+170187,"Nuts, walnuts, english",Dió
+170581,"Nuts, hazelnuts or filberts",Mogyoró
+170162,"Nuts, cashew nuts, raw",Kesudió
+170184,"Nuts, pistachio nuts, raw",Pisztácia
+170182,"Nuts, pecans",Pekándió
+170569,"Nuts, brazilnuts, dried, unblanched",Brazil dió
+170178,"Nuts, macadamia nuts, raw",Makadámdió
+170591,"Nuts, pine nuts, dried",Fenyőmag
+170190,"Nuts, chestnuts, european, roasted",Sült gesztenye
+170170,"Nuts, coconut meat, dried (desiccated), not sweetened",Kókuszreszelék
+170173,"Nuts, coconut milk, canned (liquid expressed from grated meat and water)",Kókusztej
+168588,"Nuts, almond butter, plain, without salt added",Mandulavaj
+170562,"Seeds, sunflower seed kernels, dried",Napraforgómag
+170556,"Seeds, pumpkin and squash seed kernels, dried",Tökmag
+170150,"Seeds, sesame seeds, whole, dried",Szezámmag
+169414,"Seeds, flaxseed",Lenmag
+170554,"Seeds, chia seeds, dried",Chia mag
+170148,"Seeds, hemp seed, hulled",Kendermag
+170189,"Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)",Tahini
+172430,"Peanuts, all types, raw",Földimogyoró
+172470,"Peanut butter, smooth style, without salt",Mogyoróvaj
+174036,"Beef, ground, 80% lean meat / 20% fat, raw",Darált marhahús (20% zsír)
+174030,"Beef, ground, 90% lean meat / 10% fat, raw",Darált marhahús (10% zsír)
+171812,"Beef, tenderloin, steak, separable lean only, trimmed to 1/8"" fat, all grades, raw",Bélszín
+174051,"Beef, chuck, arm pot roast, separable lean only, trimmed to 1/8"" fat, all grades, raw",Marhalapocka
+169529,"Beef, round, top round, steak, separable lean and fat, trimmed to 1/8"" fat, all grades, raw",Marhafelsál
+169437,"Beef, rib, eye, small end (ribs 10-12), separable lean only, trimmed to 0"" fat, choice, raw",Rostélyos
+168607,"Beef, brisket, whole, separable lean only, all grades, raw",Marhaszegy
+169441,"Beef, shank crosscuts, separable lean only, trimmed to 1/4"" fat, choice, raw",Marhalábszár
+169451,"Beef, variety meats and by-products, liver, raw",Marhamáj
+175290,"Veal, ground, raw",Darált borjúhús
+175269,"Veal, leg (top round), separable lean only, raw",Borjúcomb
+174370,"Lamb, ground, raw",Darált bárányhús
+172486,"Lamb, leg, shank half, separable lean only, trimmed to 1/4"" fat, choice, raw",Báránycomb
+172521,"Game meat, rabbit, domesticated, composite of cuts, raw",Nyúlhús
+173855,"Game meat, deer, raw",Szarvashús
+175297,"Game meat, boar, wild, raw",Vaddisznóhús
+173647,"Beverages, water, tap, drinking",Víz
+171890,"Beverages, coffee, brewed, prepared with tap water",Kávé
+173227,"Beverages, tea, black, brewed, prepared with tap water",Fekete tea
+174832,"Beverages, almond milk, unsweetened, shelf stable",Mandulaital
+171942,"Beverages, rice milk, unsweetened",Rizsital
+175215,"Soymilk (all flavors), unsweetened, with added calcium, vitamins A and D",Szójaital
+173190,"Alcoholic beverage, wine, table, red",Vörösbor
+174837,"Alcoholic beverage, wine, table, white",Fehérbor
+168746,"Alcoholic beverage, beer, regular, all",Sör
+175167,"Fish, salmon, Atlantic, farmed, raw",Lazac
+173687,"Fish, salmon, chinook, smoked",Füstölt lazac
+173709,"Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",Tonhalkonzerv (vízben)
+175159,"Fish, tuna, fresh, yellowfin, raw",Tonhal
+171955,"Fish, cod, Atlantic, raw",Tőkehal
+173725,"Fish, pollock, Alaska, raw",Alaszkai tőkehal
+171952,"Fish, carp, raw",Ponty
+175165,"Fish, catfish, channel, farmed, raw",Harcsa
+173680,"Fish, pike, northern, raw",Csuka
+173717,"Fish, trout, rainbow, farmed, raw",Szivárványos pisztráng
+175176,"Fish, tilapia, raw",Tilápia
+175119,"Fish, mackerel, Atlantic, raw",Makréla
+175139,"Fish, sardine, Atlantic, canned in oil, drained solids with bone",Szardínia (olajos)
+175118,"Fish, herring, Atlantic, pickled",Ecetes hering
+174183,"Fish, anchovy, european, canned in oil, drained solids",Szardella
+175179,"Crustaceans, shrimp, raw",Garnélarák
+174216,"Mollusks, mussel, blue, raw",Kékkagyló
+174223,"Mollusks, squid, mixed species, raw",Tintahal
+173744,"Beans, kidney, red, mature seeds, raw",Vörösbab (száraz)
+174285,"Beans, kidney, red, mature seeds, canned, drained solids",Vörösbab (konzerv)
+173734,"Beans, black, mature seeds, raw",Fekete bab
+175202,"Beans, white, mature seeds, raw",Fehér bab (száraz)
+175199,"Beans, pinto, mature seeds, raw (Includes foods for USDA's Food Distribution Program)",Tarkabab
+175182,"Beans, baked, canned, plain or vegetarian",Sült bab (konzerv)
+173756,"Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",Csicseriborsó (száraz)
+173801,"Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained, rinsed in tap water",Csicseriborsó (konzerv)
+172420,"Lentils, raw",Lencse
+174284,"Lentils, pink or red, raw",Vöröslencse
+172428,"Peas, green, split, mature seeds, raw",Sárgaborsó (feles)
+174270,"Soybeans, mature seeds, raw",Szójabab
+172475,"Tofu, raw, firm, prepared with calcium sulfate",Tofu
+174289,"Hummus, commercial",Hummusz
+172442,Miso,Miso
+174272,Tempeh,Tempeh
+174924,"Bread, white, commercially prepared (includes soft bread crumbs)",Fehér kenyér
+172688,"Bread, whole-wheat, commercially prepared",Teljes kiőrlésű kenyér
+172684,"Bread, rye",Rozskenyér
+168013,"Bread, multi-grain (includes whole-grain)",Magvas kenyér
+172675,"Bread, french or vienna (includes sourdough)",Bagett
+175031,"Rolls, hard (includes kaiser)",Zsemle
+172796,"Rolls, hamburger or hotdog, plain",Hamburgerzsemle
+174928,"Bread, crumbs, dry, grated, plain",Zsemlemorzsa
+174915,"Bread, pita, white, enriched",Pita
+175037,"Tortillas, ready-to-bake or -fry, flour, refrigerated",Tortilla (búza)
+174987,"Croissants, butter",Croissant
+172790,"Puff pastry, frozen, ready-to-bake",Leveles tészta
+172791,Phyllo dough,Réteslap
+172739,"Crackers, crispbread, rye",Rozs ropogós kenyér
+174950,"Cookies, butter, commercially prepared, enriched",Vajas keksz
+172803,"Leavening agents, baking powder, double-acting, sodium aluminum sulfate",Sütőpor
+175040,"Leavening agents, baking soda",Szódabikarbóna
+175043,"Leavening agents, yeast, baker's, active dry",Szárított élesztő
+175042,"Leavening agents, yeast, baker's, compressed",Friss élesztő
+169655,"Sugars, granulated",Kristálycukor
+168833,"Sugars, brown",Barna cukor
+169656,"Sugars, powdered",Porcukor
+169640,Honey,Méz
+169661,"Syrups, maple",Juharszirup
+170273,"Chocolate, dark, 70-85% cacao solids",Étcsokoládé (70–85%)
+167587,"Candies, milk chocolate",Tejcsokoládé
+169593,"Cocoa, dry powder, unsweetened",Kakaópor
+169641,Jams and preserves,Lekvár
+167575,"Ice creams, vanilla",Vaníliafagylalt
+168894,"Wheat flour, white, all-purpose, enriched, bleached",Búzaliszt (finomliszt)
+168896,"Wheat flour, white, bread, enriched",Kenyérliszt
+168893,"Wheat flour, whole-grain (Includes foods for USDA's Food Distribution Program)",Teljes kiőrlésű búzaliszt
+168886,"Rye flour, medium",Rozsliszt
+168877,"Rice, white, long-grain, regular, raw, enriched",Fehér rizs
+168878,"Rice, white, long-grain, regular, enriched, cooked",Főtt fehér rizs
+169703,"Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)",Barna rizs
+168931,"Rice, white, short-grain, raw, unenriched",Rövid szemű rizs
+169736,"Pasta, dry, enriched",Száraz tészta
+169737,"Pasta, cooked, enriched, without added salt",Főtt tészta
+169738,"Pasta, whole-wheat, dry (Includes foods for USDA's Food Distribution Program)",Teljes kiőrlésű tészta
+169731,"Noodles, egg, dry, enriched",Tojásos tészta
+168919,"Noodles, egg, cooked, enriched, with added salt",Főtt tojásos tészta
+169727,"Pasta, fresh-refrigerated, plain, as purchased",Friss tészta
+169742,"Rice noodles, dry",Rizstészta
+168906,"Noodles, japanese, soba, dry",Soba tészta
+169699,"Couscous, dry",Kuszkusz
+168874,"Quinoa, uncooked",Quinoa
+170688,"Bulgur, dry",Bulgur
+170284,"Barley, pearled, raw",Gyöngyárpa
+169702,"Millet, raw",Köles
+170685,"Buckwheat groats, roasted, dry",Hajdina
+169697,"Cornmeal, whole-grain, yellow",Kukoricadara
+169698,Cornstarch,Kukoricakeményítő
+168872,"Oat bran, raw",Zabkorpa
+169722,"Wheat bran, crude",Búzakorpa
+169715,"Semolina, enriched",Durumbúzadara
+167959,"Snacks, popcorn, air-popped",Pattogatott kukorica
+169677,"Snacks, potato chips, plain, salted",Burgonyachips
+167555,"Snacks, pretzels, hard, plain, salted",Perec
+170250,"Snacks, rice cakes, brown rice, plain, unsalted",Puffasztott rizs szelet

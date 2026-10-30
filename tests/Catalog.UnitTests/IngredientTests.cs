@@ -88,4 +88,33 @@ public class IngredientTests
 
         Assert.Throws<ArgumentOutOfRangeException>(() => egg.NutrientsFor(-1));
     }
+
+    [Fact]
+    public void UpdateFromSource_changes_data_but_keeps_identity()
+    {
+        var egg = Ingredient.Create("Egg", "Tojás", EggPer100g, "usda", "748967");
+        var id = egg.Id;
+        var corrected = new NutrientProfile(148m, 12.4m, 1m, 10m, 0m);
+
+        egg.UpdateFromSource(" Egg, whole, raw ", " Tyúktojás ", corrected);
+
+        Assert.Equal(id, egg.Id);
+        Assert.Equal("usda", egg.Source);
+        Assert.Equal("748967", egg.SourceId);
+        Assert.Equal("Egg, whole, raw", egg.Name);
+        Assert.Equal("Tyúktojás", egg.HungarianName);
+        Assert.Equal(corrected, egg.NutrientsPer100g);
+    }
+
+    [Fact]
+    public void UpdateFromSource_with_invalid_data_leaves_the_ingredient_untouched()
+    {
+        var egg = Ingredient.Create("Egg", "Tojás", EggPer100g, "usda", "1");
+        var impossible = new NutrientProfile(500m, 40m, 40m, 30m, 0m);
+
+        Assert.Throws<ArgumentException>(() => egg.UpdateFromSource("Egg, renamed", "Tojás", impossible));
+
+        Assert.Equal("Egg", egg.Name);
+        Assert.Equal(EggPer100g, egg.NutrientsPer100g);
+    }
 }

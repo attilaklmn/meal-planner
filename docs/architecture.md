@@ -115,7 +115,7 @@ piece weight. Nutrition calculation and shopping-list merging both build on this
 | Split query | Recipe details with many ingredients | Awareness of cartesian explosion |
 | Schema per module, multiple DbContexts | All three modules | Enforcing module boundaries |
 | Migration bundles | In CI, not at startup (only local Development migrates on start) | Safe schema updates |
-| Seed + import | USDA FoodData Central or Open Food Facts subset | Bulk insert, batch size |
+| Seed + import | Curated USDA SR Legacy subset (ADR 0003) | Bulk insert, batch size |
 | Compiled query | Ingredient search while typing | Performance awareness, backed by measurement |
 
 Nutrition calculation is pure domain logic (`Recipe.CalculateNutrition()`), unit-testable without a database.
@@ -165,7 +165,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 
 ### M1 – Ingredient catalog
 - [x] `Ingredient`, `NutrientProfile` complex type, migration
-- [ ] Import: a few hundred common ingredients from USDA or Open Food Facts, plus Hungarian names
+- [x] Import: a few hundred common ingredients from USDA SR Legacy, plus Hungarian names
 - [ ] Search endpoint with projection, frontend autocomplete
 
 ### M2 – Recipes
