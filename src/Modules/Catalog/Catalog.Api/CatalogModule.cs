@@ -25,6 +25,10 @@ public static class CatalogModule
         // WithName sets the OpenAPI operationId, which becomes the generated hook's name (usePingCatalog).
         group.MapGet("/ping", Ping).WithName("PingCatalog");
 
+        group.MapGet("/ingredients", SearchIngredients.Handle)
+            .WithName("SearchIngredients")
+            .WithSummary("Search ingredients by English or Hungarian name");
+
         return group;
     }
 

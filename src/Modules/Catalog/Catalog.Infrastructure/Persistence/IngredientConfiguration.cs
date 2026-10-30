@@ -24,6 +24,10 @@ internal sealed class IngredientConfiguration : IEntityTypeConfiguration<Ingredi
         // The importer matches rows by their id in the source dataset.
         builder.HasIndex(i => new { i.Source, i.SourceId }).IsUnique();
 
+        // Trigram GIN index: lets LIKE '%term%' use an index instead of scanning every row.
+        builder.Property(i => i.SearchText).HasMaxLength(Ingredient.SearchTextMaxLength);
+        builder.HasIndex(i => i.SearchText).HasMethod("gin").HasOperators("gin_trgm_ops");
+
         // Complex type: the value object's fields become columns of this table, with no key or identity of its own.
         builder.ComplexProperty(i => i.NutrientsPer100g, nutrients =>
         {

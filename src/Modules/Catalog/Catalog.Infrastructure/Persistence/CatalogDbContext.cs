@@ -18,6 +18,8 @@ public sealed class CatalogDbContext(DbContextOptions<CatalogDbContext> options)
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema(Schema);
+        // Trigram matching for ingredient search; ships with PostgreSQL (contrib), nothing to install.
+        modelBuilder.HasPostgresExtension("pg_trgm");
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogDbContext).Assembly);
     }
 }

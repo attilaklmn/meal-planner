@@ -17,7 +17,12 @@ import type {
   UseQueryResult,
 } from '@tanstack/react-query'
 
-import type { CatalogPingResponse } from '../model'
+import type {
+  CatalogPingResponse,
+  HttpValidationProblemDetails,
+  IngredientSummary,
+  SearchIngredientsParams,
+} from '../model'
 
 import { apiFetch } from '../../fetcher'
 import type { ErrorType } from '../../fetcher'
@@ -138,6 +143,141 @@ export function usePingCatalog<
   queryClient?: QueryClient,
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
   const queryOptions = getPingCatalogQueryOptions(options)
+
+  const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
+    queryKey: DataTag<QueryKey, TData, TError>
+  }
+
+  return withQueryKey(query, queryOptions.queryKey)
+}
+
+export const getSearchIngredientsUrl = (params: SearchIngredientsParams) => {
+  const normalizedParams = new URLSearchParams()
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  })
+
+  const stringifiedParams = normalizedParams.toString()
+
+  return stringifiedParams.length > 0
+    ? `/api/catalog/ingredients?${stringifiedParams}`
+    : `/api/catalog/ingredients`
+}
+
+/**
+ * @summary Search ingredients by English or Hungarian name
+ */
+export const searchIngredients = async (
+  params: SearchIngredientsParams,
+  options?: Parameters<typeof apiFetch>[1],
+): Promise<IngredientSummary[]> => {
+  return apiFetch<IngredientSummary[]>(getSearchIngredientsUrl(params), {
+    ...options,
+    method: 'GET',
+  })
+}
+
+export const getSearchIngredientsQueryKey = (params?: SearchIngredientsParams) => {
+  return [`/api/catalog/ingredients`, ...(params ? [params] : [])] as const
+}
+
+export const getSearchIngredientsQueryOptions = <
+  TData = Awaited<ReturnType<typeof searchIngredients>>,
+  TError = ErrorType<HttpValidationProblemDetails>,
+>(
+  params: SearchIngredientsParams,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof searchIngredients>>, TError, TData>>
+    request?: SecondParameter<typeof apiFetch>
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {}
+
+  const queryKey = queryOptions?.queryKey ?? getSearchIngredientsQueryKey(params)
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof searchIngredients>>> = ({ signal }) =>
+    searchIngredients(params, { signal, ...requestOptions })
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof searchIngredients>>,
+    TError,
+    TData
+  > & { queryKey: DataTag<QueryKey, TData, TError> }
+}
+
+export type SearchIngredientsQueryResult = NonNullable<
+  Awaited<ReturnType<typeof searchIngredients>>
+>
+export type SearchIngredientsQueryError = ErrorType<HttpValidationProblemDetails>
+
+export function useSearchIngredients<
+  TData = Awaited<ReturnType<typeof searchIngredients>>,
+  TError = ErrorType<HttpValidationProblemDetails>,
+>(
+  params: SearchIngredientsParams,
+  options: {
+    query: Partial<UseQueryOptions<Awaited<ReturnType<typeof searchIngredients>>, TError, TData>> &
+      Pick<
+        DefinedInitialDataOptions<
+          Awaited<ReturnType<typeof searchIngredients>>,
+          TError,
+          Awaited<ReturnType<typeof searchIngredients>>
+        >,
+        'initialData'
+      >
+    request?: SecondParameter<typeof apiFetch>
+  },
+  queryClient?: QueryClient,
+): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useSearchIngredients<
+  TData = Awaited<ReturnType<typeof searchIngredients>>,
+  TError = ErrorType<HttpValidationProblemDetails>,
+>(
+  params: SearchIngredientsParams,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof searchIngredients>>, TError, TData>> &
+      Pick<
+        UndefinedInitialDataOptions<
+          Awaited<ReturnType<typeof searchIngredients>>,
+          TError,
+          Awaited<ReturnType<typeof searchIngredients>>
+        >,
+        'initialData'
+      >
+    request?: SecondParameter<typeof apiFetch>
+  },
+  queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useSearchIngredients<
+  TData = Awaited<ReturnType<typeof searchIngredients>>,
+  TError = ErrorType<HttpValidationProblemDetails>,
+>(
+  params: SearchIngredientsParams,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof searchIngredients>>, TError, TData>>
+    request?: SecondParameter<typeof apiFetch>
+  },
+  queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+/**
+ * @summary Search ingredients by English or Hungarian name
+ */
+
+export function useSearchIngredients<
+  TData = Awaited<ReturnType<typeof searchIngredients>>,
+  TError = ErrorType<HttpValidationProblemDetails>,
+>(
+  params: SearchIngredientsParams,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof searchIngredients>>, TError, TData>>
+    request?: SecondParameter<typeof apiFetch>
+  },
+  queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+  const queryOptions = getSearchIngredientsQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>

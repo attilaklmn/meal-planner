@@ -9,6 +9,9 @@ public sealed class Ingredient
     public const int SourceMaxLength = 50;
     public const int SourceIdMaxLength = 100;
 
+    /// <summary>Both names normalized, plus the space between them; normalizing never makes text longer.</summary>
+    public const int SearchTextMaxLength = (2 * NameMaxLength) + 1;
+
     /// <summary>100 g can't hold more than 100 g of macros; the tolerance absorbs rounding in source data (e.g. oils at 100.0 g fat plus 0.1 g protein).</summary>
     internal const decimal MaxMacrosPer100g = 100.5m;
 
@@ -20,6 +23,7 @@ public sealed class Ingredient
         NutrientsPer100g = nutrientsPer100g;
         Source = source;
         SourceId = sourceId;
+        SearchText = BuildSearchText(name, hungarianName);
     }
 
     // For EF Core: it can't pass a complex property through a constructor, so it materializes through
@@ -43,6 +47,9 @@ public sealed class Ingredient
     public string Source { get; private set; }
 
     public string SourceId { get; private set; }
+
+    /// <summary>Hungarian and English name in <see cref="Domain.SearchText"/> form, kept in sync by every name change. Searches match against this.</summary>
+    public string SearchText { get; private set; }
 
     public static Ingredient Create(string name, string hungarianName, NutrientProfile nutrientsPer100g, string source, string sourceId)
     {
@@ -71,6 +78,7 @@ public sealed class Ingredient
         Name = validName;
         HungarianName = validHungarianName;
         NutrientsPer100g = validNutrients;
+        SearchText = BuildSearchText(validName, validHungarianName);
     }
 
     /// <summary>Nutrition of the given amount of this ingredient.</summary>
@@ -80,6 +88,10 @@ public sealed class Ingredient
 
         return NutrientsPer100g.Scale(grams / 100);
     }
+
+    // Hungarian first: it's the name people type, and "starts with" ranking looks at the beginning.
+    private static string BuildSearchText(string name, string hungarianName) =>
+        Domain.SearchText.Normalize($"{hungarianName} {name}");
 
     private static string RequiredText(string value, int maxLength, [CallerArgumentExpression(nameof(value))] string? paramName = null)
     {
