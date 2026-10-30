@@ -6,3 +6,8 @@
  */
 
 export * from './catalogPingResponse'
+export * from './httpValidationProblemDetails'
+export * from './httpValidationProblemDetailsErrors'
+export * from './ingredientSummary'
+export * from './nutrientsResponse'
+export * from './searchIngredientsParams'

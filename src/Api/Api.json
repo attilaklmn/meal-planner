@@ -24,6 +24,60 @@
           }
         }
       }
+    },
+    "/api/catalog/ingredients": {
+      "get": {
+        "tags": [
+          "Catalog"
+        ],
+        "summary": "Search ingredients by English or Hungarian name",
+        "operationId": "SearchIngredients",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Part of the English or Hungarian name; case and accents don't matter.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results, 1 to 50 (default 20).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IngredientSummary"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -41,6 +95,107 @@
           "serverTime": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "HttpValidationProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "status": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "detail": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "instance": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "IngredientSummary": {
+        "required": [
+          "id",
+          "name",
+          "hungarianName",
+          "nutrientsPer100g"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "hungarianName": {
+            "type": "string"
+          },
+          "nutrientsPer100g": {
+            "$ref": "#/components/schemas/NutrientsResponse"
+          }
+        }
+      },
+      "NutrientsResponse": {
+        "required": [
+          "energyKcal",
+          "protein",
+          "carbohydrate",
+          "fat",
+          "fiber"
+        ],
+        "type": "object",
+        "properties": {
+          "energyKcal": {
+            "type": "number",
+            "format": "double"
+          },
+          "protein": {
+            "type": "number",
+            "format": "double"
+          },
+          "carbohydrate": {
+            "type": "number",
+            "format": "double"
+          },
+          "fat": {
+            "type": "number",
+            "format": "double"
+          },
+          "fiber": {
+            "type": "number",
+            "format": "double"
           }
         }
       }

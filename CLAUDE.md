@@ -16,7 +16,8 @@ Full plan: [docs/architecture.md](docs/architecture.md). Decisions: [docs/adr/](
 M0 – Foundations is done (Aspire, Postgres with a DbContext and schema per module, React + Vite,
 generated API client, CI). Milestone **M1 – Ingredient catalog** in progress: `Ingredient` and
 `NutrientProfile` domain model with unit tests, persisted in `catalog."Ingredients"` (complex type),
-seeded in Development with 372 USDA SR Legacy ingredients with Hungarian names (ADR 0003).
+seeded in Development with 372 USDA SR Legacy ingredients with Hungarian names (ADR 0003),
+searchable via `GET /api/catalog/ingredients?search=` (accent-insensitive, trigram index).
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -76,7 +77,10 @@ docs/                 architecture.md, adr/
 
 - Nullable reference types on, warnings as errors.
 - Minimal API endpoints grouped per module (`MapGroup`); no controllers. Handlers return `TypedResults`
-  types and set `WithName` (OpenAPI operationId = generated hook name).
+  types and set `WithName` (OpenAPI operationId = generated hook name). JSON number handling is strict,
+  so OpenAPI (and the generated TypeScript) types numbers as `number`, not `number | string`.
+- Text search goes through `Catalog.Domain.SearchText.Normalize` on both sides: stored `SearchText`
+  columns and the search term (lowercase, no accents, punctuation → spaces).
 - No MediatR, no AutoMapper: plain handler classes and explicit mapping.
 - Modules never reference another module's Domain or Infrastructure project. Cross-module
   communication only via `Shared/Contracts` (events) or, in v1, a module's public API surface.
