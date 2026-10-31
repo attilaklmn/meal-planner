@@ -82,6 +82,7 @@ event-fed copy of the data it needs from the others.
 
 - Recipes does not call Catalog synchronously. It keeps its own copy of nutrition values from
   `IngredientNutritionChanged` events (eventual consistency; Catalog being down does not stop recipes).
+  In v1 the same copy is refreshed in process, through Catalog's public API, whenever a recipe is saved (ADR 0004).
 - Planning keeps recipe ingredients up to date from `RecipeUpdated` events, so generating a shopping
   list needs no synchronous call.
 - Every event leaves through a transactional outbox; consumers are idempotent.
@@ -98,7 +99,9 @@ piece weight. Nutrition calculation and shopping-list merging both build on this
 
 - `Ingredient`: name, `NutrientProfile` per 100 g (kcal, protein, fat, carbs, fibre), optional density (g/ml) and piece weight (g)
 - `Recipe`: title, servings, steps, tags, list of `RecipeIngredient`
-- `RecipeIngredient`: join entity with payload: `Quantity` (amount + unit) and a note
+- `RecipeIngredient`: join entity with payload: `Quantity` (amount + unit), a note and its position in the list
+- `CatalogIngredient`: Recipes' copy of a Catalog ingredient (names, nutrients per 100 g, density, piece weight),
+  one row per ingredient, shared by all recipes (ADR 0004)
 - `MealPlan`: week, entries (day, meal, recipe, servings)
 - `ShoppingList` / `ShoppingItem`: ingredient, merged quantity, checked flag, who checked it
 - `Quantity`, `NutrientProfile`: value objects, immutable records with their own conversion and addition logic
@@ -111,7 +114,8 @@ the module boundary strict at the cost of a little duplicated unit logic.
 | EF Core technique | Where | What it shows |
 | --- | --- | --- |
 | Complex / owned types | `Quantity`, `NutrientProfile` | DDD value objects without extra tables |
-| JSON column | Recipe steps, tags | When document-style storage fits in a relational DB |
+| JSON column | Recipe steps (`jsonb`, EF 10 complex collection) | When document-style storage fits in a relational DB |
+| Primitive collection | Recipe tags (`text[]` with a GIN index) | Native arrays when the values are filtered on |
 | Many-to-many with payload | `RecipeIngredient` | Configuring an explicit join entity |
 | Global query filter | Soft delete, household filter | Multi-tenancy and the risk of disabling filters |
 | Concurrency token | `ShoppingItem` (Postgres `xmin`) | Optimistic concurrency, handling 409 in the frontend |
@@ -174,7 +178,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 - [x] Search endpoint with projection, frontend autocomplete
 
 ### M2 – Recipes
-- [ ] `Recipe`, `RecipeIngredient`, `Quantity` value object with unit conversion, unit-tested
+- [x] `Recipe`, `RecipeIngredient`, `Quantity` value object with unit conversion, unit-tested
 - [ ] CRUD endpoints, steps in a JSON column
 - [ ] Recipe editor (React Hook Form + Zod), list and details pages
 - [ ] Nutrition per serving, servings slider with live recalculation
