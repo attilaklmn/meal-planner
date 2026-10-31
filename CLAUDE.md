@@ -18,7 +18,8 @@ generated API client, CI). M1 – Ingredient catalog is done: `Ingredient` / `Nu
 model persisted in `catalog."Ingredients"` (complex type), seeded in Development with 372 USDA SR
 Legacy ingredients with Hungarian names (ADR 0003), searchable via
 `GET /api/catalog/ingredients?search=` (accent-insensitive, trigram index), picked in the frontend
-with `IngredientAutocomplete` (shown on a temporary demo section). Next: **M2 – Recipes**.
+with `IngredientAutocomplete` (shown on a temporary demo section). **M2 – Recipes** in progress: `Quantity` value
+object with unit conversion in `Recipes.Domain` (unit-tested in `tests/Recipes.UnitTests`).
 Update this line when a milestone closes.
 
 ## Tech stack

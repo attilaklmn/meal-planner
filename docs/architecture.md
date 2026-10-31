@@ -103,6 +103,11 @@ piece weight. Nutrition calculation and shopping-list merging both build on this
 - `ShoppingList` / `ShoppingItem`: ingredient, merged quantity, checked flag, who checked it
 - `Quantity`, `NutrientProfile`: value objects, immutable records with their own conversion and addition logic
 
+`Quantity` lives in `Recipes.Domain`: spoons and cups are metric (5 / 15 / 250 ml), volumes convert to grams through the
+ingredient's density and pieces through its piece weight, and a missing factor is an error rather than 0 g. Planning does
+not reference it; it gets amount + unit from `RecipeUpdated` and merges the shopping list with its own logic, which keeps
+the module boundary strict at the cost of a little duplicated unit logic.
+
 | EF Core technique | Where | What it shows |
 | --- | --- | --- |
 | Complex / owned types | `Quantity`, `NutrientProfile` | DDD value objects without extra tables |
