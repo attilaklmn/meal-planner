@@ -20,7 +20,9 @@ Legacy ingredients with Hungarian names (ADR 0003), searchable via
 `GET /api/catalog/ingredients?search=` (accent-insensitive, trigram index), picked in the frontend
 with `IngredientAutocomplete` (shown on a temporary demo section). **M2 – Recipes** in progress: `Quantity` value
 object with unit conversion in `Recipes.Domain` (unit-tested in `tests/Recipes.UnitTests`); ingredients carry
-optional density and piece weight derived from USDA household portions.
+optional density and piece weight derived from USDA household portions; `Recipe` aggregate with
+`RecipeIngredient` lines and `CalculateNutrition()`, persisted in `recipes."Recipes"` / `"RecipeIngredients"` (steps jsonb,
+tags text[]), with Recipes' own ingredient copy in `recipes."Ingredients"` (ADR 0004). Next: recipe CRUD endpoints.
 Update this line when a milestone closes.
 
 ## Tech stack
