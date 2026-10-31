@@ -5,26 +5,6 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/api/catalog/ping": {
-      "get": {
-        "tags": [
-          "Catalog"
-        ],
-        "operationId": "PingCatalog",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CatalogPingResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/catalog/ingredients": {
       "get": {
         "tags": [
@@ -82,22 +62,6 @@
   },
   "components": {
     "schemas": {
-      "CatalogPingResponse": {
-        "required": [
-          "module",
-          "serverTime"
-        ],
-        "type": "object",
-        "properties": {
-          "module": {
-            "type": "string"
-          },
-          "serverTime": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
       "HttpValidationProblemDetails": {
         "type": "object",
         "properties": {

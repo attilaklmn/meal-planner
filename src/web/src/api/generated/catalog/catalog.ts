@@ -18,7 +18,6 @@ import type {
 } from '@tanstack/react-query'
 
 import type {
-  CatalogPingResponse,
   HttpValidationProblemDetails,
   IngredientSummary,
   SearchIngredientsParams,
@@ -42,113 +41,6 @@ const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKe
     })
   }
   return result
-}
-
-export const getPingCatalogUrl = () => {
-  return `/api/catalog/ping`
-}
-
-export const pingCatalog = async (
-  options?: Parameters<typeof apiFetch>[1],
-): Promise<CatalogPingResponse> => {
-  return apiFetch<CatalogPingResponse>(getPingCatalogUrl(), {
-    ...options,
-    method: 'GET',
-  })
-}
-
-export const getPingCatalogQueryKey = () => {
-  return [`/api/catalog/ping`] as const
-}
-
-export const getPingCatalogQueryOptions = <
-  TData = Awaited<ReturnType<typeof pingCatalog>>,
-  TError = ErrorType<unknown>,
->(options?: {
-  query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof pingCatalog>>, TError, TData>>
-  request?: SecondParameter<typeof apiFetch>
-}) => {
-  const { query: queryOptions, request: requestOptions } = options ?? {}
-
-  const queryKey = queryOptions?.queryKey ?? getPingCatalogQueryKey()
-
-  const queryFn: QueryFunction<Awaited<ReturnType<typeof pingCatalog>>> = ({ signal }) =>
-    pingCatalog({ signal, ...requestOptions })
-
-  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof pingCatalog>>,
-    TError,
-    TData
-  > & { queryKey: DataTag<QueryKey, TData, TError> }
-}
-
-export type PingCatalogQueryResult = NonNullable<Awaited<ReturnType<typeof pingCatalog>>>
-export type PingCatalogQueryError = ErrorType<unknown>
-
-export function usePingCatalog<
-  TData = Awaited<ReturnType<typeof pingCatalog>>,
-  TError = ErrorType<unknown>,
->(
-  options: {
-    query: Partial<UseQueryOptions<Awaited<ReturnType<typeof pingCatalog>>, TError, TData>> &
-      Pick<
-        DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof pingCatalog>>,
-          TError,
-          Awaited<ReturnType<typeof pingCatalog>>
-        >,
-        'initialData'
-      >
-    request?: SecondParameter<typeof apiFetch>
-  },
-  queryClient?: QueryClient,
-): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function usePingCatalog<
-  TData = Awaited<ReturnType<typeof pingCatalog>>,
-  TError = ErrorType<unknown>,
->(
-  options?: {
-    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof pingCatalog>>, TError, TData>> &
-      Pick<
-        UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof pingCatalog>>,
-          TError,
-          Awaited<ReturnType<typeof pingCatalog>>
-        >,
-        'initialData'
-      >
-    request?: SecondParameter<typeof apiFetch>
-  },
-  queryClient?: QueryClient,
-): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function usePingCatalog<
-  TData = Awaited<ReturnType<typeof pingCatalog>>,
-  TError = ErrorType<unknown>,
->(
-  options?: {
-    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof pingCatalog>>, TError, TData>>
-    request?: SecondParameter<typeof apiFetch>
-  },
-  queryClient?: QueryClient,
-): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-
-export function usePingCatalog<
-  TData = Awaited<ReturnType<typeof pingCatalog>>,
-  TError = ErrorType<unknown>,
->(
-  options?: {
-    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof pingCatalog>>, TError, TData>>
-    request?: SecondParameter<typeof apiFetch>
-  },
-  queryClient?: QueryClient,
-): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getPingCatalogQueryOptions(options)
-
-  const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
-    queryKey: DataTag<QueryKey, TData, TError>
-  }
-
-  return withQueryKey(query, queryOptions.queryKey)
 }
 
 export const getSearchIngredientsUrl = (params: SearchIngredientsParams) => {

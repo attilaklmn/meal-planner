@@ -166,7 +166,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 ### M1 – Ingredient catalog
 - [x] `Ingredient`, `NutrientProfile` complex type, migration
 - [x] Import: a few hundred common ingredients from USDA SR Legacy, plus Hungarian names
-- [ ] Search endpoint with projection, frontend autocomplete
+- [x] Search endpoint with projection, frontend autocomplete
 
 ### M2 – Recipes
 - [ ] `Recipe`, `RecipeIngredient`, `Quantity` value object with unit conversion, unit-tested
