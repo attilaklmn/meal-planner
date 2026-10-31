@@ -1,5 +1,5 @@
 import { ApiStatus } from '@/components/api-status'
-import { CatalogPing } from '@/features/catalog/catalog-ping'
+import { IngredientSearchDemo } from '@/features/catalog/ingredient-search-demo'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <p className="text-muted-foreground">Recipes, nutrition and shopping lists.</p>
       </header>
       <ApiStatus />
-      <CatalogPing />
+      <IngredientSearchDemo />
     </main>
   )
 }

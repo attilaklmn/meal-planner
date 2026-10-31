@@ -5,7 +5,6 @@
  * OpenAPI spec version: 1.0.0
  */
 
-export * from './catalogPingResponse'
 export * from './httpValidationProblemDetails'
 export * from './httpValidationProblemDetailsErrors'
 export * from './ingredientSummary'

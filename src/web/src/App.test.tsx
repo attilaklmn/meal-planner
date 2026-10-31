@@ -5,18 +5,15 @@ import { stubFetch } from './test/fetch'
 import { renderWithQueryClient } from './test/render'
 
 describe('App', () => {
-  it('shows the title, the API health and the Catalog module answer', async () => {
-    stubFetch({
-      '/health': () => new Response('Healthy'),
-      '/api/catalog/ping': () =>
-        Response.json({ module: 'catalog', serverTime: '2026-10-29T08:00:00Z' }),
-    })
+  it('shows the title, the API health and the ingredient search', async () => {
+    stubFetch({ '/health': () => new Response('Healthy') })
 
     renderWithQueryClient(<App />)
 
     expect(screen.getByRole('heading', { name: 'Meal Planner' })).toBeInTheDocument()
     expect(await screen.findByText('Healthy')).toBeInTheDocument()
-    expect(await screen.findByText('catalog')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Ingredient search' })).toBeInTheDocument()
+    expect(screen.getByRole('combobox')).toHaveTextContent('Choose an ingredient…')
   })
 
   it('shows the API as unreachable when the request fails', async () => {
