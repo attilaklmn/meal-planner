@@ -15,12 +15,25 @@ public sealed class Ingredient
     /// <summary>100 g can't hold more than 100 g of macros; the tolerance absorbs rounding in source data (e.g. oils at 100.0 g fat plus 0.1 g protein).</summary>
     internal const decimal MaxMacrosPer100g = 100.5m;
 
-    private Ingredient(Guid id, string name, string hungarianName, NutrientProfile nutrientsPer100g, string source, string sourceId)
+    /// <summary>Nothing in a kitchen is denser than about 2.2 g/ml (salt); a higher value means a unit mix-up in the source data.</summary>
+    internal const decimal MaxDensityGramsPerMl = 3m;
+
+    private Ingredient(
+        Guid id,
+        string name,
+        string hungarianName,
+        NutrientProfile nutrientsPer100g,
+        decimal? densityGramsPerMl,
+        decimal? pieceWeightGrams,
+        string source,
+        string sourceId)
     {
         Id = id;
         Name = name;
         HungarianName = hungarianName;
         NutrientsPer100g = nutrientsPer100g;
+        DensityGramsPerMl = densityGramsPerMl;
+        PieceWeightGrams = pieceWeightGrams;
         Source = source;
         SourceId = sourceId;
         SearchText = BuildSearchText(name, hungarianName);
@@ -43,6 +56,12 @@ public sealed class Ingredient
 
     public NutrientProfile NutrientsPer100g { get; private set; }
 
+    /// <summary>Grams per milliliter, for converting spoons and cups to grams; null when unknown.</summary>
+    public decimal? DensityGramsPerMl { get; private set; }
+
+    /// <summary>Weight of one typical piece (one medium apple, one egg) in grams; null for foods not counted in pieces.</summary>
+    public decimal? PieceWeightGrams { get; private set; }
+
     /// <summary>Dataset the ingredient was imported from; together with <see cref="SourceId"/> it identifies the row there.</summary>
     public string Source { get; private set; }
 
@@ -51,7 +70,14 @@ public sealed class Ingredient
     /// <summary>Hungarian and English name in <see cref="Domain.SearchText"/> form, kept in sync by every name change. Searches match against this.</summary>
     public string SearchText { get; private set; }
 
-    public static Ingredient Create(string name, string hungarianName, NutrientProfile nutrientsPer100g, string source, string sourceId)
+    public static Ingredient Create(
+        string name,
+        string hungarianName,
+        NutrientProfile nutrientsPer100g,
+        string source,
+        string sourceId,
+        decimal? densityGramsPerMl = null,
+        decimal? pieceWeightGrams = null)
     {
         ArgumentNullException.ThrowIfNull(nutrientsPer100g);
 
@@ -61,12 +87,22 @@ public sealed class Ingredient
             RequiredText(name, NameMaxLength),
             RequiredText(hungarianName, NameMaxLength),
             ValidPer100g(nutrientsPer100g),
+            ValidDensity(densityGramsPerMl),
+            ValidPieceWeight(pieceWeightGrams),
             RequiredText(source, SourceMaxLength),
             RequiredText(sourceId, SourceIdMaxLength));
     }
 
-    /// <summary>Takes over a newer version of the same source row; the identity (id, source, source id) stays.</summary>
-    public void UpdateFromSource(string name, string hungarianName, NutrientProfile nutrientsPer100g)
+    /// <summary>
+    /// Takes over a newer version of the same source row; the identity (id, source, source id) stays.
+    /// Unit data has no default here: a source row without it means "unknown now", so the old value is cleared.
+    /// </summary>
+    public void UpdateFromSource(
+        string name,
+        string hungarianName,
+        NutrientProfile nutrientsPer100g,
+        decimal? densityGramsPerMl,
+        decimal? pieceWeightGrams)
     {
         ArgumentNullException.ThrowIfNull(nutrientsPer100g);
 
@@ -74,10 +110,14 @@ public sealed class Ingredient
         var validName = RequiredText(name, NameMaxLength);
         var validHungarianName = RequiredText(hungarianName, NameMaxLength);
         var validNutrients = ValidPer100g(nutrientsPer100g);
+        var validDensity = ValidDensity(densityGramsPerMl);
+        var validPieceWeight = ValidPieceWeight(pieceWeightGrams);
 
         Name = validName;
         HungarianName = validHungarianName;
         NutrientsPer100g = validNutrients;
+        DensityGramsPerMl = validDensity;
+        PieceWeightGrams = validPieceWeight;
         SearchText = BuildSearchText(validName, validHungarianName);
     }
 
@@ -116,5 +156,26 @@ public sealed class Ingredient
         }
 
         return nutrientsPer100g;
+    }
+
+    private static decimal? ValidDensity(decimal? densityGramsPerMl)
+    {
+        if (densityGramsPerMl is { } density)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(density, nameof(densityGramsPerMl));
+            ArgumentOutOfRangeException.ThrowIfGreaterThan(density, MaxDensityGramsPerMl, nameof(densityGramsPerMl));
+        }
+
+        return densityGramsPerMl;
+    }
+
+    private static decimal? ValidPieceWeight(decimal? pieceWeightGrams)
+    {
+        if (pieceWeightGrams is { } pieceWeight)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(pieceWeight, nameof(pieceWeightGrams));
+        }
+
+        return pieceWeightGrams;
     }
 }

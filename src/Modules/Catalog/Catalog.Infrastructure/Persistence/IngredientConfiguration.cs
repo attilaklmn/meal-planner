@@ -21,6 +21,10 @@ internal sealed class IngredientConfiguration : IEntityTypeConfiguration<Ingredi
         builder.Property(i => i.Source).HasMaxLength(Ingredient.SourceMaxLength);
         builder.Property(i => i.SourceId).HasMaxLength(Ingredient.SourceIdMaxLength);
 
+        // numeric(8,3) as well: a density like 0.913 g/ml and piece weights up to a whole watermelon.
+        builder.Property(i => i.DensityGramsPerMl).HasPrecision(NutrientPrecision, NutrientScale);
+        builder.Property(i => i.PieceWeightGrams).HasPrecision(NutrientPrecision, NutrientScale);
+
         // The importer matches rows by their id in the source dataset.
         builder.HasIndex(i => new { i.Source, i.SourceId }).IsUnique();
 

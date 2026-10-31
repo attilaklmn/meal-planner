@@ -12,6 +12,8 @@ const egg: IngredientSummary = {
   name: 'Egg, whole, raw, fresh',
   hungarianName: 'Tojás',
   nutrientsPer100g: { energyKcal: 143, protein: 12.56, carbohydrate: 0.72, fat: 9.51, fiber: 0 },
+  densityGramsPerMl: 1.027,
+  pieceWeightGrams: 50,
 }
 
 const eggYolk: IngredientSummary = {
@@ -19,6 +21,8 @@ const eggYolk: IngredientSummary = {
   name: 'Egg, yolk, raw, fresh',
   hungarianName: 'Tojássárgája',
   nutrientsPer100g: { energyKcal: 322, protein: 15.86, carbohydrate: 3.59, fat: 26.54, fiber: 0 },
+  densityGramsPerMl: 1.03,
+  pieceWeightGrams: 17,
 }
 
 const searchUrl = (term: string) => `/api/catalog/ingredients?search=${term}&limit=20`

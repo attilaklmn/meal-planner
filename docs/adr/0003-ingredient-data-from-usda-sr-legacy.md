@@ -26,6 +26,11 @@ Neither USDA dataset has Hungarian names.
 - `tools/catalog-data/build-ingredients.cs` (a .NET file-based app) reads the SR Legacy CSV zip and
   writes `Catalog.Infrastructure/Seeding/ingredients.csv` with energy (kcal), protein,
   carbohydrate (by difference, includes fiber), fat and fiber per 100 g. The zip is not committed.
+- Unit data (added in M2): the script derives density (g/ml) and piece weight (g) from SR Legacy's
+  household portions (`food_portion.csv`). Density comes from a bare spoon or cup measure ("tbsp"
+  before "cup, chopped"), converted with US volumes; piece weight from a size ("medium" before
+  "large" and "small") or a piece-like portion ("clove", "head"). `tools/catalog-data/unit-overrides.csv`
+  corrects or removes derived values, with a reason per row.
 - The seed file is an embedded resource. In Development the Api applies it on start, after
   migrations: missing rows are added and changed ones updated, matched by (Source, SourceId).
   Rows removed from the file are not deleted, because recipes may reference them.
@@ -40,5 +45,9 @@ Neither USDA dataset has Hungarian names.
   raw"); the UI shows the Hungarian name first.
 - Hungarian-only foods (e.g. specific sausages, túró variants) are approximated by the nearest
   USDA food. User-defined ingredients would need their own `Source` later.
+- 272 of 372 foods get a density and 74 a piece weight. The rest can only be measured in grams
+  (or in volumes/pieces after an override); the recipe editor has to show that.
+- Portion descriptions are free text, so the derivation is a heuristic. Its results were reviewed
+  once by hand, and the overrides file records every correction.
 - Seeding outside Development (e.g. a production deploy) is still open; it will come with the
   deployment work in M8.

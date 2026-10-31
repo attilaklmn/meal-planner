@@ -29,11 +29,18 @@ internal sealed partial class IngredientSeeder(CatalogDbContext dbContext, ILogg
             if (existing.TryGetValue(row.SourceId, out var ingredient))
             {
                 // Same values in, no change tracked: EF compares against the loaded snapshot.
-                ingredient.UpdateFromSource(row.Name, row.HungarianName, row.NutrientsPer100g);
+                ingredient.UpdateFromSource(row.Name, row.HungarianName, row.NutrientsPer100g, row.DensityGramsPerMl, row.PieceWeightGrams);
             }
             else
             {
-                dbContext.Ingredients.Add(Ingredient.Create(row.Name, row.HungarianName, row.NutrientsPer100g, Source, row.SourceId));
+                dbContext.Ingredients.Add(Ingredient.Create(
+                    row.Name,
+                    row.HungarianName,
+                    row.NutrientsPer100g,
+                    Source,
+                    row.SourceId,
+                    row.DensityGramsPerMl,
+                    row.PieceWeightGrams));
                 added++;
             }
         }

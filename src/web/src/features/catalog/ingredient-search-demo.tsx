@@ -24,6 +24,12 @@ export function IngredientSearchDemo() {
           <dd>{selected.nutrientsPer100g.fat} g</dd>
           <dt className="text-muted-foreground">Fiber</dt>
           <dd>{selected.nutrientsPer100g.fiber} g</dd>
+          <dt className="text-muted-foreground">Density</dt>
+          <dd>
+            {selected.densityGramsPerMl === null ? '–' : `${selected.densityGramsPerMl} g/ml`}
+          </dd>
+          <dt className="text-muted-foreground">Piece weight</dt>
+          <dd>{selected.pieceWeightGrams === null ? '–' : `${selected.pieceWeightGrams} g`}</dd>
         </dl>
       )}
     </section>

@@ -1,373 +1,373 @@
-source_id,name,hungarian_name,energy_kcal,protein_g,carbohydrate_g,fat_g,fiber_g
-171287,"Egg, whole, raw, fresh",Tojás,143,12.56,0.72,9.51,0
-173424,"Egg, whole, cooked, hard-boiled",Főtt tojás,155,12.58,1.12,10.61,0
-172183,"Egg, white, raw, fresh",Tojásfehérje,52,10.9,0.73,0.17,0
-172184,"Egg, yolk, raw, fresh",Tojássárgája,322,15.86,3.59,26.54,0
-171265,"Milk, whole, 3.25% milkfat, with added vitamin D","Teljes tej (3,5%)",61,3.15,4.8,3.25,0
-171267,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",Félzsíros tej (2%),50,3.3,4.8,1.98,0
-170872,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",Zsírszegény tej (1%),42,3.37,4.99,0.97,0
-171269,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",Sovány tej,34,3.37,4.96,0.08,0
-170874,"Milk, buttermilk, fluid, cultured, lowfat",Író,40,3.31,4.79,1.07,0
-171275,"Milk, canned, condensed, sweetened",Sűrített tej (cukrozott),321,7.91,54.4,8.7,0
-170859,"Cream, fluid, heavy whipping",Habtejszín,340,2.84,2.84,36.08,0
-170857,"Cream, fluid, light (coffee cream or table cream)",Főzőtejszín,195,2.96,3.66,19.1,0
-171257,"Cream, sour, cultured",Tejföl,198,2.44,4.63,19.35,0
-171284,"Yogurt, plain, whole milk",Natúr joghurt,61,3.47,4.66,3.25,0
-171304,"Yogurt, Greek, plain, whole milk",Görög joghurt,97,9,3.98,5,0
-170894,"Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)",Zsírszegény görög joghurt,59,10.19,3.6,0.39,0
-170904,"Kefir, lowfat, plain, LIFEWAY",Kefir,43,3.79,4.77,1.02,0
-172179,"Cheese, cottage, creamed, large or small curd",Cottage cheese,98,11.12,3.38,4.3,0
-172181,"Cheese, cottage, nonfat, uncreamed, dry, large or small curd",Sovány túró,72,10.34,6.66,0.29,0
-172182,"Cheese, cottage, lowfat, 2% milkfat",Félzsíros túró,81,10.45,4.76,2.27,0
-170851,"Cheese, ricotta, whole milk",Ricotta,150,7.54,7.27,10.18,0
-170845,"Cheese, mozzarella, whole milk",Mozzarella,299,22.17,2.4,22.14,0
-170847,"Cheese, mozzarella, part skim milk",Light mozzarella,254,24.26,2.77,15.92,0
-173414,"Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",Cheddar sajt,403,22.87,3.37,33.31,0
-171247,"Cheese, parmesan, grated",Parmezán (reszelt),420,28.42,13.91,27.84,0
-170848,"Cheese, parmesan, hard",Parmezán,392,35.75,3.22,25,0
-173420,"Cheese, feta",Feta sajt,265,14.21,3.88,21.49,0
-171241,"Cheese, gouda",Gouda sajt,356,24.94,2.22,27.44,0
-173419,"Cheese, edam",Edami sajt,357,24.99,1.43,28.57,0
-171251,"Cheese, swiss",Ementáli sajt,393,26.96,1.44,30.99,0
-173418,"Cheese, cream",Krémsajt,350,6.15,5.52,34.44,0
-172177,"Cheese, brie",Brie,334,20.75,0.45,27.68,0
-172178,"Cheese, camembert",Camembert,300,19.8,0.46,24.26,0
-172175,"Cheese, blue",Kéksajt,353,21.4,2.34,28.74,0
-170850,"Cheese, provolone",Provolone,351,25.58,2.14,26.62,0
-173430,"Butter, without salt",Vaj,717,0.85,0.06,81.11,0
-173410,"Butter, salted",Sózott vaj,717,0.85,0.06,81.11,0
-173468,"Salt, table",Só,0,0,0,0,0
-170931,"Spices, pepper, black",Fekete bors,251,10.39,63.95,3.26,25.3
-171329,"Spices, paprika",Fűszerpaprika (őrölt),282,14.14,53.99,12.89,34.9
-170932,"Spices, pepper, red or cayenne",Cayenne-bors,318,12.01,56.63,17.27,27.2
-170923,"Spices, cumin seed",Római kömény,375,17.81,44.24,22.27,10.5
-170918,"Spices, caraway seed",Kömény,333,19.77,49.9,14.59,38
-171320,"Spices, cinnamon, ground",Fahéj,247,3.99,80.59,1.24,53.1
-171325,"Spices, garlic powder",Fokhagymapor,331,16.55,72.73,0.73,9
-171327,"Spices, onion powder",Hagymapor,341,10.41,79.12,1.04,15.2
-171328,"Spices, oregano, dried",Oregánó,265,9,68.92,4.28,42.5
-171317,"Spices, basil, dried",Bazsalikom (szárított),233,22.98,47.75,4.07,37.7
-170938,"Spices, thyme, dried",Kakukkfű,276,9.11,63.94,7.43,37
-170928,"Spices, marjoram, dried",Majoránna,271,12.66,60.56,7.04,40.3
-171333,"Spices, rosemary, dried",Rozmaring,331,4.88,64.06,15.22,42.6
-170917,"Spices, bay leaf",Babérlevél,313,7.61,74.97,8.36,26.3
-171326,"Spices, nutmeg, ground",Szerecsendió,525,5.84,49.29,36.31,20.8
-170926,"Spices, ginger, ground",Gyömbér (őrölt),335,8.98,71.62,4.24,14.1
-172231,"Spices, turmeric, ground",Kurkuma,312,9.68,67.14,3.25,22.7
-170924,"Spices, curry powder",Curry por,325,14.29,55.83,14.01,53.2
-171319,"Spices, chili powder",Chili por,282,13.46,49.7,14.28,34.8
-171321,"Spices, cloves, ground",Szegfűszeg,274,5.97,65.53,13,33.9
-171322,"Spices, dill weed, dried",Kapor (szárított),253,19.96,55.82,4.36,13.6
-171330,"Spices, poppy seed",Mák,525,17.99,28.13,41.56,19.5
-172232,"Basil, fresh",Bazsalikom (friss),23,3.15,2.65,0.64,1.6
-170416,"Parsley, fresh",Petrezselyemzöld,36,2.97,6.33,0.79,3.3
-172233,"Dill weed, fresh",Kapor (friss),43,3.46,7.02,1.12,2.1
-173475,"Spearmint, fresh",Menta,44,3.29,8.41,0.73,6.8
-169997,"Coriander (cilantro) leaves, raw",Koriander (friss),23,2.13,3.67,0.52,2.8
-169994,"Chives, raw",Metélőhagyma,30,3.27,4.35,0.73,2.5
-173471,Vanilla extract,Vaníliakivonat,288,0.06,12.65,0.06,0
-172234,"Mustard, prepared, yellow",Mustár,60,3.74,5.83,3.34,4
-172237,"Vinegar, distilled",Ecet,18,0,0.04,0,0
-172241,"Vinegar, balsamic",Balzsamecet,88,0.49,17.03,0,0
-173469,"Vinegar, cider",Almaecet,21,0,0.93,0,0
-171413,"Oil, olive, salad or cooking",Olívaolaj,884,0,0,100,0
-171017,"Oil, sunflower, linoleic (less than 60%)",Napraforgóolaj,884,0,0,100,0
-172336,"Oil, canola",Repceolaj,884,0,0,100,0
-171412,"Oil, coconut",Kókuszolaj,892,0,0,99.06,0
-171016,"Oil, sesame, salad or cooking",Szezámolaj,884,0,0,100,0
-171401,Lard,Disznózsír,902,0,0,100,0
-173572,"Fat, goose",Libazsír,900,0,0,99.8,0
-172346,"Margarine, regular, 80% fat, composite, stick, with salt",Margarin,717,0.16,0.7,80.71,0
-171009,"Salad dressing, mayonnaise, regular",Majonéz,680,0.96,0.57,74.85,0
-171077,"Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",Csirkemell (nyers),120,22.5,0,2.62,0
-171477,"Chicken, broilers or fryers, breast, meat only, cooked, roasted",Csirkemell (sült),165,31.02,0,3.57,0
-173627,"Chicken, broilers or fryers, dark meat, thigh, meat only, raw",Csirkecombfilé,121,19.66,0,4.12,0
-172373,"Chicken, broilers or fryers, drumstick, meat and skin, raw",Csirke alsócomb (bőrrel),161,18.08,0.11,9.2,0
-172378,"Chicken, broilers or fryers, leg, meat and skin, raw",Csirkecomb (bőrrel),214,16.37,0.17,15.95,0
-172390,"Chicken, broilers or fryers, wing, meat and skin, raw",Csirkeszárny,191,17.52,0,12.85,0
-171447,"Chicken, broilers or fryers, meat and skin, raw",Egész csirke,215,18.6,0,15.06,0
-171116,"Chicken, ground, raw",Darált csirkehús,143,17.44,0.04,8.1,0
-171060,"Chicken, liver, all classes, raw",Csirkemáj,119,16.92,0.73,4.83,0
-171456,"Chicken, gizzard, all classes, raw",Csirkezúza,94,17.66,0,2.06,0
-171505,"Turkey, Ground, raw",Darált pulykahús,148,19.66,0,7.66,0
-171098,"Turkey, whole, breast, meat only, raw",Pulykamell,114,23.66,0.14,1.48,0
-172410,"Duck, domesticated, meat only, raw",Kacsahús,135,18.28,0.94,5.95,0
-172413,"Goose, domesticated, meat only, raw",Libahús,161,22.75,0,7.13,0
-172884,"Soup, stock, chicken, home-prepared",Csirkealaplé,36,2.52,3.53,1.2,0
-172883,"Soup, stock, beef, home-prepared",Marhaalaplé,13,1.97,1.2,0.09,0
-171192,"Sauce, pasta, spaghetti/marinara, ready-to-serve",Paradicsomos tésztaszósz,50,1.39,7.43,1.61,1.8
-171610,"Sauce, worcestershire",Worcester-szósz,77,0,19.17,0,0
-171186,"Sauce, hot chile, sriracha",Sriracha,93,1.93,19.16,0.93,2.2
-174523,"Sauce, barbecue",BBQ-szósz,172,0.82,40.77,0.63,0.9
-174531,"Sauce, fish, ready-to-serve",Halszósz,35,5.06,3.64,0.01,0
-174524,"Sauce, salsa, ready-to-serve",Salsa,29,1.52,6.64,0.17,1.9
-174277,Soy sauce made from soy and wheat (shoyu),Szójaszósz,53,8.14,4.93,0.57,0.8
-168556,Catsup,Ketchup,101,1.04,27.4,0.1,0.3
-173864,"Ham, sliced, regular (approximately 11% fat)",Sonka (szeletelt),164,16.6,3.63,8.8,1.3
-172938,"Salami, dry or hard, pork",Szalámi,407,22.58,1.6,33.72,0
-173862,"Frankfurter, beef, unheated",Virsli,315,11.69,2.97,28.1,0
-171631,"Sausage, Italian, pork, mild, raw",Olasz kolbász (nyers),290,13.9,2.97,24.26,0
-173859,"Sausage, pork, chorizo, link or ground, raw",Chorizo,296,13.63,3.78,25.1,0
-174575,"Pepperoni, beef and pork, sliced",Pepperoni,504,19.25,1.18,46.28,0
-173904,"Cereals, oats, regular and quick, not fortified, dry",Zabpehely,379,13.15,67.7,6.52,10.1
-171646,"Cereals ready-to-eat, granola, homemade",Granola,489,13.67,53.88,24.31,8.9
-173916,"Cereals, farina, unenriched, dry",Búzadara,369,10.6,78,0.5,1.9
-171688,"Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)",Alma,52,0.26,13.81,0.17,2.4
-173944,"Bananas, raw",Banán,89,1.09,22.84,0.33,2.6
-169097,"Oranges, raw, all commercial varieties",Narancs,47,0.94,11.75,0.12,2.4
-167746,"Lemons, raw, without peel",Citrom,29,1.1,9.32,0.3,2.8
-167747,"Lemon juice, raw",Citromlé,22,0.35,6.9,0.24,0.3
-168155,"Limes, raw",Lime,30,0.7,10.54,0.2,2.8
-168156,"Lime juice, raw",Limelé,25,0.42,8.42,0.07,0.4
-174673,"Grapefruit, raw, pink and red, all areas",Grapefruit,42,0.77,10.66,0.14,1.6
-169105,"Tangerines, (mandarin oranges), raw",Mandarin,53,0.81,13.34,0.31,1.8
-169118,"Pears, raw",Körte,57,0.36,15.23,0.14,3.1
-169928,"Peaches, yellow, raw",Őszibarack,39,0.91,9.54,0.25,1.5
-169914,"Nectarines, raw",Nektarin,44,1.06,10.55,0.32,1.7
-171697,"Apricots, raw",Kajszibarack,48,1.4,11.12,0.39,2
-169949,"Plums, raw",Szilva,46,0.7,11.42,0.28,1.4
-171719,"Cherries, sweet, raw",Cseresznye,63,1.06,16.01,0.2,2.1
-173954,"Cherries, sour, red, raw",Meggy,50,1,12.18,0.3,1.6
-167762,"Strawberries, raw",Eper,32,0.67,7.68,0.3,2
-167755,"Raspberries, raw",Málna,52,1.2,11.94,0.65,6.5
-171711,"Blueberries, raw",Kék áfonya,57,0.74,14.49,0.33,2.4
-173946,"Blackberries, raw",Szeder,43,1.39,9.61,0.49,5.3
-173964,"Currants, red and white, raw",Ribizli,56,1.4,13.8,0.2,4.3
-173030,"Gooseberries, raw",Egres,44,0.88,10.18,0.58,4.3
-171727,"Elderberries, raw",Bodza,73,0.66,18.4,0.5,7
-174683,"Grapes, red or green (European type, such as Thompson seedless), raw",Szőlő,69,0.72,18.1,0.16,0.9
-167765,"Watermelon, raw",Görögdinnye,30,0.61,7.55,0.15,0.4
-169092,"Melons, cantaloupe, raw",Sárgadinnye,34,0.84,8.16,0.19,0.9
-169124,"Pineapple, raw, all varieties",Ananász,50,0.54,13.12,0.12,1.4
-169910,"Mangos, raw",Mangó,60,0.82,14.98,0.38,1.6
-168153,"Kiwifruit, green, raw",Kivi,61,1.14,14.66,0.52,3
-171705,"Avocados, raw, all commercial varieties",Avokádó,160,2,8.53,14.66,6.7
-169134,"Pomegranates, raw",Gránátalma,83,1.67,18.7,1.17,4
-173021,"Figs, raw",Füge,74,0.75,19.18,0.3,2.9
-174665,"Figs, dried, uncooked",Szárított füge,249,3.3,63.87,0.93,9.8
-169941,"Persimmons, japanese, raw",Kaki,70,0.58,18.59,0.19,3.6
-168163,"Quinces, raw",Birsalma,57,0.4,15.3,0.1,1.9
-167758,"Rhubarb, raw",Rebarbara,21,0.9,4.54,0.2,1.8
-168165,"Raisins, dark, seedless (Includes foods for USDA's Food Distribution Program)",Mazsola,299,3.3,79.32,0.25,4.5
-168191,"Dates, medjool",Datolya,277,1.81,74.97,0.15,6.7
-168162,"Plums, dried (prunes), uncooked",Aszalt szilva,240,2.18,63.88,0.38,7.1
-173941,"Apricots, dried, sulfured, uncooked",Aszalt sárgabarack,241,3.39,62.64,0.51,7.3
-171723,"Cranberries, dried, sweetened (Includes foods for USDA's Food Distribution Program)",Szárított vörösáfonya,308,0.17,82.8,1.09,5.3
-169098,"Orange juice, raw (Includes foods for USDA's Food Distribution Program)",Narancslé,45,0.7,10.4,0.2,0.2
-173933,"Apple juice, canned or bottled, unsweetened, without added ascorbic acid",Almalé,46,0.1,11.3,0.13,0.2
-171695,"Applesauce, canned, unsweetened, without added ascorbic acid (Includes foods for USDA's Food Distribution Program)",Almapüré,42,0.17,11.27,0.1,1.1
-169112,"Peaches, canned, heavy syrup pack, solids and liquids",Őszibarack befőtt,74,0.45,19.94,0.1,1.3
-169094,"Olives, ripe, canned (small-extra large)",Fekete olívabogyó,116,0.84,6.04,10.9,1.6
-169096,"Olives, pickled, canned or bottled, green",Zöld olívabogyó,145,1.03,3.84,15.32,3.3
-168249,"Pork, fresh, loin, tenderloin, separable lean only, raw",Sertésszűz,109,20.95,0,2.17,0
-168238,"Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw",Sertéskaraj,170,20.71,0,9.03,0
-167849,"Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat, raw",Sertéstarja,186,17.42,0,12.36,0
-168222,"Pork, fresh, leg (ham), whole, separable lean and fat, raw",Sertéscomb,245,17.43,0,18.87,0
-167902,"Pork, fresh, ground, raw",Darált sertéshús,263,16.88,0,21.19,0
-167812,"Pork, fresh, belly, raw",Sertéshasaalja,518,9.34,0,53.01,0
-167853,"Pork, fresh, spareribs, separable lean and fat, raw",Sertésoldalas,277,15.47,0,23.4,0
-167862,"Pork, fresh, variety meats and by-products, liver, raw",Sertésmáj,134,21.39,2.47,3.65,0
-167811,"Pork, fresh, backfat, raw",Sertés hátszalonna,812,2.92,0,88.69,0
-168277,"Pork, cured, bacon, unprepared",Bacon,393,13.66,0,37.13,0
-170026,"Potatoes, flesh and skin, raw",Burgonya,77,2.05,17.49,0.09,2.1
-170440,"Potatoes, boiled, cooked without skin, flesh, without salt",Főtt burgonya,86,1.71,20.01,0.1,1.8
-170523,"Potatoes, french fried, all types, salt not added in processing, frozen, as purchased",Hasábburgonya (fagyasztott),147,2.24,24.81,4.66,1.9
-168482,"Sweet potato, raw, unprepared (Includes foods for USDA's Food Distribution Program)",Édesburgonya,86,1.57,20.12,0.05,3
-170393,"Carrots, raw",Sárgarépa,41,0.93,9.58,0.24,2.8
-170417,"Parsnips, raw",Paszternák,75,1.2,17.99,0.3,4.9
-170400,"Celeriac, raw",Zellergumó,42,1.5,9.2,0.3,1.8
-169988,"Celery, raw",Szárzeller,14,0.69,2.97,0.17,1.6
-170000,"Onions, raw",Vöröshagyma,40,1.1,9.34,0.1,1.7
-170005,"Onions, spring or scallions (includes tops and bulb), raw",Újhagyma,32,1.83,7.34,0.19,2.6
-169230,"Garlic, raw",Fokhagyma,149,6.36,33.06,0.5,2.1
-169246,"Leeks, (bulb and lower leaf-portion), raw",Póréhagyma,61,1.5,14.15,0.3,1.8
-170499,"Shallots, raw",Salotta,72,2.5,16.8,0.1,3.2
-170457,"Tomatoes, red, ripe, raw, year round average",Paradicsom,18,0.88,3.89,0.2,1.2
-170051,"Tomatoes, red, ripe, canned, packed in tomato juice",Hámozott paradicsom (konzerv),16,0.79,3.47,0.25,1.9
-170459,"Tomato products, canned, paste, without salt added (Includes foods for USDA's Food Distribution Program)",Sűrített paradicsom,82,4.32,18.91,0.47,4.1
-170054,"Tomato products, canned, sauce",Paradicsomszósz (passata),24,1.2,5.31,0.3,1.5
-168567,"Tomatoes, sun-dried",Aszalt paradicsom,258,14.11,55.76,2.97,12.3
-170108,"Peppers, sweet, red, raw",Piros kaliforniai paprika,26,0.99,6.03,0.3,2.1
-170427,"Peppers, sweet, green, raw",Zöldpaprika,20,0.86,4.64,0.17,1.7
-169383,"Peppers, sweet, yellow, raw",Sárga kaliforniai paprika,27,1,6.32,0.21,0.9
-170106,"Peppers, hot chili, red, raw",Csilipaprika,40,1.87,8.81,0.44,1.5
-168576,"Peppers, jalapeno, raw",Jalapeño,29,0.91,6.5,0.37,2.8
-168409,"Cucumber, with peel, raw",Uborka,15,0.65,3.63,0.11,0.5
-168558,"Pickles, cucumber, dill or kosher dill",Csemegeuborka,12,0.5,2.41,0.3,1
-169291,"Squash, summer, zucchini, includes skin, raw",Cukkini,17,1.21,3.11,0.32,1
-169295,"Squash, winter, butternut, raw",Vajtök,45,1,11.69,0.1,2
-168448,"Pumpkin, raw",Sütőtök,26,1,6.5,0.1,0.5
-169228,"Eggplant, raw",Padlizsán,25,0.98,5.88,0.18,3
-169975,"Cabbage, raw",Fejes káposzta,25,1.28,5.8,0.1,2.5
-169977,"Cabbage, red, raw",Lilakáposzta,31,1.43,7.37,0.16,2.1
-170388,"Cabbage, savoy, raw",Kelkáposzta,27,2,6.1,0.1,3.1
-169279,"Sauerkraut, canned, solids and liquids",Savanyú káposzta,19,0.91,4.28,0.14,2.9
-169986,"Cauliflower, raw",Karfiol,25,1.92,4.97,0.28,2
-170379,"Broccoli, raw",Brokkoli,34,2.82,6.64,0.37,2.6
-170383,"Brussels sprouts, raw",Kelbimbó,43,3.38,8.95,0.3,3.8
-168424,"Kohlrabi, raw",Karalábé,27,1.7,6.2,0.1,3.6
-168421,"Kale, raw",Fodros kel,35,2.92,4.42,1.49,4.1
-168462,"Spinach, raw",Spenót,23,2.86,3.63,0.39,2.2
-169248,"Lettuce, iceberg (includes crisphead types), raw",Jégsaláta,14,0.9,2.97,0.14,1.2
-169247,"Lettuce, cos or romaine, raw",Római saláta,17,1.23,3.29,0.3,2.1
-169249,"Lettuce, green leaf, raw",Fejes saláta,15,1.36,2.87,0.15,1.3
-169387,"Arugula, raw",Rukkola,25,2.58,3.65,0.66,1.6
-169276,"Radishes, raw",Retek,16,0.68,3.4,0.1,1.6
-169145,"Beets, raw",Cékla,43,1.61,9.56,0.17,2.8
-170465,"Turnips, raw",Tarlórépa,28,0.9,6.43,0.1,1.8
-168389,"Asparagus, raw",Spárga,20,2.2,3.88,0.12,2.1
-169961,"Beans, snap, green, raw",Zöldbab,31,1.83,6.97,0.22,2.7
-170419,"Peas, green, raw",Zöldborsó,81,5.42,14.45,0.4,5.7
-170016,"Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)",Zöldborsó (fagyasztott),77,5.22,13.62,0.4,4.5
-169998,"Corn, sweet, yellow, raw",Csemegekukorica,86,3.27,18.7,1.35,2
-169214,"Corn, sweet, yellow, canned, whole kernel, drained solids",Csemegekukorica (konzerv),67,2.29,14.34,1.22,2
-169251,"Mushrooms, white, raw",Csiperkegomba,22,3.09,3.26,0.34,1
-168580,"Mushrooms, oyster, raw",Laskagomba,33,3.31,6.09,0.41,2.3
-169242,"Mushrooms, shiitake, raw",Shiitake gomba,34,2.24,6.79,0.49,2.5
-169255,"Mushrooms, portabella, raw",Portobello gomba,22,2.11,3.87,0.35,1.3
-169385,"Fennel, bulb, raw",Édeskömény,31,1.24,7.3,0.2,3.1
-169231,"Ginger root, raw",Gyömbér (friss),80,1.82,17.77,0.75,2
-173472,"Horseradish, prepared",Torma,48,1.18,11.29,0.69,3.3
-170471,"Vegetables, mixed, frozen, unprepared",Vegyes zöldség (fagyasztott),72,3.33,13.47,0.52,4
-168410,"Edamame, frozen, unprepared",Edamame,109,11.22,7.61,4.73,4.8
-170567,"Nuts, almonds",Mandula,579,21.15,21.55,49.93,12.5
-170187,"Nuts, walnuts, english",Dió,654,15.23,13.71,65.21,6.7
-170581,"Nuts, hazelnuts or filberts",Mogyoró,628,14.95,16.7,60.75,9.7
-170162,"Nuts, cashew nuts, raw",Kesudió,553,18.22,30.19,43.85,3.3
-170184,"Nuts, pistachio nuts, raw",Pisztácia,560,20.16,27.17,45.32,10.6
-170182,"Nuts, pecans",Pekándió,691,9.17,13.86,71.97,9.6
-170569,"Nuts, brazilnuts, dried, unblanched",Brazil dió,659,14.32,11.74,67.1,7.5
-170178,"Nuts, macadamia nuts, raw",Makadámdió,718,7.91,13.82,75.77,8.6
-170591,"Nuts, pine nuts, dried",Fenyőmag,673,13.69,13.08,68.37,3.7
-170190,"Nuts, chestnuts, european, roasted",Sült gesztenye,245,3.17,52.96,2.2,5.1
-170170,"Nuts, coconut meat, dried (desiccated), not sweetened",Kókuszreszelék,660,6.88,23.65,64.53,16.3
-170173,"Nuts, coconut milk, canned (liquid expressed from grated meat and water)",Kókusztej,197,2.02,2.81,21.33,0
-168588,"Nuts, almond butter, plain, without salt added",Mandulavaj,614,20.96,18.82,55.5,10.3
-170562,"Seeds, sunflower seed kernels, dried",Napraforgómag,584,20.78,20,51.46,8.6
-170556,"Seeds, pumpkin and squash seed kernels, dried",Tökmag,559,30.23,10.71,49.05,6
-170150,"Seeds, sesame seeds, whole, dried",Szezámmag,573,17.73,23.45,49.67,11.8
-169414,"Seeds, flaxseed",Lenmag,534,18.29,28.88,42.16,27.3
-170554,"Seeds, chia seeds, dried",Chia mag,486,16.54,42.12,30.74,34.4
-170148,"Seeds, hemp seed, hulled",Kendermag,553,31.56,8.67,48.75,4
-170189,"Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)",Tahini,595,17,21.19,53.76,9.3
-172430,"Peanuts, all types, raw",Földimogyoró,567,25.8,16.13,49.24,8.5
-172470,"Peanut butter, smooth style, without salt",Mogyoróvaj,598,22.21,22.31,51.36,5
-174036,"Beef, ground, 80% lean meat / 20% fat, raw",Darált marhahús (20% zsír),254,17.17,0,20,0
-174030,"Beef, ground, 90% lean meat / 10% fat, raw",Darált marhahús (10% zsír),176,20,0,10,0
-171812,"Beef, tenderloin, steak, separable lean only, trimmed to 1/8"" fat, all grades, raw",Bélszín,153,22.12,0,6.52,0
-174051,"Beef, chuck, arm pot roast, separable lean only, trimmed to 1/8"" fat, all grades, raw",Marhalapocka,132,22.11,0,4.19,0
-169529,"Beef, round, top round, steak, separable lean and fat, trimmed to 1/8"" fat, all grades, raw",Marhafelsál,166,22.06,0,7.93,0
-169437,"Beef, rib, eye, small end (ribs 10-12), separable lean only, trimmed to 0"" fat, choice, raw",Rostélyos,161,20.13,0,8.3,0
-168607,"Beef, brisket, whole, separable lean only, all grades, raw",Marhaszegy,157,20.72,0.6,7.37,0
-169441,"Beef, shank crosscuts, separable lean only, trimmed to 1/4"" fat, choice, raw",Marhalábszár,128,21.75,0,3.85,0
-169451,"Beef, variety meats and by-products, liver, raw",Marhamáj,135,20.36,3.89,3.63,0
-175290,"Veal, ground, raw",Darált borjúhús,197,18.58,0,13.06,0
-175269,"Veal, leg (top round), separable lean only, raw",Borjúcomb,107,21.28,0,1.76,0
-174370,"Lamb, ground, raw",Darált bárányhús,282,16.56,0,23.41,0
-172486,"Lamb, leg, shank half, separable lean only, trimmed to 1/4"" fat, choice, raw",Báránycomb,125,20.52,0,4.19,0
-172521,"Game meat, rabbit, domesticated, composite of cuts, raw",Nyúlhús,136,20.05,0,5.55,0
-173855,"Game meat, deer, raw",Szarvashús,120,22.96,0,2.42,0
-175297,"Game meat, boar, wild, raw",Vaddisznóhús,122,21.51,0,3.33,0
-173647,"Beverages, water, tap, drinking",Víz,0,0,0,0,0
-171890,"Beverages, coffee, brewed, prepared with tap water",Kávé,1,0.12,0,0.02,0
-173227,"Beverages, tea, black, brewed, prepared with tap water",Fekete tea,1,0,0.3,0,0
-174832,"Beverages, almond milk, unsweetened, shelf stable",Mandulaital,15,0.4,1.31,0.96,0.2
-171942,"Beverages, rice milk, unsweetened",Rizsital,47,0.28,9.17,0.97,0.3
-175215,"Soymilk (all flavors), unsweetened, with added calcium, vitamins A and D",Szójaital,33,2.86,1.74,1.61,0.5
-173190,"Alcoholic beverage, wine, table, red",Vörösbor,85,0.07,2.61,0,0
-174837,"Alcoholic beverage, wine, table, white",Fehérbor,82,0.07,2.6,0,0
-168746,"Alcoholic beverage, beer, regular, all",Sör,43,0.46,3.55,0,0
-175167,"Fish, salmon, Atlantic, farmed, raw",Lazac,208,20.42,0,13.42,0
-173687,"Fish, salmon, chinook, smoked",Füstölt lazac,117,18.28,0,4.32,0
-173709,"Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",Tonhalkonzerv (vízben),86,19.44,0,0.96,0
-175159,"Fish, tuna, fresh, yellowfin, raw",Tonhal,109,24.4,0,0.49,0
-171955,"Fish, cod, Atlantic, raw",Tőkehal,82,17.81,0,0.67,0
-173725,"Fish, pollock, Alaska, raw",Alaszkai tőkehal,76,17.17,0,0.82,0
-171952,"Fish, carp, raw",Ponty,127,17.83,0,5.6,0
-175165,"Fish, catfish, channel, farmed, raw",Harcsa,119,15.23,0,5.94,0
-173680,"Fish, pike, northern, raw",Csuka,88,19.26,0,0.69,0
-173717,"Fish, trout, rainbow, farmed, raw",Szivárványos pisztráng,141,19.94,0,6.18,0
-175176,"Fish, tilapia, raw",Tilápia,96,20.08,0,1.7,0
-175119,"Fish, mackerel, Atlantic, raw",Makréla,205,18.6,0,13.89,0
-175139,"Fish, sardine, Atlantic, canned in oil, drained solids with bone",Szardínia (olajos),208,24.62,0,11.45,0
-175118,"Fish, herring, Atlantic, pickled",Ecetes hering,262,14.19,9.64,18,0
-174183,"Fish, anchovy, european, canned in oil, drained solids",Szardella,210,28.89,0,9.71,0
-175179,"Crustaceans, shrimp, raw",Garnélarák,85,20.1,0,0.51,0
-174216,"Mollusks, mussel, blue, raw",Kékkagyló,86,11.9,3.69,2.24,0
-174223,"Mollusks, squid, mixed species, raw",Tintahal,92,15.58,3.08,1.38,0
-173744,"Beans, kidney, red, mature seeds, raw",Vörösbab (száraz),337,22.53,61.29,1.06,15.2
-174285,"Beans, kidney, red, mature seeds, canned, drained solids",Vörösbab (konzerv),124,7.98,21.49,1.05,5.5
-173734,"Beans, black, mature seeds, raw",Fekete bab,341,21.6,62.36,1.42,15.5
-175202,"Beans, white, mature seeds, raw",Fehér bab (száraz),333,23.36,60.27,0.85,15.2
-175199,"Beans, pinto, mature seeds, raw (Includes foods for USDA's Food Distribution Program)",Tarkabab,347,21.42,62.55,1.23,15.5
-175182,"Beans, baked, canned, plain or vegetarian",Sült bab (konzerv),94,4.75,21.14,0.37,4.1
-173756,"Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",Csicseriborsó (száraz),378,20.47,62.95,6.04,12.2
-173801,"Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained, rinsed in tap water",Csicseriborsó (konzerv),138,7.04,22.87,2.47,6.3
-172420,"Lentils, raw",Lencse,352,24.63,63.35,1.06,10.7
-174284,"Lentils, pink or red, raw",Vöröslencse,358,23.91,63.1,2.17,10.8
-172428,"Peas, green, split, mature seeds, raw",Sárgaborsó (feles),364,23.12,61.63,3.89,22.2
-174270,"Soybeans, mature seeds, raw",Szójabab,446,36.49,30.16,19.94,9.3
-172475,"Tofu, raw, firm, prepared with calcium sulfate",Tofu,144,17.27,2.78,8.72,2.3
-174289,"Hummus, commercial",Hummusz,237,7.78,15,17.82,5.5
-172442,Miso,Miso,198,12.79,25.37,6.01,5.4
-174272,Tempeh,Tempeh,192,20.29,7.64,10.8,0
-174924,"Bread, white, commercially prepared (includes soft bread crumbs)",Fehér kenyér,266,8.85,49.42,3.33,2.7
-172688,"Bread, whole-wheat, commercially prepared",Teljes kiőrlésű kenyér,252,12.45,42.71,3.5,6
-172684,"Bread, rye",Rozskenyér,259,8.5,48.3,3.3,5.8
-168013,"Bread, multi-grain (includes whole-grain)",Magvas kenyér,265,13.36,43.34,4.23,7.4
-172675,"Bread, french or vienna (includes sourdough)",Bagett,272,10.75,51.88,2.42,2.2
-175031,"Rolls, hard (includes kaiser)",Zsemle,293,9.9,52.7,4.3,2.3
-172796,"Rolls, hamburger or hotdog, plain",Hamburgerzsemle,279,9.77,50.12,3.91,1.8
-174928,"Bread, crumbs, dry, grated, plain",Zsemlemorzsa,395,13.35,71.98,5.3,4.5
-174915,"Bread, pita, white, enriched",Pita,275,9.1,55.7,1.2,2.2
-175037,"Tortillas, ready-to-bake or -fry, flour, refrigerated",Tortilla (búza),306,8.2,49.38,7.99,3.5
-174987,"Croissants, butter",Croissant,406,8.2,45.8,21,2.6
-172790,"Puff pastry, frozen, ready-to-bake",Leveles tészta,551,7.3,45.1,38.1,1.5
-172791,Phyllo dough,Réteslap,299,7.1,52.6,6,1.9
-172739,"Crackers, crispbread, rye",Rozs ropogós kenyér,366,7.9,82.2,1.3,16.5
-174950,"Cookies, butter, commercially prepared, enriched",Vajas keksz,467,6.1,68.9,18.8,0.8
-172803,"Leavening agents, baking powder, double-acting, sodium aluminum sulfate",Sütőpor,53,0,27.7,0,0.2
-175040,"Leavening agents, baking soda",Szódabikarbóna,0,0,0,0,0
-175043,"Leavening agents, yeast, baker's, active dry",Szárított élesztő,325,40.44,41.22,7.61,26.9
-175042,"Leavening agents, yeast, baker's, compressed",Friss élesztő,105,8.4,18.1,1.9,8.1
-169655,"Sugars, granulated",Kristálycukor,387,0,99.98,0,0
-168833,"Sugars, brown",Barna cukor,380,0.12,98.09,0,0
-169656,"Sugars, powdered",Porcukor,389,0,99.77,0,0
-169640,Honey,Méz,304,0.3,82.4,0,0.2
-169661,"Syrups, maple",Juharszirup,260,0.04,67.04,0.06,0
-170273,"Chocolate, dark, 70-85% cacao solids",Étcsokoládé (70–85%),598,7.79,45.9,42.63,10.9
-167587,"Candies, milk chocolate",Tejcsokoládé,535,7.65,59.4,29.66,3.4
-169593,"Cocoa, dry powder, unsweetened",Kakaópor,228,19.6,57.9,13.7,37
-169641,Jams and preserves,Lekvár,278,0.37,68.86,0.07,1.1
-167575,"Ice creams, vanilla",Vaníliafagylalt,207,3.5,23.6,11,0.7
-168894,"Wheat flour, white, all-purpose, enriched, bleached",Búzaliszt (finomliszt),364,10.33,76.31,0.98,2.7
-168896,"Wheat flour, white, bread, enriched",Kenyérliszt,361,11.98,72.53,1.66,2.4
-168893,"Wheat flour, whole-grain (Includes foods for USDA's Food Distribution Program)",Teljes kiőrlésű búzaliszt,340,13.21,71.97,2.5,10.7
-168886,"Rye flour, medium",Rozsliszt,349,10.88,75.43,1.52,11.8
-168877,"Rice, white, long-grain, regular, raw, enriched",Fehér rizs,365,7.13,79.95,0.66,1.3
-168878,"Rice, white, long-grain, regular, enriched, cooked",Főtt fehér rizs,130,2.69,28.17,0.28,0.4
-169703,"Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)",Barna rizs,367,7.54,76.25,3.2,3.6
-168931,"Rice, white, short-grain, raw, unenriched",Rövid szemű rizs,358,6.5,79.15,0.52,0
-169736,"Pasta, dry, enriched",Száraz tészta,371,13.04,74.67,1.51,3.2
-169737,"Pasta, cooked, enriched, without added salt",Főtt tészta,158,5.8,30.86,0.93,1.8
-169738,"Pasta, whole-wheat, dry (Includes foods for USDA's Food Distribution Program)",Teljes kiőrlésű tészta,352,13.87,73.37,2.93,9.2
-169731,"Noodles, egg, dry, enriched",Tojásos tészta,384,14.16,71.27,4.44,3.3
-168919,"Noodles, egg, cooked, enriched, with added salt",Főtt tojásos tészta,138,4.54,25.16,2.07,1.2
-169727,"Pasta, fresh-refrigerated, plain, as purchased",Friss tészta,288,11.31,54.73,2.3,0
-169742,"Rice noodles, dry",Rizstészta,364,5.95,80.18,0.56,1.6
-168906,"Noodles, japanese, soba, dry",Soba tészta,336,14.38,74.62,0.71,0
-169699,"Couscous, dry",Kuszkusz,376,12.76,77.43,0.64,5
-168874,"Quinoa, uncooked",Quinoa,368,14.12,64.16,6.07,7
-170688,"Bulgur, dry",Bulgur,342,12.29,75.87,1.33,12.5
-170284,"Barley, pearled, raw",Gyöngyárpa,352,9.91,77.72,1.16,15.6
-169702,"Millet, raw",Köles,378,11.02,72.85,4.22,8.5
-170685,"Buckwheat groats, roasted, dry",Hajdina,346,11.73,74.95,2.71,10.3
-169697,"Cornmeal, whole-grain, yellow",Kukoricadara,362,8.12,76.89,3.59,7.3
-169698,Cornstarch,Kukoricakeményítő,381,0.26,91.27,0.05,0.9
-168872,"Oat bran, raw",Zabkorpa,246,17.3,66.22,7.03,15.4
-169722,"Wheat bran, crude",Búzakorpa,216,15.55,64.51,4.25,42.8
-169715,"Semolina, enriched",Durumbúzadara,360,12.68,72.83,1.05,3.9
-167959,"Snacks, popcorn, air-popped",Pattogatott kukorica,387,12.94,77.78,4.54,14.5
-169677,"Snacks, potato chips, plain, salted",Burgonyachips,532,6.39,53.83,33.98,3.1
-167555,"Snacks, pretzels, hard, plain, salted",Perec,384,10.04,80.39,2.93,3.4
-170250,"Snacks, rice cakes, brown rice, plain, unsalted",Puffasztott rizs szelet,387,8.2,81.5,2.8,4.2
+source_id,name,hungarian_name,energy_kcal,protein_g,carbohydrate_g,fat_g,fiber_g,density_g_per_ml,piece_weight_g
+171287,"Egg, whole, raw, fresh",Tojás,143,12.56,0.72,9.51,0,1.027,50
+173424,"Egg, whole, cooked, hard-boiled",Főtt tojás,155,12.58,1.12,10.61,0,0.575,50
+172183,"Egg, white, raw, fresh",Tojásfehérje,52,10.9,0.73,0.17,0,1.027,33
+172184,"Egg, yolk, raw, fresh",Tojássárgája,322,15.86,3.59,26.54,0,1.027,17
+171265,"Milk, whole, 3.25% milkfat, with added vitamin D","Teljes tej (3,5%)",61,3.15,4.8,3.25,0,1.014,
+171267,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",Félzsíros tej (2%),50,3.3,4.8,1.98,0,1.031,
+170872,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",Zsírszegény tej (1%),42,3.37,4.99,0.97,0,1.031,
+171269,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",Sovány tej,34,3.37,4.96,0.08,0,1.036,
+170874,"Milk, buttermilk, fluid, cultured, lowfat",Író,40,3.31,4.79,1.07,0,1.036,
+171275,"Milk, canned, condensed, sweetened",Sűrített tej (cukrozott),321,7.91,54.4,8.7,0,1.293,
+170859,"Cream, fluid, heavy whipping",Habtejszín,340,2.84,2.84,36.08,0,1.014,
+170857,"Cream, fluid, light (coffee cream or table cream)",Főzőtejszín,195,2.96,3.66,19.1,0,1.014,
+171257,"Cream, sour, cultured",Tejföl,198,2.44,4.63,19.35,0,0.812,
+171284,"Yogurt, plain, whole milk",Natúr joghurt,61,3.47,4.66,3.25,0,1.036,
+171304,"Yogurt, Greek, plain, whole milk",Görög joghurt,97,9,3.98,5,0,,
+170894,"Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)",Zsírszegény görög joghurt,59,10.19,3.6,0.39,0,,
+170904,"Kefir, lowfat, plain, LIFEWAY",Kefir,43,3.79,4.77,1.02,0,1.027,
+172179,"Cheese, cottage, creamed, large or small curd",Cottage cheese,98,11.12,3.38,4.3,0,0.888,
+172181,"Cheese, cottage, nonfat, uncreamed, dry, large or small curd",Sovány túró,72,10.34,6.66,0.29,0,0.613,
+172182,"Cheese, cottage, lowfat, 2% milkfat",Félzsíros túró,81,10.45,4.76,2.27,0,0.955,
+170851,"Cheese, ricotta, whole milk",Ricotta,150,7.54,7.27,10.18,0,1.048,
+170845,"Cheese, mozzarella, whole milk",Mozzarella,299,22.17,2.4,22.14,0,0.473,
+170847,"Cheese, mozzarella, part skim milk",Light mozzarella,254,24.26,2.77,15.92,0,,
+173414,"Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",Cheddar sajt,403,22.87,3.37,33.31,0,0.558,
+171247,"Cheese, parmesan, grated",Parmezán (reszelt),420,28.42,13.91,27.84,0,0.338,
+170848,"Cheese, parmesan, hard",Parmezán,392,35.75,3.22,25,0,,
+173420,"Cheese, feta",Feta sajt,265,14.21,3.88,21.49,0,0.634,
+171241,"Cheese, gouda",Gouda sajt,356,24.94,2.22,27.44,0,,
+173419,"Cheese, edam",Edami sajt,357,24.99,1.43,28.57,0,,
+171251,"Cheese, swiss",Ementáli sajt,393,26.96,1.44,30.99,0,0.558,
+173418,"Cheese, cream",Krémsajt,350,6.15,5.52,34.44,0,0.981,
+172177,"Cheese, brie",Brie,334,20.75,0.45,27.68,0,0.609,
+172178,"Cheese, camembert",Camembert,300,19.8,0.46,24.26,0,1.040,
+172175,"Cheese, blue",Kéksajt,353,21.4,2.34,28.74,0,0.571,
+170850,"Cheese, provolone",Provolone,351,25.58,2.14,26.62,0,0.558,
+173430,"Butter, without salt",Vaj,717,0.85,0.06,81.11,0,0.960,
+173410,"Butter, salted",Sózott vaj,717,0.85,0.06,81.11,0,0.960,
+173468,"Salt, table",Só,0,0,0,0,0,1.217,
+170931,"Spices, pepper, black",Fekete bors,251,10.39,63.95,3.26,25.3,0.467,
+171329,"Spices, paprika",Fűszerpaprika (őrölt),282,14.14,53.99,12.89,34.9,0.460,
+170932,"Spices, pepper, red or cayenne",Cayenne-bors,318,12.01,56.63,17.27,27.2,0.358,
+170923,"Spices, cumin seed",Római kömény,375,17.81,44.24,22.27,10.5,0.406,
+170918,"Spices, caraway seed",Kömény,333,19.77,49.9,14.59,38,0.453,
+171320,"Spices, cinnamon, ground",Fahéj,247,3.99,80.59,1.24,53.1,0.527,
+171325,"Spices, garlic powder",Fokhagymapor,331,16.55,72.73,0.73,9,0.656,
+171327,"Spices, onion powder",Hagymapor,341,10.41,79.12,1.04,15.2,0.467,
+171328,"Spices, oregano, dried",Oregánó,265,9,68.92,4.28,42.5,0.203,
+171317,"Spices, basil, dried",Bazsalikom (szárított),233,22.98,47.75,4.07,37.7,0.142,
+170938,"Spices, thyme, dried",Kakukkfű,276,9.11,63.94,7.43,37,0.183,
+170928,"Spices, marjoram, dried",Majoránna,271,12.66,60.56,7.04,40.3,0.115,
+171333,"Spices, rosemary, dried",Rozmaring,331,4.88,64.06,15.22,42.6,0.223,
+170917,"Spices, bay leaf",Babérlevél,313,7.61,74.97,8.36,26.3,0.122,
+171326,"Spices, nutmeg, ground",Szerecsendió,525,5.84,49.29,36.31,20.8,0.473,
+170926,"Spices, ginger, ground",Gyömbér (őrölt),335,8.98,71.62,4.24,14.1,0.352,
+172231,"Spices, turmeric, ground",Kurkuma,312,9.68,67.14,3.25,22.7,0.636,
+170924,"Spices, curry powder",Curry por,325,14.29,55.83,14.01,53.2,0.426,
+171319,"Spices, chili powder",Chili por,282,13.46,49.7,14.28,34.8,0.541,
+171321,"Spices, cloves, ground",Szegfűszeg,274,5.97,65.53,13,33.9,0.440,
+171322,"Spices, dill weed, dried",Kapor (szárított),253,19.96,55.82,4.36,13.6,0.210,
+171330,"Spices, poppy seed",Mák,525,17.99,28.13,41.56,19.5,0.595,
+172232,"Basil, fresh",Bazsalikom (friss),23,3.15,2.65,0.64,1.6,0.179,
+170416,"Parsley, fresh",Petrezselyemzöld,36,2.97,6.33,0.79,3.3,0.257,
+172233,"Dill weed, fresh",Kapor (friss),43,3.46,7.02,1.12,2.1,0.038,
+173475,"Spearmint, fresh",Menta,44,3.29,8.41,0.73,6.8,0.385,
+169997,"Coriander (cilantro) leaves, raw",Koriander (friss),23,2.13,3.67,0.52,2.8,0.068,
+169994,"Chives, raw",Metélőhagyma,30,3.27,4.35,0.73,2.5,0.203,
+173471,Vanilla extract,Vaníliakivonat,288,0.06,12.65,0.06,0,0.879,
+172234,"Mustard, prepared, yellow",Mustár,60,3.74,5.83,3.34,4,1.052,
+172237,"Vinegar, distilled",Ecet,18,0,0.04,0,0,1.008,
+172241,"Vinegar, balsamic",Balzsamecet,88,0.49,17.03,0,0,1.082,
+173469,"Vinegar, cider",Almaecet,21,0,0.93,0,0,1.008,
+171413,"Oil, olive, salad or cooking",Olívaolaj,884,0,0,100,0,0.913,
+171017,"Oil, sunflower, linoleic (less than 60%)",Napraforgóolaj,884,0,0,100,0,0.920,
+172336,"Oil, canola",Repceolaj,884,0,0,100,0,0.947,
+171412,"Oil, coconut",Kókuszolaj,892,0,0,99.06,0,0.920,
+171016,"Oil, sesame, salad or cooking",Szezámolaj,884,0,0,100,0,0.920,
+171401,Lard,Disznózsír,902,0,0,100,0,0.866,
+173572,"Fat, goose",Libazsír,900,0,0,99.8,0,0.866,
+172346,"Margarine, regular, 80% fat, composite, stick, with salt",Margarin,717,0.16,0.7,80.71,0,0.947,
+171009,"Salad dressing, mayonnaise, regular",Majonéz,680,0.96,0.57,74.85,0,0.933,
+171077,"Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",Csirkemell (nyers),120,22.5,0,2.62,0,,272
+171477,"Chicken, broilers or fryers, breast, meat only, cooked, roasted",Csirkemell (sült),165,31.02,0,3.57,0,0.592,
+173627,"Chicken, broilers or fryers, dark meat, thigh, meat only, raw",Csirkecombfilé,121,19.66,0,4.12,0,,
+172373,"Chicken, broilers or fryers, drumstick, meat and skin, raw",Csirke alsócomb (bőrrel),161,18.08,0.11,9.2,0,,
+172378,"Chicken, broilers or fryers, leg, meat and skin, raw",Csirkecomb (bőrrel),214,16.37,0.17,15.95,0,,
+172390,"Chicken, broilers or fryers, wing, meat and skin, raw",Csirkeszárny,191,17.52,0,12.85,0,,107
+171447,"Chicken, broilers or fryers, meat and skin, raw",Egész csirke,215,18.6,0,15.06,0,,
+171116,"Chicken, ground, raw",Darált csirkehús,143,17.44,0.04,8.1,0,,
+171060,"Chicken, liver, all classes, raw",Csirkemáj,119,16.92,0.73,4.83,0,,
+171456,"Chicken, gizzard, all classes, raw",Csirkezúza,94,17.66,0,2.06,0,,
+171505,"Turkey, Ground, raw",Darált pulykahús,148,19.66,0,7.66,0,,
+171098,"Turkey, whole, breast, meat only, raw",Pulykamell,114,23.66,0.14,1.48,0,,
+172410,"Duck, domesticated, meat only, raw",Kacsahús,135,18.28,0.94,5.95,0,,
+172413,"Goose, domesticated, meat only, raw",Libahús,161,22.75,0,7.13,0,,
+172884,"Soup, stock, chicken, home-prepared",Csirkealaplé,36,2.52,3.53,1.2,0,1.014,
+172883,"Soup, stock, beef, home-prepared",Marhaalaplé,13,1.97,1.2,0.09,0,1.014,
+171192,"Sauce, pasta, spaghetti/marinara, ready-to-serve",Paradicsomos tésztaszósz,50,1.39,7.43,1.61,1.8,,
+171610,"Sauce, worcestershire",Worcester-szósz,77,0,19.17,0,0,1.150,
+171186,"Sauce, hot chile, sriracha",Sriracha,93,1.93,19.16,0.93,2.2,1.319,
+174523,"Sauce, barbecue",BBQ-szósz,172,0.82,40.77,0.63,0.9,1.150,
+174531,"Sauce, fish, ready-to-serve",Halszósz,35,5.06,3.64,0.01,0,1.217,
+174524,"Sauce, salsa, ready-to-serve",Salsa,29,1.52,6.64,0.17,1.9,1.217,
+174277,Soy sauce made from soy and wheat (shoyu),Szójaszósz,53,8.14,4.93,0.57,0.8,1.082,
+168556,Catsup,Ketchup,101,1.04,27.4,0.1,0.3,1.150,
+173864,"Ham, sliced, regular (approximately 11% fat)",Sonka (szeletelt),164,16.6,3.63,8.8,1.3,,
+172938,"Salami, dry or hard, pork",Szalámi,407,22.58,1.6,33.72,0,,
+173862,"Frankfurter, beef, unheated",Virsli,315,11.69,2.97,28.1,0,,49
+171631,"Sausage, Italian, pork, mild, raw",Olasz kolbász (nyers),290,13.9,2.97,24.26,0,,101
+173859,"Sausage, pork, chorizo, link or ground, raw",Chorizo,296,13.63,3.78,25.1,0,,
+174575,"Pepperoni, beef and pork, sliced",Pepperoni,504,19.25,1.18,46.28,0,,2
+173904,"Cereals, oats, regular and quick, not fortified, dry",Zabpehely,379,13.15,67.7,6.52,10.1,0.342,
+171646,"Cereals ready-to-eat, granola, homemade",Granola,489,13.67,53.88,24.31,8.9,0.516,
+173916,"Cereals, farina, unenriched, dry",Búzadara,369,10.6,78,0.5,1.9,0.737,
+171688,"Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)",Alma,52,0.26,13.81,0.17,2.4,0.528,182
+173944,"Bananas, raw",Banán,89,1.09,22.84,0.33,2.6,0.951,118
+169097,"Oranges, raw, all commercial varieties",Narancs,47,0.94,11.75,0.12,2.4,0.761,184
+167746,"Lemons, raw, without peel",Citrom,29,1.1,9.32,0.3,2.8,0.896,58
+167747,"Lemon juice, raw",Citromlé,22,0.35,6.9,0.24,0.3,1.031,
+168155,"Limes, raw",Lime,30,0.7,10.54,0.2,2.8,,67
+168156,"Lime juice, raw",Limelé,25,0.42,8.42,0.07,0.4,1.023,
+174673,"Grapefruit, raw, pink and red, all areas",Grapefruit,42,0.77,10.66,0.14,1.6,0.972,246
+169105,"Tangerines, (mandarin oranges), raw",Mandarin,53,0.81,13.34,0.31,1.8,0.824,88
+169118,"Pears, raw",Körte,57,0.36,15.23,0.14,3.1,0.592,178
+169928,"Peaches, yellow, raw",Őszibarack,39,0.91,9.54,0.25,1.5,0.651,150
+169914,"Nectarines, raw",Nektarin,44,1.06,10.55,0.32,1.7,0.604,142
+171697,"Apricots, raw",Kajszibarack,48,1.4,11.12,0.39,2,0.655,
+169949,"Plums, raw",Szilva,46,0.7,11.42,0.28,1.4,0.697,66
+171719,"Cherries, sweet, raw",Cseresznye,63,1.06,16.01,0.2,2.1,0.583,
+173954,"Cherries, sour, red, raw",Meggy,50,1,12.18,0.3,1.6,0.655,
+167762,"Strawberries, raw",Eper,32,0.67,7.68,0.3,2,0.642,12
+167755,"Raspberries, raw",Málna,52,1.2,11.94,0.65,6.5,0.520,
+171711,"Blueberries, raw",Kék áfonya,57,0.74,14.49,0.33,2.4,0.626,
+173946,"Blackberries, raw",Szeder,43,1.39,9.61,0.49,5.3,0.609,
+173964,"Currants, red and white, raw",Ribizli,56,1.4,13.8,0.2,4.3,0.473,
+173030,"Gooseberries, raw",Egres,44,0.88,10.18,0.58,4.3,0.634,
+171727,"Elderberries, raw",Bodza,73,0.66,18.4,0.5,7,0.613,
+174683,"Grapes, red or green (European type, such as Thompson seedless), raw",Szőlő,69,0.72,18.1,0.16,0.9,0.638,
+167765,"Watermelon, raw",Görögdinnye,30,0.61,7.55,0.15,0.4,0.651,
+169092,"Melons, cantaloupe, raw",Sárgadinnye,34,0.84,8.16,0.19,0.9,0.748,552
+169124,"Pineapple, raw, all varieties",Ananász,50,0.54,13.12,0.12,1.4,0.697,905
+169910,"Mangos, raw",Mangó,60,0.82,14.98,0.38,1.6,0.697,336
+168153,"Kiwifruit, green, raw",Kivi,61,1.14,14.66,0.52,3,0.761,69
+171705,"Avocados, raw, all commercial varieties",Avokádó,160,2,8.53,14.66,6.7,0.634,201
+169134,"Pomegranates, raw",Gránátalma,83,1.67,18.7,1.17,4,0.735,
+173021,"Figs, raw",Füge,74,0.75,19.18,0.3,2.9,,50
+174665,"Figs, dried, uncooked",Szárított füge,249,3.3,63.87,0.93,9.8,0.630,
+169941,"Persimmons, japanese, raw",Kaki,70,0.58,18.59,0.19,3.6,,168
+168163,"Quinces, raw",Birsalma,57,0.4,15.3,0.1,1.9,,92
+167758,"Rhubarb, raw",Rebarbara,21,0.9,4.54,0.2,1.8,0.516,
+168165,"Raisins, dark, seedless (Includes foods for USDA's Food Distribution Program)",Mazsola,299,3.3,79.32,0.25,4.5,0.697,
+168191,"Dates, medjool",Datolya,277,1.81,74.97,0.15,6.7,,
+168162,"Plums, dried (prunes), uncooked",Aszalt szilva,240,2.18,63.88,0.38,7.1,0.735,
+173941,"Apricots, dried, sulfured, uncooked",Aszalt sárgabarack,241,3.39,62.64,0.51,7.3,0.549,
+171723,"Cranberries, dried, sweetened (Includes foods for USDA's Food Distribution Program)",Szárított vörösáfonya,308,0.17,82.8,1.09,5.3,0.676,
+169098,"Orange juice, raw (Includes foods for USDA's Food Distribution Program)",Narancslé,45,0.7,10.4,0.2,0.2,1.048,
+173933,"Apple juice, canned or bottled, unsweetened, without added ascorbic acid",Almalé,46,0.1,11.3,0.13,0.2,1.048,
+171695,"Applesauce, canned, unsweetened, without added ascorbic acid (Includes foods for USDA's Food Distribution Program)",Almapüré,42,0.17,11.27,0.1,1.1,1.031,
+169112,"Peaches, canned, heavy syrup pack, solids and liquids",Őszibarack befőtt,74,0.45,19.94,0.1,1.3,1.107,
+169094,"Olives, ripe, canned (small-extra large)",Fekete olívabogyó,116,0.84,6.04,10.9,1.6,0.568,4.4
+169096,"Olives, pickled, canned or bottled, green",Zöld olívabogyó,145,1.03,3.84,15.32,3.3,,
+168249,"Pork, fresh, loin, tenderloin, separable lean only, raw",Sertésszűz,109,20.95,0,2.17,0,,
+168238,"Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw",Sertéskaraj,170,20.71,0,9.03,0,,
+167849,"Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat, raw",Sertéstarja,186,17.42,0,12.36,0,,
+168222,"Pork, fresh, leg (ham), whole, separable lean and fat, raw",Sertéscomb,245,17.43,0,18.87,0,,
+167902,"Pork, fresh, ground, raw",Darált sertéshús,263,16.88,0,21.19,0,,
+167812,"Pork, fresh, belly, raw",Sertéshasaalja,518,9.34,0,53.01,0,,
+167853,"Pork, fresh, spareribs, separable lean and fat, raw",Sertésoldalas,277,15.47,0,23.4,0,,
+167862,"Pork, fresh, variety meats and by-products, liver, raw",Sertésmáj,134,21.39,2.47,3.65,0,,
+167811,"Pork, fresh, backfat, raw",Sertés hátszalonna,812,2.92,0,88.69,0,,
+168277,"Pork, cured, bacon, unprepared",Bacon,393,13.66,0,37.13,0,,
+170026,"Potatoes, flesh and skin, raw",Burgonya,77,2.05,17.49,0.09,2.1,0.634,213
+170440,"Potatoes, boiled, cooked without skin, flesh, without salt",Főtt burgonya,86,1.71,20.01,0.1,1.8,0.659,167
+170523,"Potatoes, french fried, all types, salt not added in processing, frozen, as purchased",Hasábburgonya (fagyasztott),147,2.24,24.81,4.66,1.9,,
+168482,"Sweet potato, raw, unprepared (Includes foods for USDA's Food Distribution Program)",Édesburgonya,86,1.57,20.12,0.05,3,0.562,130
+170393,"Carrots, raw",Sárgarépa,41,0.93,9.58,0.24,2.8,0.541,61
+170417,"Parsnips, raw",Paszternák,75,1.2,17.99,0.3,4.9,0.562,
+170400,"Celeriac, raw",Zellergumó,42,1.5,9.2,0.3,1.8,0.659,
+169988,"Celery, raw",Szárzeller,14,0.69,2.97,0.17,1.6,0.507,40
+170000,"Onions, raw",Vöröshagyma,40,1.1,9.34,0.1,1.7,0.676,110
+170005,"Onions, spring or scallions (includes tops and bulb), raw",Újhagyma,32,1.83,7.34,0.19,2.6,0.406,15
+169230,"Garlic, raw",Fokhagyma,149,6.36,33.06,0.5,2.1,0.568,3
+169246,"Leeks, (bulb and lower leaf-portion), raw",Póréhagyma,61,1.5,14.15,0.3,1.8,0.376,89
+170499,"Shallots, raw",Salotta,72,2.5,16.8,0.1,3.2,0.676,
+170457,"Tomatoes, red, ripe, raw, year round average",Paradicsom,18,0.88,3.89,0.2,1.2,0.630,123
+170051,"Tomatoes, red, ripe, canned, packed in tomato juice",Hámozott paradicsom (konzerv),16,0.79,3.47,0.25,1.9,1.014,111
+170459,"Tomato products, canned, paste, without salt added (Includes foods for USDA's Food Distribution Program)",Sűrített paradicsom,82,4.32,18.91,0.47,4.1,1.082,
+170054,"Tomato products, canned, sauce",Paradicsomszósz (passata),24,1.2,5.31,0.3,1.5,1.036,
+168567,"Tomatoes, sun-dried",Aszalt paradicsom,258,14.11,55.76,2.97,12.3,0.228,2
+170108,"Peppers, sweet, red, raw",Piros kaliforniai paprika,26,0.99,6.03,0.3,2.1,0.629,119
+170427,"Peppers, sweet, green, raw",Zöldpaprika,20,0.86,4.64,0.17,1.7,0.629,119
+169383,"Peppers, sweet, yellow, raw",Sárga kaliforniai paprika,27,1,6.32,0.21,0.9,,186
+170106,"Peppers, hot chili, red, raw",Csilipaprika,40,1.87,8.81,0.44,1.5,0.634,45
+168576,"Peppers, jalapeno, raw",Jalapeño,29,0.91,6.5,0.37,2.8,0.380,
+168409,"Cucumber, with peel, raw",Uborka,15,0.65,3.63,0.11,0.5,0.440,301
+168558,"Pickles, cucumber, dill or kosher dill",Csemegeuborka,12,0.5,2.41,0.3,1,0.604,135
+169291,"Squash, summer, zucchini, includes skin, raw",Cukkini,17,1.21,3.11,0.32,1,0.524,196
+169295,"Squash, winter, butternut, raw",Vajtök,45,1,11.69,0.1,2,0.592,
+168448,"Pumpkin, raw",Sütőtök,26,1,6.5,0.1,0.5,0.490,
+169228,"Eggplant, raw",Padlizsán,25,0.98,5.88,0.18,3,0.347,548
+169975,"Cabbage, raw",Fejes káposzta,25,1.28,5.8,0.1,2.5,0.376,908
+169977,"Cabbage, red, raw",Lilakáposzta,31,1.43,7.37,0.16,2.1,0.376,839
+170388,"Cabbage, savoy, raw",Kelkáposzta,27,2,6.1,0.1,3.1,0.296,
+169279,"Sauerkraut, canned, solids and liquids",Savanyú káposzta,19,0.91,4.28,0.14,2.9,0.600,
+169986,"Cauliflower, raw",Karfiol,25,1.92,4.97,0.28,2,0.452,588
+170379,"Broccoli, raw",Brokkoli,34,2.82,6.64,0.37,2.6,0.385,
+170383,"Brussels sprouts, raw",Kelbimbó,43,3.38,8.95,0.3,3.8,0.372,19
+168424,"Kohlrabi, raw",Karalábé,27,1.7,6.2,0.1,3.6,0.571,
+168421,"Kale, raw",Fodros kel,35,2.92,4.42,1.49,4.1,0.089,
+168462,"Spinach, raw",Spenót,23,2.86,3.63,0.39,2.2,0.127,
+169248,"Lettuce, iceberg (includes crisphead types), raw",Jégsaláta,14,0.9,2.97,0.14,1.2,0.304,539
+169247,"Lettuce, cos or romaine, raw",Római saláta,17,1.23,3.29,0.3,2.1,0.199,626
+169249,"Lettuce, green leaf, raw",Fejes saláta,15,1.36,2.87,0.15,1.3,0.152,360
+169387,"Arugula, raw",Rukkola,25,2.58,3.65,0.66,1.6,0.085,
+169276,"Radishes, raw",Retek,16,0.68,3.4,0.1,1.6,0.490,4.5
+169145,"Beets, raw",Cékla,43,1.61,9.56,0.17,2.8,0.575,82
+170465,"Turnips, raw",Tarlórépa,28,0.9,6.43,0.1,1.8,0.549,122
+168389,"Asparagus, raw",Spárga,20,2.2,3.88,0.12,2.1,0.566,16
+169961,"Beans, snap, green, raw",Zöldbab,31,1.83,6.97,0.22,2.7,0.423,
+170419,"Peas, green, raw",Zöldborsó,81,5.42,14.45,0.4,5.7,0.613,
+170016,"Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)",Zöldborsó (fagyasztott),77,5.22,13.62,0.4,4.5,0.566,
+169998,"Corn, sweet, yellow, raw",Csemegekukorica,86,3.27,18.7,1.35,2,0.613,102
+169214,"Corn, sweet, yellow, canned, whole kernel, drained solids",Csemegekukorica (konzerv),67,2.29,14.34,1.22,2,0.693,
+169251,"Mushrooms, white, raw",Csiperkegomba,22,3.09,3.26,0.34,1,0.296,18
+168580,"Mushrooms, oyster, raw",Laskagomba,33,3.31,6.09,0.41,2.3,0.364,148
+169242,"Mushrooms, shiitake, raw",Shiitake gomba,34,2.24,6.79,0.49,2.5,,19
+169255,"Mushrooms, portabella, raw",Portobello gomba,22,2.11,3.87,0.35,1.3,0.364,84
+169385,"Fennel, bulb, raw",Édeskömény,31,1.24,7.3,0.2,3.1,0.368,
+169231,"Ginger root, raw",Gyömbér (friss),80,1.82,17.77,0.75,2,0.406,
+173472,"Horseradish, prepared",Torma,48,1.18,11.29,0.69,3.3,1.014,
+170471,"Vegetables, mixed, frozen, unprepared",Vegyes zöldség (fagyasztott),72,3.33,13.47,0.52,4,,
+168410,"Edamame, frozen, unprepared",Edamame,109,11.22,7.61,4.73,4.8,0.499,
+170567,"Nuts, almonds",Mandula,579,21.15,21.55,49.93,12.5,0.604,
+170187,"Nuts, walnuts, english",Dió,654,15.23,13.71,65.21,6.7,0.495,
+170581,"Nuts, hazelnuts or filberts",Mogyoró,628,14.95,16.7,60.75,9.7,0.486,
+170162,"Nuts, cashew nuts, raw",Kesudió,553,18.22,30.19,43.85,3.3,,
+170184,"Nuts, pistachio nuts, raw",Pisztácia,560,20.16,27.17,45.32,10.6,0.520,
+170182,"Nuts, pecans",Pekándió,691,9.17,13.86,71.97,9.6,0.461,
+170569,"Nuts, brazilnuts, dried, unblanched",Brazil dió,659,14.32,11.74,67.1,7.5,0.562,
+170178,"Nuts, macadamia nuts, raw",Makadámdió,718,7.91,13.82,75.77,8.6,0.566,
+170591,"Nuts, pine nuts, dried",Fenyőmag,673,13.69,13.08,68.37,3.7,0.571,
+170190,"Nuts, chestnuts, european, roasted",Sült gesztenye,245,3.17,52.96,2.2,5.1,0.604,
+170170,"Nuts, coconut meat, dried (desiccated), not sweetened",Kókuszreszelék,660,6.88,23.65,64.53,16.3,,
+170173,"Nuts, coconut milk, canned (liquid expressed from grated meat and water)",Kókusztej,197,2.02,2.81,21.33,0,1.014,
+168588,"Nuts, almond butter, plain, without salt added",Mandulavaj,614,20.96,18.82,55.5,10.3,1.082,
+170562,"Seeds, sunflower seed kernels, dried",Napraforgómag,584,20.78,20,51.46,8.6,0.592,
+170556,"Seeds, pumpkin and squash seed kernels, dried",Tökmag,559,30.23,10.71,49.05,6,0.545,
+170150,"Seeds, sesame seeds, whole, dried",Szezámmag,573,17.73,23.45,49.67,11.8,0.609,
+169414,"Seeds, flaxseed",Lenmag,534,18.29,28.88,42.16,27.3,0.697,
+170554,"Seeds, chia seeds, dried",Chia mag,486,16.54,42.12,30.74,34.4,,
+170148,"Seeds, hemp seed, hulled",Kendermag,553,31.56,8.67,48.75,4,0.676,
+170189,"Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)",Tahini,595,17,21.19,53.76,9.3,1.014,
+172430,"Peanuts, all types, raw",Földimogyoró,567,25.8,16.13,49.24,8.5,0.617,
+172470,"Peanut butter, smooth style, without salt",Mogyoróvaj,598,22.21,22.31,51.36,5,1.082,
+174036,"Beef, ground, 80% lean meat / 20% fat, raw",Darált marhahús (20% zsír),254,17.17,0,20,0,,
+174030,"Beef, ground, 90% lean meat / 10% fat, raw",Darált marhahús (10% zsír),176,20,0,10,0,,
+171812,"Beef, tenderloin, steak, separable lean only, trimmed to 1/8"" fat, all grades, raw",Bélszín,153,22.12,0,6.52,0,,
+174051,"Beef, chuck, arm pot roast, separable lean only, trimmed to 1/8"" fat, all grades, raw",Marhalapocka,132,22.11,0,4.19,0,,
+169529,"Beef, round, top round, steak, separable lean and fat, trimmed to 1/8"" fat, all grades, raw",Marhafelsál,166,22.06,0,7.93,0,,
+169437,"Beef, rib, eye, small end (ribs 10-12), separable lean only, trimmed to 0"" fat, choice, raw",Rostélyos,161,20.13,0,8.3,0,,
+168607,"Beef, brisket, whole, separable lean only, all grades, raw",Marhaszegy,157,20.72,0.6,7.37,0,,
+169441,"Beef, shank crosscuts, separable lean only, trimmed to 1/4"" fat, choice, raw",Marhalábszár,128,21.75,0,3.85,0,,
+169451,"Beef, variety meats and by-products, liver, raw",Marhamáj,135,20.36,3.89,3.63,0,,
+175290,"Veal, ground, raw",Darált borjúhús,197,18.58,0,13.06,0,,
+175269,"Veal, leg (top round), separable lean only, raw",Borjúcomb,107,21.28,0,1.76,0,,
+174370,"Lamb, ground, raw",Darált bárányhús,282,16.56,0,23.41,0,,
+172486,"Lamb, leg, shank half, separable lean only, trimmed to 1/4"" fat, choice, raw",Báránycomb,125,20.52,0,4.19,0,,
+172521,"Game meat, rabbit, domesticated, composite of cuts, raw",Nyúlhús,136,20.05,0,5.55,0,,
+173855,"Game meat, deer, raw",Szarvashús,120,22.96,0,2.42,0,,
+175297,"Game meat, boar, wild, raw",Vaddisznóhús,122,21.51,0,3.33,0,,
+173647,"Beverages, water, tap, drinking",Víz,0,0,0,0,0,1.001,
+171890,"Beverages, coffee, brewed, prepared with tap water",Kávé,1,0.12,0,0.02,0,1.001,
+173227,"Beverages, tea, black, brewed, prepared with tap water",Fekete tea,1,0,0.3,0,0,1.001,
+174832,"Beverages, almond milk, unsweetened, shelf stable",Mandulaital,15,0.4,1.31,0.96,0.2,1.107,
+171942,"Beverages, rice milk, unsweetened",Rizsital,47,0.28,9.17,0.97,0.3,1.014,
+175215,"Soymilk (all flavors), unsweetened, with added calcium, vitamins A and D",Szójaital,33,2.86,1.74,1.61,0.5,1.027,
+173190,"Alcoholic beverage, wine, table, red",Vörösbor,85,0.07,2.61,0,0,0.994,
+174837,"Alcoholic beverage, wine, table, white",Fehérbor,82,0.07,2.6,0,0,0.994,
+168746,"Alcoholic beverage, beer, regular, all",Sör,43,0.46,3.55,0,0,1.004,
+175167,"Fish, salmon, Atlantic, farmed, raw",Lazac,208,20.42,0,13.42,0,,
+173687,"Fish, salmon, chinook, smoked",Füstölt lazac,117,18.28,0,4.32,0,0.575,
+173709,"Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",Tonhalkonzerv (vízben),86,19.44,0,0.96,0,0.651,
+175159,"Fish, tuna, fresh, yellowfin, raw",Tonhal,109,24.4,0,0.49,0,,
+171955,"Fish, cod, Atlantic, raw",Tőkehal,82,17.81,0,0.67,0,,
+173725,"Fish, pollock, Alaska, raw",Alaszkai tőkehal,76,17.17,0,0.82,0,,
+171952,"Fish, carp, raw",Ponty,127,17.83,0,5.6,0,,
+175165,"Fish, catfish, channel, farmed, raw",Harcsa,119,15.23,0,5.94,0,,
+173680,"Fish, pike, northern, raw",Csuka,88,19.26,0,0.69,0,,
+173717,"Fish, trout, rainbow, farmed, raw",Szivárványos pisztráng,141,19.94,0,6.18,0,,
+175176,"Fish, tilapia, raw",Tilápia,96,20.08,0,1.7,0,,
+175119,"Fish, mackerel, Atlantic, raw",Makréla,205,18.6,0,13.89,0,,
+175139,"Fish, sardine, Atlantic, canned in oil, drained solids with bone",Szardínia (olajos),208,24.62,0,11.45,0,0.630,12
+175118,"Fish, herring, Atlantic, pickled",Ecetes hering,262,14.19,9.64,18,0,0.592,15
+174183,"Fish, anchovy, european, canned in oil, drained solids",Szardella,210,28.89,0,9.71,0,,
+175179,"Crustaceans, shrimp, raw",Garnélarák,85,20.1,0,0.51,0,,
+174216,"Mollusks, mussel, blue, raw",Kékkagyló,86,11.9,3.69,2.24,0,0.634,16
+174223,"Mollusks, squid, mixed species, raw",Tintahal,92,15.58,3.08,1.38,0,,
+173744,"Beans, kidney, red, mature seeds, raw",Vörösbab (száraz),337,22.53,61.29,1.06,15.2,0.825,
+174285,"Beans, kidney, red, mature seeds, canned, drained solids",Vörösbab (konzerv),124,7.98,21.49,1.05,5.5,,
+173734,"Beans, black, mature seeds, raw",Fekete bab,341,21.6,62.36,1.42,15.5,0.818,
+175202,"Beans, white, mature seeds, raw",Fehér bab (száraz),333,23.36,60.27,0.85,15.2,0.852,
+175199,"Beans, pinto, mature seeds, raw (Includes foods for USDA's Food Distribution Program)",Tarkabab,347,21.42,62.55,1.23,15.5,0.812,
+175182,"Beans, baked, canned, plain or vegetarian",Sült bab (konzerv),94,4.75,21.14,0.37,4.1,1.074,
+173756,"Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",Csicseriborsó (száraz),378,20.47,62.95,6.04,12.2,0.845,
+173801,"Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained, rinsed in tap water",Csicseriborsó (konzerv),138,7.04,22.87,2.47,6.3,0.642,
+172420,"Lentils, raw",Lencse,352,24.63,63.35,1.06,10.7,0.812,
+174284,"Lentils, pink or red, raw",Vöröslencse,358,23.91,63.1,2.17,10.8,0.812,
+172428,"Peas, green, split, mature seeds, raw",Sárgaborsó (feles),364,23.12,61.63,3.89,22.2,0.828,
+174270,"Soybeans, mature seeds, raw",Szójabab,446,36.49,30.16,19.94,9.3,0.786,
+172475,"Tofu, raw, firm, prepared with calcium sulfate",Tofu,144,17.27,2.78,8.72,2.3,1.065,
+174289,"Hummus, commercial",Hummusz,237,7.78,15,17.82,5.5,1.014,
+172442,Miso,Miso,198,12.79,25.37,6.01,5.4,1.150,
+174272,Tempeh,Tempeh,192,20.29,7.64,10.8,0,0.702,
+174924,"Bread, white, commercially prepared (includes soft bread crumbs)",Fehér kenyér,266,8.85,49.42,3.33,2.7,0.190,
+172688,"Bread, whole-wheat, commercially prepared",Teljes kiőrlésű kenyér,252,12.45,42.71,3.5,6,,
+172684,"Bread, rye",Rozskenyér,259,8.5,48.3,3.3,5.8,,
+168013,"Bread, multi-grain (includes whole-grain)",Magvas kenyér,265,13.36,43.34,4.23,7.4,,
+172675,"Bread, french or vienna (includes sourdough)",Bagett,272,10.75,51.88,2.42,2.2,,
+175031,"Rolls, hard (includes kaiser)",Zsemle,293,9.9,52.7,4.3,2.3,,57
+172796,"Rolls, hamburger or hotdog, plain",Hamburgerzsemle,279,9.77,50.12,3.91,1.8,,44
+174928,"Bread, crumbs, dry, grated, plain",Zsemlemorzsa,395,13.35,71.98,5.3,4.5,0.456,
+174915,"Bread, pita, white, enriched",Pita,275,9.1,55.7,1.2,2.2,,60
+175037,"Tortillas, ready-to-bake or -fry, flour, refrigerated",Tortilla (búza),306,8.2,49.38,7.99,3.5,,48
+174987,"Croissants, butter",Croissant,406,8.2,45.8,21,2.6,,57
+172790,"Puff pastry, frozen, ready-to-bake",Leveles tészta,551,7.3,45.1,38.1,1.5,,
+172791,Phyllo dough,Réteslap,299,7.1,52.6,6,1.9,,
+172739,"Crackers, crispbread, rye",Rozs ropogós kenyér,366,7.9,82.2,1.3,16.5,0.232,
+174950,"Cookies, butter, commercially prepared, enriched",Vajas keksz,467,6.1,68.9,18.8,0.8,,
+172803,"Leavening agents, baking powder, double-acting, sodium aluminum sulfate",Sütőpor,53,0,27.7,0,0.2,0.933,
+175040,"Leavening agents, baking soda",Szódabikarbóna,0,0,0,0,0,0.933,
+175043,"Leavening agents, yeast, baker's, active dry",Szárított élesztő,325,40.44,41.22,7.61,26.9,0.812,
+175042,"Leavening agents, yeast, baker's, compressed",Friss élesztő,105,8.4,18.1,1.9,8.1,,
+169655,"Sugars, granulated",Kristálycukor,387,0,99.98,0,0,0.852,
+168833,"Sugars, brown",Barna cukor,380,0.12,98.09,0,0,0.609,
+169656,"Sugars, powdered",Porcukor,389,0,99.77,0,0,0.507,
+169640,Honey,Méz,304,0.3,82.4,0,0.2,1.420,
+169661,"Syrups, maple",Juharszirup,260,0.04,67.04,0.06,0,1.353,
+170273,"Chocolate, dark, 70-85% cacao solids",Étcsokoládé (70–85%),598,7.79,45.9,42.63,10.9,,
+167587,"Candies, milk chocolate",Tejcsokoládé,535,7.65,59.4,29.66,3.4,0.710,
+169593,"Cocoa, dry powder, unsweetened",Kakaópor,228,19.6,57.9,13.7,37,0.365,
+169641,Jams and preserves,Lekvár,278,0.37,68.86,0.07,1.1,1.353,
+167575,"Ice creams, vanilla",Vaníliafagylalt,207,3.5,23.6,11,0.7,,
+168894,"Wheat flour, white, all-purpose, enriched, bleached",Búzaliszt (finomliszt),364,10.33,76.31,0.98,2.7,0.528,
+168896,"Wheat flour, white, bread, enriched",Kenyérliszt,361,11.98,72.53,1.66,2.4,0.579,
+168893,"Wheat flour, whole-grain (Includes foods for USDA's Food Distribution Program)",Teljes kiőrlésű búzaliszt,340,13.21,71.97,2.5,10.7,0.507,
+168886,"Rye flour, medium",Rozsliszt,349,10.88,75.43,1.52,11.8,0.431,
+168877,"Rice, white, long-grain, regular, raw, enriched",Fehér rizs,365,7.13,79.95,0.66,1.3,0.782,
+168878,"Rice, white, long-grain, regular, enriched, cooked",Főtt fehér rizs,130,2.69,28.17,0.28,0.4,0.668,
+169703,"Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)",Barna rizs,367,7.54,76.25,3.2,3.6,0.782,
+168931,"Rice, white, short-grain, raw, unenriched",Rövid szemű rizs,358,6.5,79.15,0.52,0,0.845,
+169736,"Pasta, dry, enriched",Száraz tészta,371,13.04,74.67,1.51,3.2,0.385,
+169737,"Pasta, cooked, enriched, without added salt",Főtt tészta,158,5.8,30.86,0.93,1.8,0.524,
+169738,"Pasta, whole-wheat, dry (Includes foods for USDA's Food Distribution Program)",Teljes kiőrlésű tészta,352,13.87,73.37,2.93,9.2,0.385,
+169731,"Noodles, egg, dry, enriched",Tojásos tészta,384,14.16,71.27,4.44,3.3,0.161,
+168919,"Noodles, egg, cooked, enriched, with added salt",Főtt tojásos tészta,138,4.54,25.16,2.07,1.2,0.676,
+169727,"Pasta, fresh-refrigerated, plain, as purchased",Friss tészta,288,11.31,54.73,2.3,0,,
+169742,"Rice noodles, dry",Rizstészta,364,5.95,80.18,0.56,1.6,,
+168906,"Noodles, japanese, soba, dry",Soba tészta,336,14.38,74.62,0.71,0,,
+169699,"Couscous, dry",Kuszkusz,376,12.76,77.43,0.64,5,0.731,
+168874,"Quinoa, uncooked",Quinoa,368,14.12,64.16,6.07,7,0.719,
+170688,"Bulgur, dry",Bulgur,342,12.29,75.87,1.33,12.5,0.592,
+170284,"Barley, pearled, raw",Gyöngyárpa,352,9.91,77.72,1.16,15.6,0.845,
+169702,"Millet, raw",Köles,378,11.02,72.85,4.22,8.5,0.845,
+170685,"Buckwheat groats, roasted, dry",Hajdina,346,11.73,74.95,2.71,10.3,0.693,
+169697,"Cornmeal, whole-grain, yellow",Kukoricadara,362,8.12,76.89,3.59,7.3,0.516,
+169698,Cornstarch,Kukoricakeményítő,381,0.26,91.27,0.05,0.9,0.541,
+168872,"Oat bran, raw",Zabkorpa,246,17.3,66.22,7.03,15.4,0.397,
+169722,"Wheat bran, crude",Búzakorpa,216,15.55,64.51,4.25,42.8,0.245,
+169715,"Semolina, enriched",Durumbúzadara,360,12.68,72.83,1.05,3.9,0.706,
+167959,"Snacks, popcorn, air-popped",Pattogatott kukorica,387,12.94,77.78,4.54,14.5,0.034,
+169677,"Snacks, potato chips, plain, salted",Burgonyachips,532,6.39,53.83,33.98,3.1,,
+167555,"Snacks, pretzels, hard, plain, salted",Perec,384,10.04,80.39,2.93,3.4,,
+170250,"Snacks, rice cakes, brown rice, plain, unsalted",Puffasztott rizs szelet,387,8.2,81.5,2.8,4.2,,
