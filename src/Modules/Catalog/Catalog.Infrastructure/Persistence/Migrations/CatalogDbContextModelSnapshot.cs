@@ -30,6 +30,10 @@ namespace Catalog.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
+                    b.Property<decimal?>("DensityGramsPerMl")
+                        .HasPrecision(8, 3)
+                        .HasColumnType("numeric(8,3)");
+
                     b.Property<string>("HungarianName")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -39,6 +43,10 @@ namespace Catalog.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
+
+                    b.Property<decimal?>("PieceWeightGrams")
+                        .HasPrecision(8, 3)
+                        .HasColumnType("numeric(8,3)");
 
                     b.Property<string>("SearchText")
                         .IsRequired()

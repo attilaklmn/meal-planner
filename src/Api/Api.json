@@ -112,7 +112,9 @@
           "id",
           "name",
           "hungarianName",
-          "nutrientsPer100g"
+          "nutrientsPer100g",
+          "densityGramsPerMl",
+          "pieceWeightGrams"
         ],
         "type": "object",
         "properties": {
@@ -128,6 +130,20 @@
           },
           "nutrientsPer100g": {
             "$ref": "#/components/schemas/NutrientsResponse"
+          },
+          "densityGramsPerMl": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "pieceWeightGrams": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
           }
         }
       },

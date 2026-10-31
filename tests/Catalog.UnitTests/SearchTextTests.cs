@@ -48,7 +48,7 @@ public class SearchTextTests
     {
         var egg = Ingredient.Create("Egg", "Tojás", NutrientProfile.Zero, "usda", "1");
 
-        egg.UpdateFromSource("Egg, whole", "Tyúktojás", NutrientProfile.Zero);
+        egg.UpdateFromSource("Egg, whole", "Tyúktojás", NutrientProfile.Zero, null, null);
 
         Assert.Equal("tyuktojas egg whole", egg.SearchText);
     }

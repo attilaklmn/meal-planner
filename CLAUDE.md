@@ -19,7 +19,8 @@ model persisted in `catalog."Ingredients"` (complex type), seeded in Development
 Legacy ingredients with Hungarian names (ADR 0003), searchable via
 `GET /api/catalog/ingredients?search=` (accent-insensitive, trigram index), picked in the frontend
 with `IngredientAutocomplete` (shown on a temporary demo section). **M2 – Recipes** in progress: `Quantity` value
-object with unit conversion in `Recipes.Domain` (unit-tested in `tests/Recipes.UnitTests`).
+object with unit conversion in `Recipes.Domain` (unit-tested in `tests/Recipes.UnitTests`); ingredients carry
+optional density and piece weight derived from USDA household portions.
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -142,7 +143,8 @@ Fill in as the solution takes shape:
 - API client: `dotnet build src/Api` writes `src/Api/Api.json` (OpenAPI), then in `src/web`
   `npm run generate:api` regenerates `src/api/generated`. Both are committed; regenerate after every
   endpoint or DTO change. Live document in Development: `/openapi/v1.json`.
-- Ingredient seed data: edit `tools/catalog-data/selection.csv`, download the USDA SR Legacy CSV zip
-  (FoodData Central downloads, not committed), then
+- Ingredient seed data: edit `tools/catalog-data/selection.csv` (foods, Hungarian names) or
+  `tools/catalog-data/unit-overrides.csv` (density / piece weight corrections), download the USDA SR Legacy
+  CSV zip (FoodData Central downloads, not committed), then
   `dotnet run tools/catalog-data/build-ingredients.cs -- <zip>` rewrites
-  `src/Modules/Catalog/Catalog.Infrastructure/Seeding/ingredients.csv`. Commit both files.
+  `src/Modules/Catalog/Catalog.Infrastructure/Seeding/ingredients.csv`. Commit the edited and generated files.

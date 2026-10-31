@@ -11,4 +11,8 @@ export interface IngredientSummary {
   name: string
   hungarianName: string
   nutrientsPer100g: NutrientsResponse
+  /** @nullable */
+  densityGramsPerMl: number | null
+  /** @nullable */
+  pieceWeightGrams: number | null
 }

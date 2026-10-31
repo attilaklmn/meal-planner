@@ -63,7 +63,9 @@ internal static class SearchIngredients
                     i.NutrientsPer100g.Protein,
                     i.NutrientsPer100g.Carbohydrate,
                     i.NutrientsPer100g.Fat,
-                    i.NutrientsPer100g.Fiber)))
+                    i.NutrientsPer100g.Fiber),
+                i.DensityGramsPerMl,
+                i.PieceWeightGrams))
             .ToArrayAsync(cancellationToken));
     }
 }

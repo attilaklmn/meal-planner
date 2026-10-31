@@ -96,7 +96,7 @@ public class IngredientTests
         var id = egg.Id;
         var corrected = new NutrientProfile(148m, 12.4m, 1m, 10m, 0m);
 
-        egg.UpdateFromSource(" Egg, whole, raw ", " Tyúktojás ", corrected);
+        egg.UpdateFromSource(" Egg, whole, raw ", " Tyúktojás ", corrected, densityGramsPerMl: 1.027m, pieceWeightGrams: 50m);
 
         Assert.Equal(id, egg.Id);
         Assert.Equal("usda", egg.Source);
@@ -104,6 +104,8 @@ public class IngredientTests
         Assert.Equal("Egg, whole, raw", egg.Name);
         Assert.Equal("Tyúktojás", egg.HungarianName);
         Assert.Equal(corrected, egg.NutrientsPer100g);
+        Assert.Equal(1.027m, egg.DensityGramsPerMl);
+        Assert.Equal(50m, egg.PieceWeightGrams);
     }
 
     [Fact]
@@ -112,9 +114,51 @@ public class IngredientTests
         var egg = Ingredient.Create("Egg", "Tojás", EggPer100g, "usda", "1");
         var impossible = new NutrientProfile(500m, 40m, 40m, 30m, 0m);
 
-        Assert.Throws<ArgumentException>(() => egg.UpdateFromSource("Egg, renamed", "Tojás", impossible));
+        Assert.Throws<ArgumentException>(() => egg.UpdateFromSource("Egg, renamed", "Tojás", impossible, null, null));
 
         Assert.Equal("Egg", egg.Name);
         Assert.Equal(EggPer100g, egg.NutrientsPer100g);
+    }
+
+    [Fact]
+    public void Unit_data_is_optional()
+    {
+        var flour = Ingredient.Create("Wheat flour", "Búzaliszt", EggPer100g, "usda", "1", densityGramsPerMl: 0.528m);
+
+        Assert.Equal(0.528m, flour.DensityGramsPerMl);
+        Assert.Null(flour.PieceWeightGrams);
+    }
+
+    [Theory]
+    [InlineData(0.0, null)]
+    [InlineData(-1.0, null)]
+    [InlineData(3.5, null)]
+    [InlineData(null, 0.0)]
+    [InlineData(null, -50.0)]
+    public void Rejects_implausible_unit_data(double? density, double? pieceWeight)
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Ingredient.Create("Egg", "Tojás", EggPer100g, "usda", "1", (decimal?)density, (decimal?)pieceWeight));
+    }
+
+    [Fact]
+    public void UpdateFromSource_clears_unit_data_the_source_no_longer_has()
+    {
+        var egg = Ingredient.Create("Egg", "Tojás", EggPer100g, "usda", "1", pieceWeightGrams: 50m);
+
+        egg.UpdateFromSource("Egg", "Tojás", EggPer100g, densityGramsPerMl: null, pieceWeightGrams: null);
+
+        Assert.Null(egg.PieceWeightGrams);
+    }
+
+    [Fact]
+    public void UpdateFromSource_with_invalid_unit_data_leaves_the_ingredient_untouched()
+    {
+        var egg = Ingredient.Create("Egg", "Tojás", EggPer100g, "usda", "1", pieceWeightGrams: 50m);
+
+        Assert.Throws<ArgumentOutOfRangeException>(() => egg.UpdateFromSource("Egg, renamed", "Tojás", EggPer100g, null, -1m));
+
+        Assert.Equal("Egg", egg.Name);
+        Assert.Equal(50m, egg.PieceWeightGrams);
     }
 }
