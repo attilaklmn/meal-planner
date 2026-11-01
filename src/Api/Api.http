@@ -1,5 +1,6 @@
 # Requests for trying the API by hand (Visual Studio, Rider or VS Code REST Client).
 # Start the Api first; named requests (# @name) pass ids on to the ones below them, so run them top to bottom.
+# The searches return an array; Visual Studio rejects `$[0].id`, but `$.id` takes the first result's id (limit=1).
 @Api = http://localhost:5030
 
 ### Find ingredients for the recipe
@@ -25,9 +26,9 @@ Content-Type: application/json
   "steps": ["Mix the flour, eggs and water into a soft dough.", "Press it into boiling salted water."],
   "tags": ["Köret", "magyar"],
   "ingredients": [
-    { "ingredientId": "{{flour.response.body.$[0].id}}", "amount": 250, "unit": "Gram" },
-    { "ingredientId": "{{egg.response.body.$[0].id}}", "amount": 3, "unit": "Piece" },
-    { "ingredientId": "{{oil.response.body.$[0].id}}", "amount": 1, "unit": "Tablespoon", "note": "for the pan" }
+    { "ingredientId": "{{flour.response.body.$.id}}", "amount": 250, "unit": "Gram" },
+    { "ingredientId": "{{egg.response.body.$.id}}", "amount": 3, "unit": "Piece" },
+    { "ingredientId": "{{oil.response.body.$.id}}", "amount": 1, "unit": "Tablespoon", "note": "for the pan" }
   ]
 }
 
@@ -47,8 +48,8 @@ Content-Type: application/json
   "steps": ["Mix the flour, eggs and water into a soft dough.", "Press it into boiling salted water."],
   "tags": ["köret"],
   "ingredients": [
-    { "ingredientId": "{{flour.response.body.$[0].id}}", "amount": 375, "unit": "Gram" },
-    { "ingredientId": "{{egg.response.body.$[0].id}}", "amount": 4, "unit": "Piece" }
+    { "ingredientId": "{{flour.response.body.$.id}}", "amount": 375, "unit": "Gram" },
+    { "ingredientId": "{{egg.response.body.$.id}}", "amount": 4, "unit": "Piece" }
   ]
 }
 
@@ -62,7 +63,7 @@ Content-Type: application/json
   "steps": [],
   "tags": [],
   "ingredients": [
-    { "ingredientId": "{{flour.response.body.$[0].id}}", "amount": 2, "unit": "Piece" },
+    { "ingredientId": "{{flour.response.body.$.id}}", "amount": 2, "unit": "Piece" },
     { "ingredientId": "00000000-0000-0000-0000-000000000001", "amount": 1, "unit": "Gram" }
   ]
 }
