@@ -13,6 +13,8 @@ internal sealed class RecipeConfiguration : IEntityTypeConfiguration<Recipe>
         builder.Property(r => r.Id).ValueGeneratedNever();
 
         builder.Property(r => r.Title).HasMaxLength(Recipe.TitleMaxLength);
+        // Normalizing never makes text longer. No index: a household's few hundred recipes scan in well under a millisecond.
+        builder.Property(r => r.SearchText).HasMaxLength(Recipe.TitleMaxLength);
 
         // Steps are read and written only with their recipe, in order, and never queried one by one:
         // a document, so a jsonb column instead of a table.

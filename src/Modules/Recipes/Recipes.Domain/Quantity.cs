@@ -8,7 +8,11 @@ public sealed record Quantity
 {
     public Quantity(decimal amount, Unit unit)
     {
-        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(amount);
+        if (amount <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(amount), amount, "The amount must be greater than 0.");
+        }
+
         if (!Enum.IsDefined(unit))
         {
             throw new ArgumentOutOfRangeException(nameof(unit), unit, "Unknown unit.");

@@ -13,7 +13,16 @@ builder.Services.AddOpenApi();
 
 // The web defaults also accept numbers sent as strings ("12.5"), so OpenAPI describes every number as
 // `number | string` and the generated TypeScript types follow. Strict keeps them plain numbers.
-builder.Services.ConfigureHttpJsonOptions(options => options.SerializerOptions.NumberHandling = JsonNumberHandling.Strict);
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.NumberHandling = JsonNumberHandling.Strict;
+    // Enums by name ("Tablespoon"), in JSON and in OpenAPI, so the generated client gets a string union.
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    // A request missing a property, or with null where the type says non-null, is a 400 instead of a null
+    // that would surface later as a NullReferenceException. OpenAPI marks those properties as required too.
+    options.SerializerOptions.RespectRequiredConstructorParameters = true;
+    options.SerializerOptions.RespectNullableAnnotations = true;
+});
 
 builder.AddCatalogModule(Database);
 builder.AddRecipesModule(Database);

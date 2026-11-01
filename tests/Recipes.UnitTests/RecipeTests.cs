@@ -104,6 +104,43 @@ public class RecipeTests
     }
 
     [Fact]
+    public void ClearIngredients_empties_the_list_and_new_lines_start_at_position_0()
+    {
+        var recipe = Recipe.Create("Nokedli", 4, [], []);
+        recipe.AddIngredient(Flour, new Quantity(250m, Unit.Gram), note: null);
+        recipe.AddIngredient(Egg, new Quantity(3m, Unit.Piece), note: null);
+
+        recipe.ClearIngredients();
+        var line = recipe.AddIngredient(Egg, new Quantity(4m, Unit.Piece), note: null);
+
+        Assert.Equal([line], recipe.Ingredients);
+        Assert.Equal(0, line.Position);
+    }
+
+    [Fact]
+    public void Calculating_from_lines_gives_the_same_as_the_aggregate()
+    {
+        var recipe = Recipe.Create("Nokedli", 4, [], []);
+        recipe.AddIngredient(Flour, new Quantity(250m, Unit.Gram), note: null);
+        recipe.AddIngredient(OliveOil, new Quantity(2m, Unit.Tablespoon), note: null);
+
+        var fromLines = RecipeNutrition.Calculate(
+            [(Flour.Id, new Quantity(250m, Unit.Gram)), (OliveOil.Id, new Quantity(2m, Unit.Tablespoon))], 4, Catalog);
+
+        Assert.Equal(recipe.CalculateNutrition(Catalog), fromLines);
+    }
+
+    [Fact]
+    public void SearchText_follows_the_title()
+    {
+        var recipe = Recipe.Create("Gulyásleves", 6, [], []);
+        Assert.Equal("gulyasleves", recipe.SearchText);
+
+        recipe.Update("Babgulyás (csülkös)", 6, [], []);
+        Assert.Equal("babgulyas csulkos", recipe.SearchText);
+    }
+
+    [Fact]
     public void Removing_an_unknown_line_fails()
     {
         Assert.Throws<ArgumentException>(() => Recipe.Create("Soup", 2, [], []).RemoveIngredient(Guid.CreateVersion7()));

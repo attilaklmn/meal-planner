@@ -21,6 +21,7 @@ public sealed class Recipe
     {
         Id = id;
         Title = title;
+        SearchText = Domain.SearchText.Normalize(title);
         Servings = servings;
         _steps = steps;
         Tags = tags;
@@ -36,6 +37,9 @@ public sealed class Recipe
     public Guid Id { get; private set; }
 
     public string Title { get; private set; }
+
+    /// <summary>The title in <see cref="Domain.SearchText"/> form, kept in sync by every title change. Searches match against this.</summary>
+    public string SearchText { get; private set; }
 
     /// <summary>How many servings the ingredient quantities are for.</summary>
     public int Servings { get; private set; }
@@ -61,6 +65,7 @@ public sealed class Recipe
         var validTags = ValidTags(tags);
 
         Title = validTitle;
+        SearchText = Domain.SearchText.Normalize(validTitle);
         Servings = validServings;
         _steps = validSteps;
         Tags = validTags;
@@ -105,27 +110,15 @@ public sealed class Recipe
         _ingredients.Sort((a, b) => a.Position.CompareTo(b.Position));
     }
 
+    /// <summary>Removes every ingredient line, for replacing the whole list.</summary>
+    public void ClearIngredients() => _ingredients.Clear();
+
     /// <summary>
     /// Total and per-serving nutrition, from each line's quantity in grams and its ingredient's nutrients per 100 g.
     /// <paramref name="ingredients"/> must hold the <see cref="CatalogIngredient"/> of every line, keyed by id.
     /// </summary>
-    public RecipeNutrition CalculateNutrition(IReadOnlyDictionary<Guid, CatalogIngredient> ingredients)
-    {
-        ArgumentNullException.ThrowIfNull(ingredients);
-
-        var total = NutrientProfile.Zero;
-        foreach (var line in _ingredients)
-        {
-            if (!ingredients.TryGetValue(line.IngredientId, out var ingredient))
-            {
-                throw new ArgumentException($"Ingredient {line.IngredientId} of the recipe is missing.", nameof(ingredients));
-            }
-
-            total += ingredient.NutrientsFor(line.Quantity);
-        }
-
-        return new RecipeNutrition(total, total.Scale(1m / Servings));
-    }
+    public RecipeNutrition CalculateNutrition(IReadOnlyDictionary<Guid, CatalogIngredient> ingredients) =>
+        RecipeNutrition.Calculate(_ingredients.Select(i => (i.IngredientId, i.Quantity)), Servings, ingredients);
 
     private static string ValidTitle(string title)
     {
@@ -139,10 +132,9 @@ public sealed class Recipe
 
     private static int ValidServings(int servings)
     {
-        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(servings);
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(servings, MaxServings);
-
-        return servings;
+        return servings is >= 1 and <= MaxServings
+            ? servings
+            : throw new ArgumentOutOfRangeException(nameof(servings), servings, $"Servings must be between 1 and {MaxServings}.");
     }
 
     private static List<RecipeStep> ValidSteps(IEnumerable<string> steps)
