@@ -19,7 +19,9 @@ There is one row per Catalog ingredient that a recipe uses; `RecipeIngredient` l
 ingredient's id, the `Quantity` and a note, with a foreign key to the copy.
 
 - **v1:** when a recipe is saved, Recipes asks Catalog's public API (in process) for the ingredients the
-  recipe uses and creates or refreshes their copies in the same transaction as the recipe.
+  recipe uses and creates or refreshes their copies in the same transaction as the recipe. That API is
+  `ICatalogIngredients` in `Catalog.Contracts`, a project with interfaces and DTOs only: Recipes references it,
+  never Catalog's Domain or Infrastructure, and in v2 the same interface gets an HTTP implementation.
 - **v2 (M7):** Catalog publishes `IngredientNutritionChanged`; Recipes' consumer refreshes the one copy row.
   Saving a recipe with an ingredient Recipes has never seen still needs one call to Catalog (or the event
   feed has to include new ingredients); this is decided with the extraction.

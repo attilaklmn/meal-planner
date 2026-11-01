@@ -1,0 +1,71 @@
+# Requests for trying the API by hand (Visual Studio, Rider or VS Code REST Client).
+# Start the Api first; named requests (# @name) pass ids on to the ones below them, so run them top to bottom.
+@Api = http://localhost:5030
+
+### Find ingredients for the recipe
+# @name flour
+GET {{Api}}/api/catalog/ingredients?search=buzaliszt&limit=1
+
+###
+# @name egg
+GET {{Api}}/api/catalog/ingredients?search=tojas&limit=1
+
+###
+# @name oil
+GET {{Api}}/api/catalog/ingredients?search=olivaolaj&limit=1
+
+### Create a recipe: grams, tablespoons and pieces
+# @name created
+POST {{Api}}/api/recipes
+Content-Type: application/json
+
+{
+  "title": "Nokedli",
+  "servings": 4,
+  "steps": ["Mix the flour, eggs and water into a soft dough.", "Press it into boiling salted water."],
+  "tags": ["Köret", "magyar"],
+  "ingredients": [
+    { "ingredientId": "{{flour.response.body.$[0].id}}", "amount": 250, "unit": "Gram" },
+    { "ingredientId": "{{egg.response.body.$[0].id}}", "amount": 3, "unit": "Piece" },
+    { "ingredientId": "{{oil.response.body.$[0].id}}", "amount": 1, "unit": "Tablespoon", "note": "for the pan" }
+  ]
+}
+
+### List, optionally filtered by title (case and accents don't matter)
+GET {{Api}}/api/recipes?search=NOKEDLI
+
+### Details with nutrition per serving
+GET {{Api}}/api/recipes/{{created.response.body.$.id}}
+
+### Replace it: more servings, no oil
+PUT {{Api}}/api/recipes/{{created.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "title": "Nokedli",
+  "servings": 6,
+  "steps": ["Mix the flour, eggs and water into a soft dough.", "Press it into boiling salted water."],
+  "tags": ["köret"],
+  "ingredients": [
+    { "ingredientId": "{{flour.response.body.$[0].id}}", "amount": 375, "unit": "Gram" },
+    { "ingredientId": "{{egg.response.body.$[0].id}}", "amount": 4, "unit": "Piece" }
+  ]
+}
+
+### Validation: pieces of flour have no weight, servings must be at least 1
+POST {{Api}}/api/recipes
+Content-Type: application/json
+
+{
+  "title": "Broken",
+  "servings": 0,
+  "steps": [],
+  "tags": [],
+  "ingredients": [
+    { "ingredientId": "{{flour.response.body.$[0].id}}", "amount": 2, "unit": "Piece" },
+    { "ingredientId": "00000000-0000-0000-0000-000000000001", "amount": 1, "unit": "Gram" }
+  ]
+}
+
+### Delete
+DELETE {{Api}}/api/recipes/{{created.response.body.$.id}}

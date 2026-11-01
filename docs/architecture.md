@@ -82,7 +82,8 @@ event-fed copy of the data it needs from the others.
 
 - Recipes does not call Catalog synchronously. It keeps its own copy of nutrition values from
   `IngredientNutritionChanged` events (eventual consistency; Catalog being down does not stop recipes).
-  In v1 the same copy is refreshed in process, through Catalog's public API, whenever a recipe is saved (ADR 0004).
+  In v1 the same copy is refreshed in process, through Catalog's public API (`ICatalogIngredients` in
+  `Catalog.Contracts`), whenever a recipe is saved (ADR 0004).
 - Planning keeps recipe ingredients up to date from `RecipeUpdated` events, so generating a shopping
   list needs no synchronous call.
 - Every event leaves through a transactional outbox; consumers are idempotent.
@@ -179,7 +180,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 
 ### M2 – Recipes
 - [x] `Recipe`, `RecipeIngredient`, `Quantity` value object with unit conversion, unit-tested
-- [ ] CRUD endpoints, steps in a JSON column
+- [x] CRUD endpoints, steps in a JSON column
 - [ ] Recipe editor (React Hook Form + Zod), list and details pages
 - [ ] Nutrition per serving, servings slider with live recalculation
 

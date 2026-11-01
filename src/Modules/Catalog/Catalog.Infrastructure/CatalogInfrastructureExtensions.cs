@@ -1,3 +1,4 @@
+using Catalog.Contracts;
 using Catalog.Infrastructure.Persistence;
 using Catalog.Infrastructure.Seeding;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,9 @@ public static class CatalogInfrastructureExtensions
 
         // Adds Aspire's health check, OpenTelemetry instrumentation and retry-on-failure to the registration above.
         builder.EnrichNpgsqlDbContext<CatalogDbContext>();
+
+        // Catalog's public API for other modules (Catalog.Contracts).
+        builder.Services.AddScoped<ICatalogIngredients, CatalogIngredients>();
 
         if (builder.Environment.IsDevelopment())
         {

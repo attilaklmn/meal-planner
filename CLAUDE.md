@@ -22,7 +22,9 @@ with `IngredientAutocomplete` (shown on a temporary demo section). **M2 – Reci
 object with unit conversion in `Recipes.Domain` (unit-tested in `tests/Recipes.UnitTests`); ingredients carry
 optional density and piece weight derived from USDA household portions; `Recipe` aggregate with
 `RecipeIngredient` lines and `CalculateNutrition()`, persisted in `recipes."Recipes"` / `"RecipeIngredients"` (steps jsonb,
-tags text[]), with Recipes' own ingredient copy in `recipes."Ingredients"` (ADR 0004). Next: recipe CRUD endpoints.
+tags text[]), with Recipes' own ingredient copy in `recipes."Ingredients"` (ADR 0004); CRUD endpoints under
+`/api/recipes` (copies refreshed on save through `Catalog.Contracts`, try them with `src/Api/Api.http`).
+Next: recipe list and details pages.
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -55,7 +57,7 @@ src/
   Api/                v1 host, loads all modules
   Gateway/            YARP (v2)
   Modules/
-    Catalog/          Catalog.Domain, Catalog.Infrastructure, Catalog.Api
+    Catalog/          Catalog.Domain, Catalog.Infrastructure, Catalog.Api, Catalog.Contracts
     Recipes/          same split
     Planning/         same split
   Services/           v2 hosts (Catalog.Service, Planning.Service)
@@ -83,12 +85,17 @@ docs/                 architecture.md, adr/
 - Nullable reference types on, warnings as errors.
 - Minimal API endpoints grouped per module (`MapGroup`); no controllers. Handlers return `TypedResults`
   types and set `WithName` (OpenAPI operationId = generated hook name). JSON number handling is strict,
-  so OpenAPI (and the generated TypeScript) types numbers as `number`, not `number | string`.
+  so OpenAPI (and the generated TypeScript) types numbers as `number`, not `number | string`. Enums are
+  serialized by name; request records are deserialized with required constructor parameters and nullable
+  annotations respected, so a missing or null field is a 400.
+- Validation lives in the domain (it throws `ArgumentException`); endpoints translate those errors into a
+  `ValidationProblem` keyed by request field (see `Recipes.Api/ValidationErrors.cs`) instead of repeating the rules.
 - Text search goes through `Catalog.Domain.SearchText.Normalize` on both sides: stored `SearchText`
   columns and the search term (lowercase, no accents, punctuation → spaces).
 - No MediatR, no AutoMapper: plain handler classes and explicit mapping.
 - Modules never reference another module's Domain or Infrastructure project. Cross-module
-  communication only via `Shared/Contracts` (events) or, in v1, a module's public API surface.
+  communication only via `Shared/Contracts` (events) or, in v1, a module's public API surface:
+  its `<Module>.Contracts` project (interfaces + DTOs, no dependencies), implemented in its Infrastructure.
   An architecture test enforces this.
 - Value objects (`Quantity`, `NutrientProfile`) are immutable records with their own logic,
   mapped as EF Core complex/owned types.

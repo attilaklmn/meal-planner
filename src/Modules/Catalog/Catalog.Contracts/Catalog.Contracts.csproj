@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Catalog's public API for other modules (ADR 0004): interfaces and DTOs only, no dependencies,
+       so referencing it never pulls Catalog.Domain or Catalog.Infrastructure into another module. -->
+
+</Project>
