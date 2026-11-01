@@ -133,6 +133,8 @@ Nutrition calculation is pure domain logic (`Recipe.CalculateNutrition()`), unit
 ## Frontend (React)
 
 Feature-based folders; server state is handled by TanStack Query, no global state manager.
+Routing is React Router v7 in library (declarative) mode: it only maps URLs to pages and keeps URL state
+(the recipe search), while data loading stays in TanStack Query hooks instead of router loaders.
 
 **Pages:** recipe list with filters, recipe details (servings slider with live nutrition recalculation),
 recipe editor, ingredient search, weekly plan view, shopping list (mobile-first).
@@ -182,7 +184,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 - [x] `Recipe`, `RecipeIngredient`, `Quantity` value object with unit conversion, unit-tested
 - [x] CRUD endpoints, steps in a JSON column
 - [ ] Recipe editor (React Hook Form + Zod), list and details pages
-- [ ] Nutrition per serving, servings slider with live recalculation
+- [x] Nutrition per serving, servings slider with live recalculation
 
 ### M3 – Meal plan and shopping list
 - [ ] Weekly plan view, recipes assigned to days and meals
