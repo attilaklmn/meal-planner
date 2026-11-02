@@ -1,10 +1,27 @@
+import { useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
-import { Link, useParams } from 'react-router'
+import { Link, useNavigate, useParams } from 'react-router'
 import { ApiError } from '@/api/fetcher'
-import type { NutritionResponse, RecipeDetails } from '@/api/generated/model'
-import { useGetRecipe } from '@/api/generated/recipes/recipes'
+import type { RecipeDetails } from '@/api/generated/model'
+import {
+  getGetRecipeQueryKey,
+  getListRecipesQueryKey,
+  useDeleteRecipe,
+  useGetRecipe,
+} from '@/api/generated/recipes/recipes'
 import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
 import { Slider } from '@/components/ui/slider'
+import { NutritionTable } from './nutrition-table'
 import { formatQuantity, scaleAmount, totalNutrition } from './scale-recipe'
 
 export function RecipeDetailsPage() {
@@ -50,7 +67,15 @@ function RecipeView({ recipe }: { recipe: RecipeDetails }) {
         <Link to="/recipes" className="text-muted-foreground text-sm underline">
           ← Recipes
         </Link>
-        <h2 className="text-2xl font-semibold">{recipe.title}</h2>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-2xl font-semibold">{recipe.title}</h2>
+          <div className="flex gap-2">
+            <Button variant="outline" size="sm" asChild>
+              <Link to={`/recipes/${recipe.id}/edit`}>Edit</Link>
+            </Button>
+            <DeleteRecipeButton id={recipe.id} title={recipe.title} />
+          </div>
+        </div>
         {recipe.tags.length > 0 && (
           <p className="text-muted-foreground text-sm">{recipe.tags.join(', ')}</p>
         )}
@@ -111,48 +136,51 @@ function RecipeView({ recipe }: { recipe: RecipeDetails }) {
   )
 }
 
-const kcal = new Intl.NumberFormat('en', { maximumFractionDigits: 0 })
-const grams = new Intl.NumberFormat('en', { maximumFractionDigits: 1 })
+function DeleteRecipeButton({ id, title }: { id: string; title: string }) {
+  const queryClient = useQueryClient()
+  const navigate = useNavigate()
+  const deleteRecipe = useDeleteRecipe({
+    mutation: {
+      onSuccess: async () => {
+        // Leave first, so the details query isn't refetched for a recipe that's gone.
+        await navigate('/recipes')
+        queryClient.removeQueries({ queryKey: getGetRecipeQueryKey(id) })
+        // Prefix match: every list query, whatever its search.
+        await queryClient.invalidateQueries({ queryKey: getListRecipesQueryKey() })
+      },
+    },
+  })
 
-const rows: { label: string; key: keyof NutritionResponse; format: (value: number) => string }[] = [
-  { label: 'Energy', key: 'energyKcal', format: (value) => `${kcal.format(value)} kcal` },
-  { label: 'Protein', key: 'protein', format: (value) => `${grams.format(value)} g` },
-  { label: 'Carbohydrate', key: 'carbohydrate', format: (value) => `${grams.format(value)} g` },
-  { label: 'Fat', key: 'fat', format: (value) => `${grams.format(value)} g` },
-  { label: 'Fiber', key: 'fiber', format: (value) => `${grams.format(value)} g` },
-]
-
-function NutritionTable({
-  perServing,
-  total,
-  servings,
-}: {
-  perServing: NutritionResponse
-  total: NutritionResponse
-  servings: number
-}) {
   return (
-    <table className="w-full max-w-md text-sm">
-      <thead className="text-muted-foreground">
-        <tr>
-          <th className="text-left font-normal"></th>
-          <th className="text-right font-normal">Per serving</th>
-          <th className="text-right font-normal">
-            {servings === 1 ? 'Total (1 serving)' : `Total (${servings} servings)`}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row) => (
-          <tr key={row.key}>
-            <th scope="row" className="text-left font-normal">
-              {row.label}
-            </th>
-            <td className="text-right tabular-nums">{row.format(perServing[row.key])}</td>
-            <td className="text-right tabular-nums">{row.format(total[row.key])}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline" size="sm">
+          Delete
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Delete “{title}”?</DialogTitle>
+          <DialogDescription>This can’t be undone.</DialogDescription>
+        </DialogHeader>
+        {deleteRecipe.isError && (
+          <p role="alert" className="text-destructive text-sm">
+            Couldn’t delete the recipe. Try again.
+          </p>
+        )}
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant="outline">Keep it</Button>
+          </DialogClose>
+          <Button
+            variant="destructive"
+            disabled={deleteRecipe.isPending}
+            onClick={() => deleteRecipe.mutate({ id })}
+          >
+            {deleteRecipe.isPending ? 'Deleting…' : 'Delete'}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   )
 }

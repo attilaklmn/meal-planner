@@ -29,7 +29,12 @@ export function RecipeListPage() {
 
   return (
     <section className="flex flex-col gap-4">
-      <h2 className="text-2xl font-semibold">Recipes</h2>
+      <div className="flex items-center justify-between gap-3">
+        <h2 className="text-2xl font-semibold">Recipes</h2>
+        <Button asChild>
+          <Link to="/recipes/new">New recipe</Link>
+        </Button>
+      </div>
       <Input
         type="search"
         aria-label="Search recipes"

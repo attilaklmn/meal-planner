@@ -15,6 +15,7 @@
     "generate:api": "orval && prettier --write src/api/generated --log-level warn"
   },
   "dependencies": {
+    "@hookform/resolvers": "^7.0.1",
     "@tanstack/react-query": "^5.105.0",
     "class-variance-authority": "^0.7.1",
     "cmdk": "^1.1.1",
@@ -23,7 +24,9 @@
     "radix-ui": "^1.8.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "react-router": "^7.18.5"
+    "react-hook-form": "^7.91.0",
+    "react-router": "^7.18.5",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",

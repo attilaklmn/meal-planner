@@ -18,15 +18,12 @@ generated API client, CI). M1 – Ingredient catalog is done: `Ingredient` / `Nu
 model persisted in `catalog."Ingredients"` (complex type), seeded in Development with 372 USDA SR
 Legacy ingredients with Hungarian names (ADR 0003), searchable via
 `GET /api/catalog/ingredients?search=` (accent-insensitive, trigram index), picked in the frontend
-with `IngredientAutocomplete` (shown on a temporary demo section). **M2 – Recipes** in progress: `Quantity` value
-object with unit conversion in `Recipes.Domain` (unit-tested in `tests/Recipes.UnitTests`); ingredients carry
-optional density and piece weight derived from USDA household portions; `Recipe` aggregate with
-`RecipeIngredient` lines and `CalculateNutrition()`, persisted in `recipes."Recipes"` / `"RecipeIngredients"` (steps jsonb,
-tags text[]), with Recipes' own ingredient copy in `recipes."Ingredients"` (ADR 0004); CRUD endpoints under
-`/api/recipes` (copies refreshed on save through `Catalog.Contracts`, try them with `src/Api/Api.http`).
-Recipe list (`/recipes`, search in the URL)
-and details pages (`/recipes/:id`, servings slider rescaling in the browser) in an app shell with navigation.
-Next: recipe editor form.
+with `IngredientAutocomplete` (used by the recipe editor). **M2 – Recipes** is done: `Quantity` value object with unit conversion and the `Recipe` aggregate with
+`CalculateNutrition()` in `Recipes.Domain`; ingredients carry density and piece weight from USDA household portions;
+recipes persisted in `recipes."Recipes"` / `"RecipeIngredients"` (steps jsonb, tags text[]) with Recipes' own
+ingredient copy in `recipes."Ingredients"` (ADR 0004), refreshed on save through `Catalog.Contracts`; CRUD under
+`/api/recipes` (`src/Api/Api.http`); frontend list, details (servings slider) and a shared create/edit form with
+live nutrition preview. Next: **M3 – Meal plan and shopping list**.
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -123,7 +120,10 @@ docs/                 architecture.md, adr/
 - API calls go through the generated client; never hand-write request types that exist in OpenAPI.
   Never edit `src/api/generated` by hand. All generated requests use `src/api/fetcher.ts`, which throws
   `ApiError` on non-2xx so queries reach their error state.
-- Forms: React Hook Form + Zod schemas.
+- Forms: React Hook Form + Zod schemas (`z.input` for the field values, `z.output` for what submit gets). The schema
+  repeats the domain's limits for instant feedback; server `ValidationProblem` errors are mapped back onto fields
+  (`toFieldPath` in `recipe-form-schema.ts`). Unit conversion for the live preview lives in `features/recipes/units.ts`,
+  a copy of `Recipes.Domain/Unit.cs`: change both together.
 
 ## Working with the owner
 

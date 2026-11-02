@@ -27,9 +27,21 @@ public sealed record RecipeDetails(
     NutritionResponse NutritionPerServing,
     NutritionResponse NutritionTotal);
 
-/// <summary>One ingredient line, with the ingredient's names from Recipes' copy.</summary>
+/// <summary>
+/// One ingredient line, with the ingredient's data from Recipes' copy: names, and the nutrients per 100 g and unit data
+/// the editor needs to recalculate nutrition and to know which units the ingredient can be measured in.
+/// </summary>
 public sealed record RecipeIngredientResponse(
-    Guid Id, Guid IngredientId, string Name, string HungarianName, decimal Amount, Unit Unit, string? Note);
+    Guid Id,
+    Guid IngredientId,
+    string Name,
+    string HungarianName,
+    decimal Amount,
+    Unit Unit,
+    string? Note,
+    NutritionResponse NutrientsPer100g,
+    decimal? DensityGramsPerMl,
+    decimal? PieceWeightGrams);
 
 /// <summary>Energy in kcal, everything else in grams, rounded to 2 decimals.</summary>
 public sealed record NutritionResponse(decimal EnergyKcal, decimal Protein, decimal Carbohydrate, decimal Fat, decimal Fiber)

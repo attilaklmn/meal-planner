@@ -20,17 +20,16 @@ describe('App', () => {
     expect(await screen.findByText('Healthy')).toBeInTheDocument()
   })
 
-  it('navigates to the ingredient search', async () => {
+  it('links to the new-recipe form', async () => {
     stubFetch({
       '/health': () => new Response('Healthy'),
       '/api/recipes': () => Response.json([]),
     })
     renderWithQueryClient(<App />)
 
-    await userEvent.setup().click(screen.getByRole('link', { name: 'Ingredients' }))
+    await userEvent.setup().click(await screen.findByRole('link', { name: 'New recipe' }))
 
-    expect(screen.getByRole('heading', { name: 'Ingredient search' })).toBeInTheDocument()
-    expect(screen.getByRole('combobox')).toHaveTextContent('Choose an ingredient…')
+    expect(screen.getByRole('heading', { name: 'New recipe' })).toBeInTheDocument()
   })
 
   it('shows a not-found page for unknown URLs', () => {

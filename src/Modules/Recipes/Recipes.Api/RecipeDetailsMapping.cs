@@ -16,15 +16,20 @@ internal static class RecipeDetailsMapping
             [.. recipe.Steps.Select(s => s.Text)],
             recipe.Tags,
             // EF Core loads the lines in no particular order.
-            [.. recipe.Ingredients.OrderBy(l => l.Position).Select(l => new RecipeIngredientResponse(
-                l.Id,
-                l.IngredientId,
-                ingredients[l.IngredientId].Name,
-                ingredients[l.IngredientId].HungarianName,
-                l.Quantity.Amount,
-                l.Quantity.Unit,
-                l.Note))],
+            [.. recipe.Ingredients.OrderBy(l => l.Position).Select(l => ToResponse(l, ingredients[l.IngredientId]))],
             NutritionResponse.From(nutrition.PerServing),
             NutritionResponse.From(nutrition.Total));
     }
+
+    private static RecipeIngredientResponse ToResponse(RecipeIngredient line, CatalogIngredient ingredient) => new(
+        line.Id,
+        line.IngredientId,
+        ingredient.Name,
+        ingredient.HungarianName,
+        line.Quantity.Amount,
+        line.Quantity.Unit,
+        line.Note,
+        NutritionResponse.From(ingredient.NutrientsPer100g),
+        ingredient.UnitConversion.DensityGramsPerMl,
+        ingredient.UnitConversion.PieceWeightGrams);
 }
