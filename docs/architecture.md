@@ -141,7 +141,9 @@ recipe editor, ingredient search, weekly plan view, shopping list (mobile-first)
 
 **Showcase pieces**
 
-- **Recipe editor:** React Hook Form `useFieldArray` for dynamic ingredient rows, Zod schema, debounced ingredient autocomplete
+- **Recipe editor:** React Hook Form `useFieldArray` for dynamic ingredient rows, Zod schema, debounced ingredient autocomplete,
+  units the ingredient can't convert disabled, live nutrition preview calculated in the browser (a TS copy of the unit
+  table; the server recalculates on save), server `ValidationProblem` errors mapped back onto the fields
 - **Shopping list:** optimistic update on check-off, rollback on error, 409 conflict handling
 - **Real-time:** SignalR events written into the TanStack Query cache (`setQueryData`), so the list updates live on two phones
 - **Offline:** PWA with a service worker; check-off works with poor reception in the shop and syncs on reconnect
@@ -158,7 +160,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 | --- | --- | --- | --- |
 | 1. v1 MVP | M0 – Foundations | Aspire, Postgres, Vite skeleton | 1 evening |
 | | M1 – Ingredient catalog | Data import and search | 1 evening |
-| | M2 – Recipes | CRUD, editor, nutrition | 1 evening |
+| | M2 – Recipes | CRUD, editor, nutrition | 2 days (planned: 1 evening; unit conversion and the ingredient copy took longer) |
 | | M3 – Meal plan and shopping list | Weekly plan, generated list | 1 evening |
 | | **Gate: v1 usable at home** | | |
 | 2. Reliability | M4 – Tests and CI | Testcontainers, CI, ADRs | 1 evening |
@@ -183,7 +185,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 ### M2 – Recipes
 - [x] `Recipe`, `RecipeIngredient`, `Quantity` value object with unit conversion, unit-tested
 - [x] CRUD endpoints, steps in a JSON column
-- [ ] Recipe editor (React Hook Form + Zod), list and details pages
+- [x] Recipe editor (React Hook Form + Zod), list and details pages
 - [x] Nutrition per serving, servings slider with live recalculation
 
 ### M3 – Meal plan and shopping list

@@ -20,12 +20,20 @@ const SEARCH_DEBOUNCE_MS = 250
 const RESULT_LIMIT = 20
 
 type IngredientAutocompleteProps = {
-  value: IngredientSummary | null
+  // Only the name is shown, so a recipe's saved line works as the value too, not just a search result.
+  value: Pick<IngredientSummary, 'hungarianName'> | null
   onSelect: (ingredient: IngredientSummary) => void
+  'aria-label'?: string
+  'aria-invalid'?: boolean
 }
 
-// Combobox for picking a catalog ingredient; the recipe editor (M2) uses it for each ingredient row.
-export function IngredientAutocomplete({ value, onSelect }: IngredientAutocompleteProps) {
+// Combobox for picking a catalog ingredient; the recipe editor uses it for each ingredient row.
+export function IngredientAutocomplete({
+  value,
+  onSelect,
+  'aria-label': ariaLabel,
+  'aria-invalid': ariaInvalid,
+}: IngredientAutocompleteProps) {
   const [open, setOpen] = useState(false)
   const [search, setSearch] = useState('')
   const term = useDebouncedValue(search.trim(), SEARCH_DEBOUNCE_MS)
@@ -59,6 +67,8 @@ export function IngredientAutocomplete({ value, onSelect }: IngredientAutocomple
           variant="outline"
           role="combobox"
           aria-expanded={open}
+          aria-label={ariaLabel}
+          aria-invalid={ariaInvalid}
           className="w-full justify-between font-normal"
         >
           {value ? value.hungarianName : 'Choose an ingredient…'}

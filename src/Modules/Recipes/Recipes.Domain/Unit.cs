@@ -34,6 +34,7 @@ public static class UnitExtensions
     /// <summary>
     /// How many base units (g, ml or pieces) one of this unit is.
     /// Spoons and cups are the metric kitchen measures: 5 ml, 15 ml and 250 ml (close to a Hungarian "bögre").
+    /// The recipe editor's live preview has a copy of this table (src/web/src/features/recipes/units.ts): change both.
     /// </summary>
     public static decimal BaseFactor(this Unit unit) => unit switch
     {

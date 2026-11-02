@@ -483,7 +483,10 @@
           "hungarianName",
           "amount",
           "unit",
-          "note"
+          "note",
+          "nutrientsPer100g",
+          "densityGramsPerMl",
+          "pieceWeightGrams"
         ],
         "type": "object",
         "properties": {
@@ -513,6 +516,23 @@
               "null",
               "string"
             ]
+          },
+          "nutrientsPer100g": {
+            "$ref": "#/components/schemas/NutritionResponse"
+          },
+          "densityGramsPerMl": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "pieceWeightGrams": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
           }
         }
       },

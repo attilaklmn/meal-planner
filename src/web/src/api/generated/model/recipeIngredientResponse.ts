@@ -4,6 +4,7 @@
  * Api | v1
  * OpenAPI spec version: 1.0.0
  */
+import type { NutritionResponse } from './nutritionResponse'
 import type { Unit } from './unit'
 
 export interface RecipeIngredientResponse {
@@ -15,4 +16,9 @@ export interface RecipeIngredientResponse {
   unit: Unit
   /** @nullable */
   note: string | null
+  nutrientsPer100g: NutritionResponse
+  /** @nullable */
+  densityGramsPerMl: number | null
+  /** @nullable */
+  pieceWeightGrams: number | null
 }

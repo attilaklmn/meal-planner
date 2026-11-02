@@ -2,68 +2,9 @@ import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import App from '@/App'
-import type { RecipeDetails, RecipeSummary } from '@/api/generated/model'
 import { stubFetch } from '@/test/fetch'
 import { renderWithQueryClient } from '@/test/render'
-
-const nokedliSummary: RecipeSummary = {
-  id: '01a193cb-612d-7053-8147-5bc4ab4e5f43',
-  title: 'Nokedli',
-  servings: 2,
-  tags: ['köret', 'magyar'],
-  energyKcalPerServing: 311.39,
-}
-
-const nokedli: RecipeDetails = {
-  id: nokedliSummary.id,
-  title: 'Nokedli',
-  servings: 2,
-  steps: ['Mix the dough.', 'Press it into boiling water.'],
-  tags: ['köret', 'magyar'],
-  ingredients: [
-    {
-      id: '01a193cb-612e-729a-bf7d-ac311cd785c0',
-      ingredientId: '01a193ca-bd95-7684-8dec-6e3ddc8572cf',
-      name: 'Wheat flour, white, all-purpose, enriched, bleached',
-      hungarianName: 'Búzaliszt (finomliszt)',
-      amount: 125,
-      unit: 'Gram',
-      note: null,
-    },
-    {
-      id: '01a193cb-612f-7739-a32d-a7edc48c00de',
-      ingredientId: '01a193ca-bd90-7555-9988-5770661bc687',
-      name: 'Oil, olive, salad or cooking',
-      hungarianName: 'Olívaolaj',
-      amount: 0.5,
-      unit: 'Tablespoon',
-      note: 'for the pan',
-    },
-    {
-      id: '01a193cb-612e-7ecf-bac4-818e77cb4974',
-      ingredientId: '01a193ca-bd1e-752b-9ed4-cea2b6f90f11',
-      name: 'Egg, whole, raw, fresh',
-      hungarianName: 'Tojás',
-      amount: 1.5,
-      unit: 'Piece',
-      note: null,
-    },
-  ],
-  nutritionPerServing: {
-    energyKcal: 311.39,
-    protein: 11.17,
-    carbohydrate: 47.96,
-    fat: 7.6,
-    fiber: 1.69,
-  },
-  nutritionTotal: {
-    energyKcal: 622.78,
-    protein: 22.34,
-    carbohydrate: 95.92,
-    fat: 15.2,
-    fiber: 3.38,
-  },
-}
+import { nokedli, nokedliSummary } from './test-recipes'
 
 const health = { '/health': () => new Response('Healthy') }
 
