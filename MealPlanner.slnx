@@ -22,6 +22,7 @@
   </Folder>
   <Folder Name="/src/Modules/Recipes/">
     <Project Path="src/Modules/Recipes/Recipes.Api/Recipes.Api.csproj" />
+    <Project Path="src/Modules/Recipes/Recipes.Contracts/Recipes.Contracts.csproj" />
     <Project Path="src/Modules/Recipes/Recipes.Domain/Recipes.Domain.csproj" />
     <Project Path="src/Modules/Recipes/Recipes.Infrastructure/Recipes.Infrastructure.csproj" />
   </Folder>

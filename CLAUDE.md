@@ -23,7 +23,8 @@ with `IngredientAutocomplete` (used by the recipe editor). **M2 – Recipes** is
 recipes persisted in `recipes."Recipes"` / `"RecipeIngredients"` (steps jsonb, tags text[]) with Recipes' own
 ingredient copy in `recipes."Ingredients"` (ADR 0004), refreshed on save through `Catalog.Contracts`; CRUD under
 `/api/recipes` (`src/Api/Api.http`); frontend list, details (servings slider) and a shared create/edit form with
-live nutrition preview. Next: **M3 – Meal plan and shopping list**.
+live nutrition preview. **M3 – Meal plan and shopping list** in progress: Planning reads recipes (title, kcal per
+serving, lines with grams) through `Recipes.Contracts` (`IRecipeReader`, ADR 0005). Next: `MealPlan` aggregate.
 Update this line when a milestone closes.
 
 ## Tech stack

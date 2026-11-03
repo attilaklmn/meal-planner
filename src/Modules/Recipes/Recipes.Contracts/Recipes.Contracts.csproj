@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Recipes' public API for other modules (ADR 0005): interfaces and DTOs only, no dependencies,
+       so referencing it never pulls Recipes.Domain or Recipes.Infrastructure into another module. -->
+
+</Project>
