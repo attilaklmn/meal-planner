@@ -1,3 +1,4 @@
+using Recipes.Contracts;
 using Recipes.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,9 @@ public static class RecipesInfrastructureExtensions
 
         // Adds Aspire's health check, OpenTelemetry instrumentation and retry-on-failure to the registration above.
         builder.EnrichNpgsqlDbContext<RecipesDbContext>();
+
+        // Recipes' public API for other modules (Recipes.Contracts).
+        builder.Services.AddScoped<IRecipeReader, RecipeReader>();
 
         if (builder.Environment.IsDevelopment())
         {

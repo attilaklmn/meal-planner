@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Modules\Recipes\Recipes.Domain\Recipes.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Recipes\Recipes.Infrastructure\Recipes.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

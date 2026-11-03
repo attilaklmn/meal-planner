@@ -85,7 +85,9 @@ event-fed copy of the data it needs from the others.
   In v1 the same copy is refreshed in process, through Catalog's public API (`ICatalogIngredients` in
   `Catalog.Contracts`), whenever a recipe is saved (ADR 0004).
 - Planning keeps recipe ingredients up to date from `RecipeUpdated` events, so generating a shopping
-  list needs no synchronous call.
+  list needs no synchronous call. In v1 it reads them in process through Recipes' public API
+  (`IRecipeReader` in `Recipes.Contracts`); plan entries copy the recipe's title and kcal per serving,
+  and a shopping list is a snapshot taken when it is generated (ADR 0005).
 - Every event leaves through a transactional outbox; consumers are idempotent.
 
 **Why exactly these two extractions:** Catalog's import is heavy, infrequent batch work; Planning is
@@ -109,7 +111,7 @@ piece weight. Nutrition calculation and shopping-list merging both build on this
 
 `Quantity` lives in `Recipes.Domain`: spoons and cups are metric (5 / 15 / 250 ml), volumes convert to grams through the
 ingredient's density and pieces through its piece weight, and a missing factor is an error rather than 0 g. Planning does
-not reference it; it gets amount + unit from `RecipeUpdated` and merges the shopping list with its own logic, which keeps
+not reference it; it gets amount + unit and the line's grams from `Recipes.Contracts` (later `RecipeUpdated`) and merges the shopping list with its own logic, which keeps
 the module boundary strict at the cost of a little duplicated unit logic.
 
 | EF Core technique | Where | What it shows |
