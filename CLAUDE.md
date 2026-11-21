@@ -24,7 +24,9 @@ recipes persisted in `recipes."Recipes"` / `"RecipeIngredients"` (steps jsonb, t
 ingredient copy in `recipes."Ingredients"` (ADR 0004), refreshed on save through `Catalog.Contracts`; CRUD under
 `/api/recipes` (`src/Api/Api.http`); frontend list, details (servings slider) and a shared create/edit form with
 live nutrition preview. **M3 – Meal plan and shopping list** in progress: Planning reads recipes (title, kcal per
-serving, lines with grams) through `Recipes.Contracts` (`IRecipeReader`, ADR 0005). Next: `MealPlan` aggregate.
+serving, lines with grams) through `Recipes.Contracts` (`IRecipeReader`, ADR 0005); `MealPlan` aggregate (one per week,
+keyed by its Monday; entries with day, meal, servings and a `RecipeSnapshot` copy) in `planning."MealPlans"` /
+`"MealPlanEntries"`, unit-tested in `tests/Planning.UnitTests`. Next: meal plan endpoints.
 Update this line when a milestone closes.
 
 ## Tech stack
@@ -150,7 +152,7 @@ Fill in as the solution takes shape:
   (`.editorconfig` marks that folder as generated code, so analyzers don't fail the build on it).
   Review the SQL with `dotnet ef migrations script <From> <To> --project ...`.
 - Backend tests: `dotnet test` (xUnit v3 on Microsoft.Testing.Platform, opted in via `global.json`;
-  in CI `dotnet test --solution MealPlanner.slnx`). Test projects live in `tests/<Module>.UnitTests`;
+  in CI `dotnet test --solution MealPlanner.slnx`). Test projects live in `tests/<Module>.UnitTests` (Catalog, Recipes, Planning);
   `tests/Directory.Build.props` allows `Sentence_style_test_names`.
 - Frontend (in `src/web`): `npm run dev` (standalone, proxies `/api` to `localhost:5030`; under Aspire the
   AppHost starts it), `npm test`, `npm run lint` (oxlint), `npm run format` / `format:check` (Prettier),

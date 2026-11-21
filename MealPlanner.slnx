@@ -28,6 +28,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Catalog.UnitTests/Catalog.UnitTests.csproj" />
+    <Project Path="tests/Planning.UnitTests/Planning.UnitTests.csproj" />
     <Project Path="tests/Recipes.UnitTests/Recipes.UnitTests.csproj" />
   </Folder>
 </Solution>
