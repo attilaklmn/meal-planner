@@ -105,7 +105,8 @@ piece weight. Nutrition calculation and shopping-list merging both build on this
 - `RecipeIngredient`: join entity with payload: `Quantity` (amount + unit), a note and its position in the list
 - `CatalogIngredient`: Recipes' copy of a Catalog ingredient (names, nutrients per 100 g, density, piece weight),
   one row per ingredient, shared by all recipes (ADR 0004)
-- `MealPlan`: week, entries (day, meal, recipe, servings)
+- `MealPlan`: one per week, identified by its Monday (ISO week, as in Hungary); entries (day, meal, servings) keep a
+  `RecipeSnapshot`: the recipe's id plus a copy of its title and kcal per serving (ADR 0005)
 - `ShoppingList` / `ShoppingItem`: ingredient, merged quantity, checked flag, who checked it
 - `Quantity`, `NutrientProfile`: value objects, immutable records with their own conversion and addition logic
 
