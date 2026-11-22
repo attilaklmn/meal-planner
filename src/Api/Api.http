@@ -68,5 +68,31 @@ Content-Type: application/json
   ]
 }
 
-### Delete
+### Meal plan: a week is addressed by its Monday; a week with nothing planned is an empty plan, not a 404
+@Week = 2026-11-16
+GET {{Api}}/api/plans/{{Week}}
+
+### Put the recipe on Wednesday's lunch (days[2]): title and kcal per serving are copied from Recipes
+# @name planned
+POST {{Api}}/api/plans/{{Week}}/entries
+Content-Type: application/json
+
+{ "recipeId": "{{created.response.body.$.id}}", "day": "Wednesday", "meal": "Lunch", "servings": 2 }
+
+### Move it to Friday's dinner with 3 servings; the daily totals follow
+PUT {{Api}}/api/plans/{{Week}}/entries/{{planned.response.body.$.days[2].entries[0].id}}
+Content-Type: application/json
+
+{ "day": "Friday", "meal": "Dinner", "servings": 3 }
+
+### Validation: not a Monday, unknown recipe, no servings
+POST {{Api}}/api/plans/2026-11-17/entries
+Content-Type: application/json
+
+{ "recipeId": "00000000-0000-0000-0000-000000000001", "day": "Monday", "meal": "Lunch", "servings": 0 }
+
+### Take it off the plan
+DELETE {{Api}}/api/plans/{{Week}}/entries/{{planned.response.body.$.days[2].entries[0].id}}
+
+### Delete the recipe
 DELETE {{Api}}/api/recipes/{{created.response.body.$.id}}

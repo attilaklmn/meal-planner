@@ -5,10 +5,17 @@
  * OpenAPI spec version: 1.0.0
  */
 
+export * from './addMealPlanEntryRequest'
+export * from './changeMealPlanEntryRequest'
+export * from './dayOfWeek'
 export * from './httpValidationProblemDetails'
 export * from './httpValidationProblemDetailsErrors'
 export * from './ingredientSummary'
 export * from './listRecipesParams'
+export * from './meal'
+export * from './mealPlanDayResponse'
+export * from './mealPlanEntryResponse'
+export * from './mealPlanResponse'
 export * from './nutrientsResponse'
 export * from './nutritionResponse'
 export * from './recipeDetails'

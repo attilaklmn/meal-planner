@@ -5,6 +5,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Recipes' public API only (ADR 0005); never its Domain or Infrastructure. -->
+    <ProjectReference Include="..\..\Recipes\Recipes.Contracts\Recipes.Contracts.csproj" />
     <ProjectReference Include="..\Planning.Domain\Planning.Domain.csproj" />
     <ProjectReference Include="..\Planning.Infrastructure\Planning.Infrastructure.csproj" />
   </ItemGroup>

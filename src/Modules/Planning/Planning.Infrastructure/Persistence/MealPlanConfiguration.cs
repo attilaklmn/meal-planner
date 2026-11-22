@@ -15,7 +15,7 @@ internal sealed class MealPlanConfiguration : IEntityTypeConfiguration<MealPlan>
         // One plan per week: plans are looked up by their Monday, and two requests creating the same week's plan at once
         // fail on this index instead of leaving two plans. A surrogate id rather than the date as key, because with
         // households (M5) the week alone stops being unique.
-        builder.HasIndex(p => p.WeekStart).IsUnique();
+        builder.HasIndex(p => p.WeekStart).IsUnique().HasDatabaseName(PlanningDbContext.WeekStartIndex);
 
         // Entries are a child entity, reached only through the aggregate's backing field.
         builder.HasMany(p => p.Entries)
