@@ -26,7 +26,8 @@ ingredient copy in `recipes."Ingredients"` (ADR 0004), refreshed on save through
 live nutrition preview. **M3 – Meal plan and shopping list** in progress: Planning reads recipes (title, kcal per
 serving, lines with grams) through `Recipes.Contracts` (`IRecipeReader`, ADR 0005); `MealPlan` aggregate (one per week,
 keyed by its Monday; entries with day, meal, servings and a `RecipeSnapshot` copy) in `planning."MealPlans"` /
-`"MealPlanEntries"`, unit-tested in `tests/Planning.UnitTests`. Next: meal plan endpoints.
+`"MealPlanEntries"`, unit-tested in `tests/Planning.UnitTests`; endpoints under `/api/plans/{weekStart}` (GET returns all
+seven days with kcal totals, empty for an unplanned week; add / change / remove entries return the whole week). Next: weekly plan page.
 Update this line when a milestone closes.
 
 ## Tech stack

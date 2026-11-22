@@ -245,10 +245,270 @@
           }
         }
       }
+    },
+    "/api/plans/{weekStart}": {
+      "get": {
+        "tags": [
+          "Meal plans"
+        ],
+        "summary": "Get a week's plan with daily energy totals; an empty plan when nothing is planned",
+        "operationId": "GetMealPlan",
+        "parameters": [
+          {
+            "name": "weekStart",
+            "in": "path",
+            "description": "The Monday the week starts on, as yyyy-MM-dd.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MealPlanResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/plans/{weekStart}/entries": {
+      "post": {
+        "tags": [
+          "Meal plans"
+        ],
+        "summary": "Put a recipe on a day and meal of the week",
+        "operationId": "AddMealPlanEntry",
+        "parameters": [
+          {
+            "name": "weekStart",
+            "in": "path",
+            "description": "The Monday the week starts on, as yyyy-MM-dd.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddMealPlanEntryRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MealPlanResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/plans/{weekStart}/entries/{entryId}": {
+      "put": {
+        "tags": [
+          "Meal plans"
+        ],
+        "summary": "Move an entry to another day or meal, or change its servings",
+        "operationId": "ChangeMealPlanEntry",
+        "parameters": [
+          {
+            "name": "weekStart",
+            "in": "path",
+            "description": "The Monday the week starts on, as yyyy-MM-dd.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "entryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeMealPlanEntryRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MealPlanResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Meal plans"
+        ],
+        "summary": "Take an entry off the plan",
+        "operationId": "RemoveMealPlanEntry",
+        "parameters": [
+          {
+            "name": "weekStart",
+            "in": "path",
+            "description": "The Monday the week starts on, as yyyy-MM-dd.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "entryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MealPlanResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AddMealPlanEntryRequest": {
+        "required": [
+          "recipeId",
+          "day",
+          "meal",
+          "servings"
+        ],
+        "type": "object",
+        "properties": {
+          "recipeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "day": {
+            "$ref": "#/components/schemas/DayOfWeek"
+          },
+          "meal": {
+            "$ref": "#/components/schemas/Meal"
+          },
+          "servings": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ChangeMealPlanEntryRequest": {
+        "required": [
+          "day",
+          "meal",
+          "servings"
+        ],
+        "type": "object",
+        "properties": {
+          "day": {
+            "$ref": "#/components/schemas/DayOfWeek"
+          },
+          "meal": {
+            "$ref": "#/components/schemas/Meal"
+          },
+          "servings": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "DayOfWeek": {
+        "enum": [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      },
       "HttpValidationProblemDetails": {
         "type": "object",
         "properties": {
@@ -330,6 +590,106 @@
               "null",
               "number"
             ],
+            "format": "double"
+          }
+        }
+      },
+      "Meal": {
+        "enum": [
+          "Breakfast",
+          "Lunch",
+          "Dinner",
+          "Snack"
+        ]
+      },
+      "MealPlanDayResponse": {
+        "required": [
+          "day",
+          "date",
+          "energyKcal",
+          "entries"
+        ],
+        "type": "object",
+        "properties": {
+          "day": {
+            "$ref": "#/components/schemas/DayOfWeek"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "energyKcal": {
+            "type": "number",
+            "format": "double"
+          },
+          "entries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MealPlanEntryResponse"
+            }
+          }
+        }
+      },
+      "MealPlanEntryResponse": {
+        "required": [
+          "id",
+          "meal",
+          "recipeId",
+          "recipeTitle",
+          "servings",
+          "energyKcalPerServing",
+          "energyKcal"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "meal": {
+            "$ref": "#/components/schemas/Meal"
+          },
+          "recipeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "recipeTitle": {
+            "type": "string"
+          },
+          "servings": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "energyKcalPerServing": {
+            "type": "number",
+            "format": "double"
+          },
+          "energyKcal": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "MealPlanResponse": {
+        "required": [
+          "weekStart",
+          "days",
+          "energyKcal"
+        ],
+        "type": "object",
+        "properties": {
+          "weekStart": {
+            "type": "string",
+            "format": "date"
+          },
+          "days": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MealPlanDayResponse"
+            }
+          },
+          "energyKcal": {
+            "type": "number",
             "format": "double"
           }
         }
@@ -626,6 +986,9 @@
     },
     {
       "name": "Recipes"
+    },
+    {
+      "name": "Meal plans"
     }
   ]
 }
