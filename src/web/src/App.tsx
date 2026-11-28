@@ -3,6 +3,7 @@ import { AppShell } from '@/components/app-shell'
 import { RecipeDetailsPage } from '@/features/recipes/recipe-details-page'
 import { EditRecipePage, NewRecipePage } from '@/features/recipes/recipe-editor-pages'
 import { RecipeListPage } from '@/features/recipes/recipe-list-page'
+import { WeeklyPlanPage } from '@/features/planning/weekly-plan-page'
 
 // Declarative routes (React Router's library mode): data stays in TanStack Query, the router only maps URLs to pages.
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="recipes/new" element={<NewRecipePage />} />
         <Route path="recipes/:id" element={<RecipeDetailsPage />} />
         <Route path="recipes/:id/edit" element={<EditRecipePage />} />
+        <Route path="plan" element={<WeeklyPlanPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

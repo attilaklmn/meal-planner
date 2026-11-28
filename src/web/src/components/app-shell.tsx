@@ -2,8 +2,11 @@ import { NavLink, Outlet } from 'react-router'
 import { cn } from '@/lib/utils'
 import { ApiStatus } from './api-status'
 
-// Planning and shopping join here in M3.
-const navItems = [{ to: '/recipes', label: 'Recipes' }]
+// Shopping joins here later in M3.
+const navItems = [
+  { to: '/recipes', label: 'Recipes' },
+  { to: '/plan', label: 'Plan' },
+]
 
 // Layout route: header and navigation around whichever page the URL selects.
 export function AppShell() {
