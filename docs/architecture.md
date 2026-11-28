@@ -192,7 +192,7 @@ The first usable version is done within 4 evenings (M0–M3); the full, demoable
 - [x] Nutrition per serving, servings slider with live recalculation
 
 ### M3 – Meal plan and shopping list
-- [ ] Weekly plan view, recipes assigned to days and meals
+- [x] Weekly plan view, recipes assigned to days and meals
 - [ ] Generate list with merged quantities, add manual items
 - [ ] Check-off with optimistic update, mobile-friendly view
 
